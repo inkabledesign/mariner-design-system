@@ -1,0 +1,49 @@
+{
+  "name": "@mariner/theme",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Design tokens, theme utilities, and Tailwind configurations for Mariner cross-platform applications",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "react-native": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "react-native": "./src/index.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./src/loadTokens.js": "./src/loadTokens.js",
+    "./src/*.json": "./src/*.json",
+    "./tailwind/native": "./tailwind/native.js",
+    "./tailwind/web": "./tailwind/web.js"
+  },
+  "files": [
+    "dist",
+    "src",
+    "tailwind"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "jest",
+    "lint": "eslint src --ext .ts,.tsx"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@types/node": "^20.0.0",
+    "rollup": "^4.6.0",
+    "typescript": "^5.2.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inkabledesign/mariner-design-system.git",
+    "directory": "packages/theme"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "@mariner/assets",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Icons, fonts, and images for Mariner design system",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "react-native": "index.ts",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "icons",
+    "fonts",
+    "images"
+  ],
+  "scripts": {
+    "generate:icons": "node icons/icons-gen.cjs",
+    "build": "npm run generate:icons && rollup -c",
+    "dev": "rollup -c -w",
+    "test": "echo \"No tests for assets package\"",
+    "lint": "echo \"No linting for assets package\""
+  },
+  "dependencies": {
+    "react-native-svg": "15.15.3"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@types/node": "^20.0.0",
+    "@types/react": "^19.0.0",
+    "cheerio": "^1.2.0",
+    "rollup": "^4.6.0",
+    "typescript": "^5.2.0"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-native": "^0.83.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inkabledesign/mariner-design-system.git",
+    "directory": "packages/assets"
+  }
+}

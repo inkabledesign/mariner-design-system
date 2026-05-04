@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "npmClient": "yarn",
+  "command": {
+    "publish": {
+      "conventionalCommits": true,
+      "message": "chore(release): publish",
+      "registry": "https://npm.pkg.github.com"
+    },
+    "version": {
+      "allowBranch": ["main", "master"],
+      "conventionalCommits": true
+    }
+  },
+  "packages": [
+    "packages/*",
+    "apps/*"
+  ]
+}

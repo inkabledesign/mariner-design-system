@@ -1,0 +1,152 @@
+{
+  "default": {
+    "linear": {
+      "angle": 180,
+      "stops": [
+        { "offset": "0%", "color": "rgb(255, 255, 255)", "opacity": 0 },
+        { "offset": "69.1%", "color": "rgb(255, 255, 255)", "opacity": 0 },
+        { "offset": "100%", "color": "rgb(255, 255, 255)", "opacity": 0.05 }
+      ]
+    },
+    "radial1": {
+      "cx": "98.14%",
+      "cy": "0%",
+      "rx": "126.25%",
+      "ry": "128.12%",
+      "stops": [
+        { "offset": "11.54%", "color": "rgb(38, 46, 188)", "opacity": 0.05 },
+        { "offset": "94.23%", "color": "rgb(38, 46, 188)", "opacity": 0 }
+      ]
+    },
+    "radial2": {
+      "cx": "0%",
+      "cy": "0%",
+      "rx": "139.67%",
+      "ry": "141.42%",
+      "stops": [
+        { "offset": "30.77%", "color": "rgb(166, 135, 86)", "opacity": 0.05 },
+        { "offset": "61.06%", "color": "rgb(17, 21, 86)", "opacity": 0 }
+      ]
+    }
+  },
+  "blue": {
+    "linear": {
+      "angle": 180,
+      "stops": [
+        { "offset": "0%", "color": "rgb(255, 255, 255)", "opacity": 0 },
+        { "offset": "70%", "color": "rgb(38, 46, 188)", "opacity": 0.1 },
+        { "offset": "100%", "color": "rgb(38, 46, 188)", "opacity": 0.2 }
+      ]
+    },
+    "radial1": {
+      "cx": "100%",
+      "cy": "0%",
+      "rx": "120%",
+      "ry": "120%",
+      "stops": [
+        { "offset": "0%", "color": "rgb(38, 46, 188)", "opacity": 0.15 },
+        { "offset": "100%", "color": "rgb(38, 46, 188)", "opacity": 0 }
+      ]
+    },
+    "radial2": {
+      "cx": "0%",
+      "cy": "100%",
+      "rx": "120%",
+      "ry": "120%",
+      "stops": [
+        { "offset": "0%", "color": "rgb(125, 130, 215)", "opacity": 0.1 },
+        { "offset": "100%", "color": "rgb(38, 46, 188)", "opacity": 0 }
+      ]
+    }
+  },
+  "gold": {
+    "linear": {
+      "angle": 180,
+      "stops": [
+        { "offset": "0%", "color": "rgb(255, 255, 255)", "opacity": 0 },
+        { "offset": "70%", "color": "rgb(166, 135, 86)", "opacity": 0.05 },
+        { "offset": "100%", "color": "rgb(166, 135, 86)", "opacity": 0.1 }
+      ]
+    },
+    "radial1": {
+      "cx": "100%",
+      "cy": "0%",
+      "rx": "130%",
+      "ry": "130%",
+      "stops": [
+        { "offset": "0%", "color": "rgb(166, 135, 86)", "opacity": 0.1 },
+        { "offset": "100%", "color": "rgb(166, 135, 86)", "opacity": 0 }
+      ]
+    },
+    "radial2": {
+      "cx": "0%",
+      "cy": "100%",
+      "rx": "130%",
+      "ry": "130%",
+      "stops": [
+        { "offset": "0%", "color": "rgb(228, 219, 204)", "opacity": 0.08 },
+        { "offset": "100%", "color": "rgb(166, 135, 86)", "opacity": 0 }
+      ]
+    }
+  },
+  "purple": {
+    "linear": {
+      "angle": 180,
+      "stops": [
+        { "offset": "0%", "color": "rgb(255, 255, 255)", "opacity": 0 },
+        { "offset": "70%", "color": "rgb(147, 51, 234)", "opacity": 0.05 },
+        { "offset": "100%", "color": "rgb(147, 51, 234)", "opacity": 0.1 }
+      ]
+    },
+    "radial1": {
+      "cx": "100%",
+      "cy": "0%",
+      "rx": "120%",
+      "ry": "120%",
+      "stops": [
+        { "offset": "0%", "color": "rgb(147, 51, 234)", "opacity": 0.1 },
+        { "offset": "100%", "color": "rgb(147, 51, 234)", "opacity": 0 }
+      ]
+    },
+    "radial2": {
+      "cx": "0%",
+      "cy": "100%",
+      "rx": "120%",
+      "ry": "120%",
+      "stops": [
+        { "offset": "0%", "color": "rgb(192, 132, 252)", "opacity": 0.08 },
+        { "offset": "100%", "color": "rgb(147, 51, 234)", "opacity": 0 }
+      ]
+    }
+  },
+  "green": {
+    "linear": {
+      "angle": 180,
+      "stops": [
+        { "offset": "0%", "color": "rgb(255, 255, 255)", "opacity": 0 },
+        { "offset": "70%", "color": "rgb(34, 197, 94)", "opacity": 0.05 },
+        { "offset": "100%", "color": "rgb(34, 197, 94)", "opacity": 0.1 }
+      ]
+    },
+    "radial1": {
+      "cx": "100%",
+      "cy": "0%",
+      "rx": "120%",
+      "ry": "120%",
+      "stops": [
+        { "offset": "0%", "color": "rgb(34, 197, 94)", "opacity": 0.1 },
+        { "offset": "100%", "color": "rgb(34, 197, 94)", "opacity": 0 }
+      ]
+    },
+    "radial2": {
+      "cx": "0%",
+      "cy": "100%",
+      "rx": "120%",
+      "ry": "120%",
+      "stops": [
+        { "offset": "0%", "color": "rgb(134, 239, 172)", "opacity": 0.08 },
+        { "offset": "100%", "color": "rgb(34, 197, 94)", "opacity": 0 }
+      ]
+    }
+  }
+}

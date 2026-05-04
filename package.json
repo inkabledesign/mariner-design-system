@@ -1,0 +1,71 @@
+{
+  "name": "@mariner/design-system",
+  "version": "1.0.0",
+  "description": "Cross-platform design system for Mariner applications",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "lerna run build",
+    "test": "lerna run test",
+    "lint": "lerna run lint",
+    "clean": "lerna clean && rm -rf node_modules",
+    "bootstrap": "lerna bootstrap",
+    "version": "lerna version",
+    "publish": "lerna publish",
+    "dev": "lerna run dev --parallel",
+    "storybook:mobile": "cd apps/storybook-mobile && npm run storybook",
+    "storybook:web": "cd apps/storybook-web && npm run storybook",
+    "build:storybook:mobile": "cd apps/storybook-mobile && npm run build",
+    "build:storybook:web": "cd apps/storybook-web && npm run build-storybook",
+    "generate:icons": "cd packages/icons && npm run generate"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/plugin-proposal-decorators": "^7.29.0",
+    "@babel/plugin-transform-export-namespace-from": "^7.27.1",
+    "@babel/plugin-transform-parameters": "^7.27.7",
+    "@babel/plugin-transform-react-jsx": "^7.28.6",
+    "@babel/preset-env": "^7.23.0",
+    "@babel/preset-react": "^7.28.5",
+    "@babel/preset-typescript": "^7.23.0",
+    "@rollup/plugin-babel": "^7.0.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@svgr/rollup": "^8.1.0",
+    "@types/react": "^19.0.0",
+    "eslint": "^8.57.0",
+    "eslint-config-expo": "^7.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "jest": "^29.7.0",
+    "lerna": "^8.0.0",
+    "prettier": "^3.1.0",
+    "rollup": "^4.6.0",
+    "storybook": "^8.6.18",
+    "@storybook/react-webpack5": "^8.6.18",
+    "@storybook/react": "^8.6.18",
+    "@storybook/addon-essentials": "^8.6.18",
+    "@storybook/addon-interactions": "^8.6.18",
+    "@storybook/addon-viewport": "^8.6.18",
+    "typescript": "^5.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/mariner-design-system.git"
+  },
+  "author": "Mariner Team",
+  "license": "MIT",
+  "dependencies": {
+    "react-native-audio-api": "^0.11.7",
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
