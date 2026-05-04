@@ -40,7 +40,11 @@ export function buildTheme(scales: {
   size: 'mobile' | 'tablet' | 'desktop-sm' | 'desktop-lg';
   typography: 'mobile' | 'tablet' | 'desktop-sm' | 'desktop-lg';
 }) {
-  const { color, typography, spacing, radius } = require('./index');
+  // Use the already-imported values (avoid self-referencing require cycle)
+  const colorData = color;
+  const typographyData = typography;
+  const spacingData = spacing;
+  const radiusData = radius;
   
   const radiusScale = radius[scales.radius].radius;
   const spacingScale = spacing[scales.spacing].spacing;

@@ -1,4 +1,4 @@
-import { color } from '../';
+import { color } from '../colors';
 
 export function getColorFromClass(
   colorClass: string,

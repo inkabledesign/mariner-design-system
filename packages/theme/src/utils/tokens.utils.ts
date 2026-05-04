@@ -1,4 +1,7 @@
-import { spacing, radius, typography, color } from '../';
+import { spacing } from '../spacing';
+import { radius } from '../radius';
+import { typography } from '../typography';
+import { color } from '../colors';
 
 type Breakpoint = 'mobile' | 'tablet' | 'desktop-sm' | 'desktop-lg';
 type SpacingScale = 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
