@@ -18,6 +18,7 @@ export * from './utils/style-helpers';
 
 // Breakpoint hook
 export * from './hooks/useBreakpoint';
+export * from './hooks/useDesignTokens';
 
 // Unified theme object — single import for all tokens
 import { color } from './colors';

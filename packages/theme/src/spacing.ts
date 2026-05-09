@@ -1,7 +1,7 @@
-import spacingJson from './spacing.json';
+import { spacingData } from './spacing.data';
 import type { SpacingScale } from './types';
 
-export const spacing: SpacingScale = spacingJson;
+export const spacing: SpacingScale = spacingData;
 
 // Export individual scales for easier access
 export const mobileSpacing = spacing['mobile'];

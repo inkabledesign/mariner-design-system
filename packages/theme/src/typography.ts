@@ -1,7 +1,7 @@
-import typographyJson from './typography.json';
+import { typographyData } from './typography.data';
 import type { TypographyScale } from './types';
 
-export const typography: TypographyScale = typographyJson;
+export const typography: TypographyScale = typographyData;
 
 // Export individual scales for easier access
 export const mobileTypography = typography['mobile'];

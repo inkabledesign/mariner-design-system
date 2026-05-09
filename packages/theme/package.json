@@ -1,7 +1,6 @@
 {
   "name": "@mariner/theme",
   "version": "1.0.0",
-  "type": "module",
   "description": "Design tokens, theme utilities, and Tailwind configurations for Mariner cross-platform applications",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -10,11 +9,13 @@
   "exports": {
     ".": {
       "react-native": "./src/index.ts",
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.esm.js",
       "require": "./dist/index.js",
-      "default": "./dist/index.js"
+      "default": "./dist/index.esm.js"
     },
     "./src/loadTokens.js": "./src/loadTokens.js",
+    "./src/loadTokens": "./src/loadTokens.ts",
     "./src/*.json": "./src/*.json",
     "./tailwind/native": "./tailwind/native.js",
     "./tailwind/web": "./tailwind/web.js"

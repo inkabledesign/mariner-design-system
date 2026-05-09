@@ -1,7 +1,8 @@
-import colorsJson from './colors.json';
+import { colorsData } from './colors.data';
 import type { ColorPalette } from './types';
 
-export const color: ColorPalette = colorsJson;
+// Now using TypeScript for instant hot reload!
+export const color: ColorPalette = colorsData;
 
 /** @deprecated Use `color` instead */
 export const colors = color;

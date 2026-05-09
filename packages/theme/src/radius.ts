@@ -1,7 +1,7 @@
-import radiusJson from './radius.json';
+import { radiusData } from './radius.data';
 import type { RadiusScale } from './types';
 
-export const radius: RadiusScale = radiusJson;
+export const radius: RadiusScale = radiusData;
 
 // Export individual scales for easier access
 export const mobileRadius = radius['mobile'];

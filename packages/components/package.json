@@ -31,7 +31,7 @@
     "lint": "echo \"No linting for components package\""
   },
   "dependencies": {
-    "@mariner/assets": "*"
+    "@mariner/assets": "file:../assets"
   },
   "peerDependencies": {
     "@mariner/theme": "*",
