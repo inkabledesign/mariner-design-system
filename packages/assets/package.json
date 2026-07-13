@@ -1,6 +1,6 @@
 {
   "name": "@inkabledesign/mariner-assets",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "Icons, fonts, and images for Mariner design system",
   "main": "dist/index.js",

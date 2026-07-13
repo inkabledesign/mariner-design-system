@@ -1,6 +1,6 @@
 {
   "name": "@inkabledesign/mariner-theme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Design tokens, theme utilities, and Tailwind configurations for Mariner cross-platform applications",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -31,7 +31,6 @@
     "test": "jest",
     "lint": "eslint src --ext .ts,.tsx"
   },
-  "dependencies": {},
   "devDependencies": {
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-typescript": "^11.1.5",

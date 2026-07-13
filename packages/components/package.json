@@ -1,6 +1,6 @@
 {
   "name": "@inkabledesign/mariner-components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "Cross-platform React Native components for Mariner applications",
   "main": "dist/index.js",
@@ -31,7 +31,7 @@
     "lint": "echo \"No linting for components package\""
   },
   "dependencies": {
-    "@inkabledesign/mariner-assets": "^1.0.0"
+    "@inkabledesign/mariner-assets": "^1.0.1"
   },
   "peerDependencies": {
     "@inkabledesign/mariner-theme": "*",
