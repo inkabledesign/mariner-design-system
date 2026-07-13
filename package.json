@@ -20,7 +20,7 @@
     "storybook:web": "cd apps/storybook-web && npm run storybook",
     "build:storybook:mobile": "cd apps/storybook-mobile && npm run build",
     "build:storybook:web": "cd apps/storybook-web && npm run build-storybook",
-    "generate:icons": "cd packages/icons && npm run generate"
+    "generate:icons": "cd packages/assets && npm run generate:icons"
   },
   "devDependencies": {
     "@babel/core": "^7.23.0",

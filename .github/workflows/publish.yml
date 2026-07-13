@@ -36,9 +36,6 @@ jobs:
     - name: Install dependencies
       run: yarn install --frozen-lockfile
 
-    - name: Generate icons
-      run: npm run generate:icons
-
     - name: Build packages
       run: npm run build
 
