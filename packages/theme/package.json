@@ -1,5 +1,5 @@
 {
-  "name": "@mariner/theme",
+  "name": "@inkabledesign/mariner-theme",
   "version": "1.0.0",
   "description": "Design tokens, theme utilities, and Tailwind configurations for Mariner cross-platform applications",
   "main": "dist/index.js",

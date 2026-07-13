@@ -10,9 +10,9 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@mariner/assets": "^1.0.0",
-    "@mariner/components": "^1.0.0",
-    "@mariner/theme": "^1.0.0",
+    "@inkabledesign/mariner-assets": "^1.0.0",
+    "@inkabledesign/mariner-components": "^1.0.0",
+    "@inkabledesign/mariner-theme": "^1.0.0",
     "expo-audio": "55.0.8",
     "expo-image": "55.0.8",
     "expo-video": "55.0.8",

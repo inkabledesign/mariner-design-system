@@ -44,8 +44,8 @@ export default {
     resolve({
       extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
       preferBuiltins: false,
-      // Don't resolve external packages (keep @mariner/* and RN libs external)
-      resolveOnly: [/^(?!react|react-native|expo-image|@mariner)/]
+      // Don't resolve external packages (keep @inkabledesign/* and RN libs external)
+      resolveOnly: [/^(?!react|react-native|expo-image|@inkabledesign)/]
     }),
     commonjs(),
     json(),
@@ -74,7 +74,7 @@ export default {
     'expo-image',
     'nativewind',
     'tailwindcss',
-    '@mariner/theme',
-    '@mariner/assets'
+    '@inkabledesign/mariner-theme',
+    '@inkabledesign/mariner-assets'
   ],
 };
