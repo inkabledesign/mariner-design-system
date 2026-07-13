@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
+import { View, Text, Pressable } from 'react-native';
 import { CircleProgress } from '@mariner/components';
 
 const meta: Meta<typeof CircleProgress> = {
@@ -117,18 +118,7 @@ export const WithPercentage: Story = {
     progress: 80,
     size: 64,
     strokeWidth: 6,
-    children: (
-      <div style={{ 
-        display: 'flex', 
-        alignItems: 'center', 
-        justifyContent: 'center',
-        fontSize: '14px',
-        fontWeight: '600',
-        color: '#1f2937'
-      }}>
-        80%
-      </div>
-    ),
+    children: undefined,
   },
 };
 
@@ -137,16 +127,7 @@ export const WithIcon: Story = {
     progress: 90,
     size: 64,
     strokeWidth: 6,
-    children: (
-      <div style={{ 
-        display: 'flex', 
-        alignItems: 'center', 
-        justifyContent: 'center',
-        fontSize: '24px'
-      }}>
-        ✓
-      </div>
-    ),
+    children: undefined,
   },
 };
 
@@ -154,60 +135,61 @@ export const WithIcon: Story = {
 export const Interactive: Story = {
   render: () => {
     const [progress, setProgress] = useState(30);
-    
+
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
-        <CircleProgress 
-          progress={progress} 
-          size={80} 
+      <View style={{ flexDirection: 'column', alignItems: 'center', gap: 20 }}>
+        <CircleProgress
+          progress={progress}
+          size={80}
           strokeWidth={8}
           progressColor="#262ebc"
           railColor="#e5e7eb"
         >
-          
-            {progress}%
-          
+          <Text>{progress}%</Text>
         </CircleProgress>
-        
-        <div style={{ display: 'flex', gap: '10px' }}>
-          <button 
-            onClick={() => setProgress(Math.max(0, progress - 10))}
+
+        <View style={{ flexDirection: 'row', gap: 10 }}>
+          <Pressable
+            onPress={() => setProgress(Math.max(0, progress - 10))}
             style={{
-              padding: '8px 16px',
-              borderRadius: '6px',
-              border: '1px solid #d1d5db',
+              paddingHorizontal: 16,
+              paddingVertical: 8,
+              borderRadius: 6,
+              borderWidth: 1,
+              borderColor: '#d1d5db',
               backgroundColor: '#f9fafb',
-              cursor: 'pointer'
             }}
           >
-            -10%
-          </button>
-          <button 
-            onClick={() => setProgress(Math.min(100, progress + 10))}
+            <Text>-10%</Text>
+          </Pressable>
+          <Pressable
+            onPress={() => setProgress(Math.min(100, progress + 10))}
             style={{
-              padding: '8px 16px',
-              borderRadius: '6px',
-              border: '1px solid #d1d5db',
+              paddingHorizontal: 16,
+              paddingVertical: 8,
+              borderRadius: 6,
+              borderWidth: 1,
+              borderColor: '#d1d5db',
               backgroundColor: '#f9fafb',
-              cursor: 'pointer'
             }}
           >
-            +10%
-          </button>
-          <button 
-            onClick={() => setProgress(0)}
+            <Text>+10%</Text>
+          </Pressable>
+          <Pressable
+            onPress={() => setProgress(0)}
             style={{
-              padding: '8px 16px',
-              borderRadius: '6px',
-              border: '1px solid #d1d5db',
+              paddingHorizontal: 16,
+              paddingVertical: 8,
+              borderRadius: 6,
+              borderWidth: 1,
+              borderColor: '#d1d5db',
               backgroundColor: '#f9fafb',
-              cursor: 'pointer'
             }}
           >
-            Reset
-          </button>
-        </div>
-      </div>
+            <Text>Reset</Text>
+          </Pressable>
+        </View>
+      </View>
     );
   },
 };
@@ -215,25 +197,25 @@ export const Interactive: Story = {
 // Showcase different sizes
 export const SizeShowcase: Story = {
   render: () => (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 20 }}>
       <CircleProgress progress={75} size={20} strokeWidth={2} />
       <CircleProgress progress={75} size={32} strokeWidth={3} />
       <CircleProgress progress={75} size={48} strokeWidth={4} />
       <CircleProgress progress={75} size={64} strokeWidth={6} />
       <CircleProgress progress={75} size={80} strokeWidth={8} />
-    </div>
+    </View>
   ),
 };
 
 // Showcase different progress values
 export const ProgressShowcase: Story = {
   render: () => (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 20 }}>
       <CircleProgress progress={0} size={48} strokeWidth={4} />
       <CircleProgress progress={25} size={48} strokeWidth={4} />
       <CircleProgress progress={50} size={48} strokeWidth={4} />
       <CircleProgress progress={75} size={48} strokeWidth={4} />
       <CircleProgress progress={100} size={48} strokeWidth={4} />
-    </div>
+    </View>
   ),
 };

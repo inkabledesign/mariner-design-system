@@ -21,7 +21,12 @@
     },
     "scheme": "mariner-storybook",
     "plugins": [
-      "expo-router"
+      [
+        "expo-router",
+        {
+          "root": "./app"
+        }
+      ]
     ]
   }
 }

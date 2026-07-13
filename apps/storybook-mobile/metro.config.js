@@ -21,7 +21,7 @@ config.resolver.nodeModulesPaths = [
 // Configure SVG transformer
 config.transformer = {
   ...config.transformer,
-  babelTransformerPath: require.resolve('react-native-svg-transformer'),
+  babelTransformerPath: require.resolve('./svg-transformer'),
 };
 
 // Configure resolver
