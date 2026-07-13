@@ -138,7 +138,6 @@ Thumbs.db
 
 # Package lock files (using npm workspaces)
 package-lock.json
-yarn.lock
 
 # Rollup cache
 .rollup.cache/
