@@ -35,8 +35,6 @@ jobs:
 
     - name: Install dependencies
       run: yarn install --frozen-lockfile
-      env:
-        NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Generate icons
       run: npm run generate:icons
