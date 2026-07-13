@@ -12,9 +12,9 @@
     "build": "expo build"
   },
   "dependencies": {
-    "@mariner/assets": "*",
-    "@mariner/components": "*",
-    "@mariner/theme": "*",
+    "@mariner/assets": "^1.0.0",
+    "@mariner/components": "^1.0.0",
+    "@mariner/theme": "^1.0.0",
     "@react-native-async-storage/async-storage": "^3.0.2",
     "@react-native-community/datetimepicker": "8.2.0",
     "@react-native-community/slider": "^5.2.0",

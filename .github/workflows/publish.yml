@@ -3,17 +3,27 @@ name: Publish Packages
 on:
   push:
     branches: [ main ]
-    tags: [ 'v*' ]
+
+concurrency:
+  group: publish-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  packages: write
 
 jobs:
   publish:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v')
+    # Skip the run triggered by lerna's own release commit to avoid a loop
+    if: "!contains(github.event.head_commit.message, 'chore(release): publish')"
 
     steps:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+        persist-credentials: true
 
     - name: Use Node.js 20.x
       uses: actions/setup-node@v4
@@ -26,9 +36,6 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    - name: Bootstrap monorepo
-      run: npm run bootstrap
-
     - name: Generate icons
       run: npm run generate:icons
 
@@ -37,22 +44,14 @@ jobs:
 
     - name: Configure Git
       run: |
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "actions@github.com"
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-    - name: Version packages
-      run: npm run version -- --yes --no-push
+    # lerna publish (with conventionalCommits in lerna.json) bumps versions,
+    # commits, tags, pushes to main, and publishes changed packages to the registry.
+    - name: Version and publish packages
+      run: npx lerna publish --yes
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Publish packages
-      run: npm run publish -- --yes
-      env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Push version changes
-      run: |
-        git push origin main --follow-tags
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
