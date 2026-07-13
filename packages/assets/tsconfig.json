@@ -16,6 +16,6 @@
     "resolveJsonModule": true,
     "jsx": "react-native"
   },
-  "include": ["*.ts", "*.d.ts", "src/**/*"],
+  "include": ["*.ts", "**/*.d.ts", "src/**/*", "icons/**/*.ts"],
   "exclude": ["node_modules", "dist"]
 }
