@@ -37,7 +37,7 @@ jobs:
       run: yarn install --frozen-lockfile
 
     - name: Build packages
-      run: npm run build
+      run: npx lerna run build --scope '@mariner/*'
 
     - name: Configure Git
       run: |
