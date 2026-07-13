@@ -31,13 +31,13 @@ jobs:
         node-version: 20.x
         cache: 'yarn'
         registry-url: 'https://npm.pkg.github.com'
-        scope: '@mariner'
+        scope: '@inkabledesign'
 
     - name: Install dependencies
       run: yarn install --frozen-lockfile
 
     - name: Build packages
-      run: npx lerna run build --scope '@mariner/*'
+      run: npx lerna run build --scope '@inkabledesign/mariner-*'
 
     - name: Configure Git
       run: |
