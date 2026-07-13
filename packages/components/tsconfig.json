@@ -17,9 +17,7 @@
     "jsx": "react-native",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"],
-      "@mariner/theme": ["../theme/src/index.ts"],
-      "@mariner/assets": ["../assets/index.ts"]
+      "@/*": ["./*"]
     }
   },
   "include": [

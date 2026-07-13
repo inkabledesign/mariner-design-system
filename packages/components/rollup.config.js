@@ -44,8 +44,8 @@ export default {
     resolve({
       extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
       preferBuiltins: false,
-      // Don't resolve external packages
-      resolveOnly: [/^(?!react|react-native|expo-image)/]
+      // Don't resolve external packages (keep @mariner/* and RN libs external)
+      resolveOnly: [/^(?!react|react-native|expo-image|@mariner)/]
     }),
     commonjs(),
     json(),
