@@ -19,14 +19,14 @@ jobs:
     if: "!contains(github.event.head_commit.message, 'chore(release): publish')"
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
       with:
         fetch-depth: 0
         token: ${{ secrets.GITHUB_TOKEN }}
         persist-credentials: true
 
     - name: Use Node.js 20.x
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v5
       with:
         node-version: 20.x
         cache: 'yarn'
