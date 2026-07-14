@@ -1,6 +1,6 @@
 {
   "name": "@inkabledesign/mariner-components",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "description": "Cross-platform React Native components for Mariner applications",
   "main": "dist/index.js",

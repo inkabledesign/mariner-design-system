@@ -1,6 +1,6 @@
 {
   "name": "storybook-web",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Web Storybook for Mariner design system components",
   "scripts": {
     "dev": "next dev",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@inkabledesign/mariner-assets": "^1.0.1",
-    "@inkabledesign/mariner-components": "^1.0.1",
+    "@inkabledesign/mariner-components": "^1.0.2",
     "@inkabledesign/mariner-theme": "^1.0.1",
     "expo-audio": "55.0.8",
     "expo-image": "55.0.8",
