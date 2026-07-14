@@ -1,5 +1,5 @@
 {
-  "mobile": {
+  "mobile-sm": {
     "size": {
       "xxs": 8,
       "xs": 12,
@@ -10,7 +10,7 @@
       "xxl": 56
     }
   },
-  "tablet": {
+  "tablet-md": {
     "size": {
       "xxs": 8,
       "xs": 12,

@@ -1,5 +1,5 @@
 {
-  "mobile": {
+  "mobile-sm": {
     "radius": {
       "xs": 4,
       "sm": 6,
@@ -9,7 +9,7 @@
       "xxl": 36
     }
   },
-  "tablet": {
+  "tablet-md": {
     "radius": {
       "xs": 6,
       "sm": 8,

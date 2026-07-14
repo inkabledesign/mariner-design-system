@@ -1,5 +1,5 @@
 {
-  "mobile": {
+  "mobile-sm": {
     "spacing": {
       "xxs": 4,
       "xs": 6,
@@ -11,7 +11,7 @@
       "xxxl": 56
     }
   },
-  "tablet": {
+  "tablet-md": {
     "spacing": {
       "xxs": 6,
       "xs": 8,

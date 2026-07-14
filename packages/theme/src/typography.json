@@ -1,5 +1,5 @@
 {
-  "mobile": {
+  "mobile-sm": {
     "text": {
       "heading1": {
         "fontFamily": "Montserrat-Bold",
@@ -102,7 +102,7 @@
       }
     }
   },
-  "tablet": {
+  "tablet-md": {
     "text": {
       "heading1": {
         "fontFamily": "Montserrat-Bold",
