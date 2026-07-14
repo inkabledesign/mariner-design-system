@@ -1,6 +1,6 @@
 {
   "name": "storybook-mobile",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Mobile Storybook for Mariner design system components",
   "main": "expo-router/entry",
   "scripts": {
@@ -14,7 +14,7 @@
   "dependencies": {
     "@inkabledesign/mariner-assets": "^1.0.1",
     "@inkabledesign/mariner-components": "^1.0.2",
-    "@inkabledesign/mariner-theme": "^1.0.1",
+    "@inkabledesign/mariner-theme": "^1.0.3",
     "@react-native-async-storage/async-storage": "^3.0.2",
     "@react-native-community/datetimepicker": "8.2.0",
     "@react-native-community/slider": "^5.2.0",
