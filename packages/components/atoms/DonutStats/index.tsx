@@ -3,6 +3,7 @@ import AnimatedCircleProgress from '../AnimatedCircleProgress';
 import Column from '../Column';
 import TextStyled from '../TextStyled';
 // Theme context removed - using direct token imports instead
+import { theme } from '@inkabledesign/mariner-theme';
 import type { DonutStatsProps } from './index.types';
 
 const DonutStats = ({
@@ -15,8 +16,6 @@ const DonutStats = ({
   railColor,
   barColor,
 }: DonutStatsProps) => {
-  const theme = useTheme();
-
   // Use theme colors by default
   const defaultRailColor = theme.color.light.brand.accent['20'];
   const defaultBarColor = theme.color.light.brand.accent['100'];

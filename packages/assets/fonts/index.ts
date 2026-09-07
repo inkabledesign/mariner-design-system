@@ -33,4 +33,19 @@ export const fontFamilies = {
   'font-montserrat-bold': ['Montserrat-Bold', 'sans-serif'],
 };
 
+/**
+ * Metro-resolvable font assets for `expo-font`.
+ *
+ * Use with `Font.loadAsync(fontAssets)` in the consumer app before render.
+ * `require()` is resolved relative to this file inside the package, so it
+ * works regardless of where the consumer's project root is.
+ */
+export const fontAssets = {
+  'Montserrat-Light': require('./Montserrat-Light.ttf'),
+  'Montserrat-Regular': require('./Montserrat-Regular.ttf'),
+  'Montserrat-Medium': require('./Montserrat-Medium.ttf'),
+  'Montserrat-SemiBold': require('./Montserrat-SemiBold.ttf'),
+  'Montserrat-Bold': require('./Montserrat-Bold.ttf'),
+};
+
 export default fonts;

@@ -9,8 +9,15 @@ const componentsPath = path.resolve(workspaceRoot, 'packages/components');
 /** @type {import('expo/metro-config').MetroConfig} */
 const config = getDefaultConfig(projectRoot);
 
-// Watch all files in the monorepo
-config.watchFolders = [workspaceRoot];
+// Required for Storybook's require.context story loading
+config.transformer = {
+  ...config.transformer,
+  unstable_allowRequireContext: true,
+};
+
+// Watch the packages dirs (avoid watching an ancestor of projectRoot —
+// metro-file-map's path collapse in newer Metro rejects that)
+config.watchFolders = [path.resolve(workspaceRoot, 'packages')];
 
 // Let Metro know where to resolve packages
 config.resolver.nodeModulesPaths = [
@@ -18,18 +25,20 @@ config.resolver.nodeModulesPaths = [
   path.resolve(workspaceRoot, 'node_modules'),
 ];
 
-// Configure SVG transformer
-config.transformer = {
-  ...config.transformer,
-  babelTransformerPath: require.resolve('./svg-transformer'),
-};
-
 // Configure resolver
 config.resolver = {
   ...config.resolver,
-  assetExts: config.resolver.assetExts.filter((ext) => ext !== 'svg'),
-  sourceExts: [...config.resolver.sourceExts, 'svg'],
   resolveRequest: (context, moduleName, platform) => {
+    // Force @inkabledesign/mariner-assets to the built bundle — its source
+    // index.ts imports raw .svg files which would otherwise resolve as
+    // numeric asset IDs and crash icon rendering.
+    if (moduleName === '@inkabledesign/mariner-assets') {
+      return {
+        filePath: path.resolve(workspaceRoot, 'packages/assets/dist/index.js'),
+        type: 'sourceFile',
+      };
+    }
+
     // Handle @/ imports from components package
     if (moduleName.startsWith('@/')) {
       let relativePath = moduleName.substring(2); // Remove '@/'

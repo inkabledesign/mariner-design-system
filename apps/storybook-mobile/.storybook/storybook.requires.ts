@@ -31,12 +31,17 @@ const normalizedStories = [
     files: "**/*.stories.?(ts|tsx|js|jsx)",
     importPathMatcher:
       /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/,
-    // @ts-ignore
-    req: require.context(
-      "../../../packages/components",
-      true,
-      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/
-    ),
+    // Metro 0.84+ (Expo SDK 57) cannot collapse require.context dirs outside
+    // the app projectRoot, so use the generated static require map instead.
+    req: (() => {
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
+      const modules = require("./generated/storyMap").default as Record<string, () => unknown>;
+      const req = (key: string) => modules[key]();
+      req.keys = () => Object.keys(modules);
+      req.resolve = (key: string) => key;
+      req.id = "generated-story-map";
+      return req;
+    })(),
   },
 ];
 

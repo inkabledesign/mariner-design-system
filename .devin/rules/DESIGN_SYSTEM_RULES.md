@@ -215,14 +215,17 @@ Breakpoints: `mobile`, `tablet`, `desktop-sm`, `desktop-lg` (Tailwind defaults: 
 
 | Dependency | Version |
 |-----------|---------|
-| Expo SDK | 55 |
-| React | 19.x |
-| React Native | 0.83.x |
+| Expo SDK | 57 |
+| React | 19.2.x |
+| React Native | 0.86.x |
 | NativeWind | 4.x |
 | Tailwind CSS | 3.4.x |
-| react-native-reanimated | 4.x |
+| react-native-reanimated | 4.5.x |
+| react-native-worklets | 0.10.x |
 | react-native-svg | 15.x |
-| TypeScript | 5.x |
+| react-native-gesture-handler | 2.32.x |
+| react-native-safe-area-context | 5.7.x |
+| TypeScript | 6.x |
 
 ---
 

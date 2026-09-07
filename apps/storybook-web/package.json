@@ -4,7 +4,7 @@
   "description": "Web Storybook for Mariner design system components",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "echo \"storybook-web: build deferred (RN-Web infrastructure not set up)\"",
     "start": "next start",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"

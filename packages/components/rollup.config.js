@@ -57,6 +57,9 @@ export default {
     babel({
       babelHelpers: 'bundled',
       extensions: ['.ts', '.tsx'],
+      // Metro-only configs (NativeWind, reanimated) must not affect Rollup
+      babelrc: false,
+      configFile: false,
       presets: [
         '@babel/preset-react',
         '@babel/preset-typescript',
