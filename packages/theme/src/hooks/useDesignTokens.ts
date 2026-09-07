@@ -1,5 +1,9 @@
-import { theme } from '../index';
+import { color } from '../colors';
+import { typography } from '../typography';
+import { spacing } from '../spacing';
+import { radius } from '../radius';
 import { useBreakpoint } from './useBreakpoint';
+import type { Theme } from '../types';
 
 /**
  * Hook for convenient access to design tokens with hot reload support
@@ -27,23 +31,25 @@ import { useBreakpoint } from './useBreakpoint';
  */
 export function useDesignTokens() {
   const { breakpoint } = useBreakpoint();
-  
+
+  const theme: Theme = { color, typography, spacing, radius };
+
   return {
     /** Spacing tokens for current breakpoint (hot reload) */
-    spacing: theme.spacing[breakpoint].spacing,
-    
+    spacing: spacing[breakpoint].spacing,
+
     /** Radius tokens for current breakpoint (hot reload) */
-    radius: theme.radius[breakpoint].radius,
-    
+    radius: radius[breakpoint].radius,
+
     /** Typography tokens for current breakpoint (hot reload) */
-    typography: theme.typography[breakpoint].text,
-    
+    typography: typography[breakpoint].text,
+
     /** Color tokens (light and dark modes) (hot reload) */
-    color: theme.color,
-    
+    color,
+
     /** Current breakpoint */
     breakpoint,
-    
+
     /** Full theme object */
     theme,
   };

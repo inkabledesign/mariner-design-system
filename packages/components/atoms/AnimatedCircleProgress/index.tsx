@@ -8,7 +8,7 @@ import Animated, {
   Easing,
 } from 'react-native-reanimated';
 import ViewStyled from '../ViewStyled';
-import { theme } from '@mariner/theme';
+import { theme } from '@inkabledesign/mariner-theme';
 import type { AnimatedCircleProgressProps } from './index.types';
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);

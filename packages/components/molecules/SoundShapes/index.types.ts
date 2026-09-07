@@ -1,12 +1,25 @@
-export type SignalDurationType = 'short' | 'long';
-export interface SoundShapeProps {
-  duration?: SignalDurationType;
-  style?: 'accent' | 'primary';
+export type SoundShapeDuration = 'short' | 'long';
+
+export interface SoundSignal {
+  /**
+   * Signal name.
+   */
+  name?: string;
+
+  /**
+   * Ordered sound bars — 'short' renders a narrow bar, 'long' a wide bar.
+   */
+  signalSounds?: SoundShapeDuration[];
 }
 
 export interface SoundShapesProps {
-  signal?: {
-    name?: string;
-    signalSounds?: SignalDurationType[];
-  };
+  /**
+   * Sound signal to visualise.
+   */
+  signal?: SoundSignal;
+
+  /**
+   * Additional Tailwind classes for the container.
+   */
+  className?: string;
 }

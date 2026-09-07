@@ -166,5 +166,31 @@ let existing = fs.existsSync(typesPath) ? fs.readFileSync(typesPath, 'utf8') : '
 existing = existing.replace(new RegExp(`${marker}[\\s\\S]*$`), '').trimEnd();
 fs.writeFileSync(typesPath, `${existing}\n\n${generatedTypes}\n`, 'utf8');
 
+/* ---------- 6b. mirror generated types into the components package ---------- */
+// Keeps `@inkabledesign/mariner-components` IconName/IconType/IconMap in sync with the
+// icons that actually ship in this assets package, so components can only reference
+// icons that exist. No assets are pulled from Figma — this only reflects the SVGs
+// already present under ./src (sourced from the Mariner / Mariner-Learning apps).
+const componentsTypesPath = path.join(
+  __dirname,
+  '..',
+  '..',
+  'components',
+  'types',
+  'icons.type.ts'
+);
+if (fs.existsSync(path.dirname(componentsTypesPath))) {
+  let existingComponents = fs.existsSync(componentsTypesPath)
+    ? fs.readFileSync(componentsTypesPath, 'utf8')
+    : '';
+  existingComponents = existingComponents.replace(new RegExp(`${marker}[\\s\\S]*$`), '').trimEnd();
+  fs.writeFileSync(
+    componentsTypesPath,
+    `${existingComponents}\n\n${generatedTypes}\n`.trimStart(),
+    'utf8'
+  );
+  console.log('🔁  Mirrored icon types → packages/components/types/icons.type.ts');
+}
+
 /* ---------- 7. done ---------- */
 console.log('🎉  iconMap.ts & icons.type.ts generated!');

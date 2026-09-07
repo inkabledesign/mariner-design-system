@@ -4,7 +4,7 @@ import Row from '../../atoms/Row';
 import Icon from '../../atoms/Icon';
 import TextStyled from '../../atoms/TextStyled';
 import SearchInput from '../SearchInput';
-import { theme } from '@mariner/theme';
+import { theme } from '@inkabledesign/mariner-theme';
 import type { HeaderTopBarProps } from './index.types';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Pressable } from 'react-native';

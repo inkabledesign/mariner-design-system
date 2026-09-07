@@ -1,10 +1,10 @@
 import React from 'react';
 import { ViewStyle } from 'react-native';
 import { SvgProps } from 'react-native-svg';
-import { iconMap } from '@mariner/assets';
+import { iconMap } from '@inkabledesign/mariner-assets';
 import { IconCategoryType, IconName } from '../../types/icons.type';
 import ViewStyled from '../ViewStyled';
-import { getColorFromClass } from '@mariner/theme';
+import { getColorFromClass } from '@inkabledesign/mariner-theme';
 
 // Valid Tailwind color classes from design tokens
 type BrandColor =

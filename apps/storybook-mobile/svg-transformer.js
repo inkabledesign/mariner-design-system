@@ -1,5 +1,4 @@
 const { resolveConfig, transform } = require('@svgr/core');
-const resolveConfigDir = require('path-dirname');
 const upstreamTransformer = require('@expo/metro-config/babel-transformer');
 
 const defaultSVGRConfig = {
@@ -22,18 +21,15 @@ const defaultSVGRConfig = {
   },
 };
 
-function createTransformer(transformer) {
-  return async (transformOptions, projectRoot, filename, src, fileBuffer) => {
+// @expo/metro-config passes a single object: { filename, src, options, ... }
+module.exports = {
+  transform: async function transform(transformOptions) {
+    const { filename, src } = transformOptions;
     if (filename && typeof filename === 'string' && filename.endsWith('.svg')) {
-      const config = await resolveConfig(resolveConfigDir(filename));
-      const svgrConfig = config
-        ? { ...defaultSVGRConfig, ...config }
-        : defaultSVGRConfig;
-      const transformedSrc = await transform(src, svgrConfig, { filePath: filename });
-      return transformer.transform(transformOptions, projectRoot, filename, transformedSrc, fileBuffer);
+      const config = (await resolveConfig(filename)) || defaultSVGRConfig;
+      const code = await transform(src, { ...defaultSVGRConfig, ...config }, { filePath: filename });
+      return upstreamTransformer.transform({ ...transformOptions, src: code });
     }
-    return transformer.transform(transformOptions, projectRoot, filename, src, fileBuffer);
-  };
-}
-
-module.exports = { transform: createTransformer(upstreamTransformer) };
+    return upstreamTransformer.transform(transformOptions);
+  },
+};

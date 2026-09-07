@@ -1,5 +1,5 @@
 import type { IconProps } from '@/components/atoms/Icon';
-import type { Breakpoint } from '@mariner/theme';
+import type { Breakpoint } from '@inkabledesign/mariner-theme';
 
 export type HeaderTopBarVariant = 'default' | 'search';
 export type Orientation = 'portrait' | 'landscape';

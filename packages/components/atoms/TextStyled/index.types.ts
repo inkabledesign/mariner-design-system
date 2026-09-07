@@ -1,6 +1,6 @@
 import type { TextStyle as RNTextStyle } from 'react-native';
 import type { TextStyles } from '@/style/tokens.types';
-import type { Breakpoint } from '@mariner/theme';
+import type { Breakpoint } from '@inkabledesign/mariner-theme';
 
 export interface StyledTextProps {
   /** Breakpoint for responsive typography resolution @default 'mobile' */

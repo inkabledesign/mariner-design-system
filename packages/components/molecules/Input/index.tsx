@@ -6,7 +6,7 @@ import ViewStyled from '../../atoms/ViewStyled';
 import TextStyled from '../../atoms/TextStyled';
 import Icon from '../../atoms/Icon';
 // import type { IconName } from '../../types/icons.type';
-import { theme } from '@mariner/theme';
+import { theme } from '@inkabledesign/mariner-theme';
 import type { InputProps } from './index.types';
 
 

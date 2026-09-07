@@ -1,3 +1,6 @@
+import React from 'react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
 export const parameters = {
   controls: {
     matchers: {
@@ -7,4 +10,10 @@ export const parameters = {
   },
 };
 
-export const decorators = [];
+export const decorators = [
+  (Story: React.ComponentType) => (
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <Story />
+    </GestureHandlerRootView>
+  ),
+];

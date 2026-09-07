@@ -10,7 +10,7 @@ import Animated, {
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import TextStyled from '../../atoms/TextStyled';
 import ViewStyled from '../../atoms/ViewStyled';
-import { theme } from '@mariner/theme';
+import { theme } from '@inkabledesign/mariner-theme';
 import type { ButtonGroupProps } from './index.types';
 import Column from '../../atoms/Column';
 import Row from '../../atoms/Row';

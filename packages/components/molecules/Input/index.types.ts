@@ -1,6 +1,6 @@
 import type { TextInputProps } from 'react-native';
 import type { IconName } from '@/types/icons.type';
-import type { Breakpoint } from '@mariner/theme';
+import type { Breakpoint } from '@inkabledesign/mariner-theme';
 
 export interface InputProps extends Omit<TextInputProps, 'style'> {
   /** Theme mode for color resolution @default 'light' */

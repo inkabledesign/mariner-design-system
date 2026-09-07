@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text } from 'react-native';
 import type { StyledTextProps } from './index.types';
-import { theme, getFontFamilyForWeight } from '@mariner/theme';
+import { theme, getFontFamilyForWeight } from '@inkabledesign/mariner-theme';
 // Removed useTheme import to prevent render-time state updates
 
 const TextStyled: React.FC<StyledTextProps> = ({

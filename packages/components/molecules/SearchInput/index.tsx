@@ -3,7 +3,7 @@ import { TextInput } from 'react-native';
 import ViewStyled from '../../atoms/ViewStyled';
 import Icon from '../../atoms/Icon';
 import Divider from '../../atoms/Divider';
-import { theme } from '@mariner/theme';
+import { theme } from '@inkabledesign/mariner-theme';
 import type { SearchInputProps } from './index.types';
 
 /**

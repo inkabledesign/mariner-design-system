@@ -10,7 +10,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import ViewStyled from '../../atoms/ViewStyled';
 import TextStyled from '../../atoms/TextStyled';
-import { theme } from '@mariner/theme';
+import { theme } from '@inkabledesign/mariner-theme';
 import type { TabBarProps } from './index.types';
 
 /**

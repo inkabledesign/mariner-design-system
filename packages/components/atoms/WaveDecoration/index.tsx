@@ -1,10 +1,10 @@
 import React from 'react';
 import ViewStyled from '../ViewStyled';
 import type { WaveDecorationProps } from './index.types';
-import { wavesLong, wavesShortR, wavesShortL } from '@mariner/assets';
+import { wavesLong, wavesShortR, wavesShortL } from '@inkabledesign/mariner-assets';
 import { SvgProps } from 'react-native-svg';
 import { Platform, useColorScheme } from 'react-native';
-import { getColorFromClass } from '@mariner/theme';
+import { getColorFromClass } from '@inkabledesign/mariner-theme';
 
 const WaveDecoration: React.FC<WaveDecorationProps> = ({ style, color, variant, className, themeMode: themeModeOverride }) => {
   const colorScheme = Platform.OS !== 'web' ? useColorScheme() : null;

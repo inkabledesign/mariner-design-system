@@ -1,6 +1,6 @@
 import React from 'react';
 import AnimatedCircleProgress from '../AnimatedCircleProgress';
-import { getColorFromClass } from '@mariner/theme';
+import { getColorFromClass } from '@inkabledesign/mariner-theme';
 import type { CircleProgressProps } from './index.types';
 
 /**

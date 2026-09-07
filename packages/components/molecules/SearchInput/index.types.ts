@@ -1,5 +1,5 @@
 import type { ViewStyle, TextInputProps } from 'react-native';
-import type { Breakpoint } from '@mariner/theme';
+import type { Breakpoint } from '@inkabledesign/mariner-theme';
 
 export interface SearchInputProps extends Omit<TextInputProps, 'style'> {
   /** Theme mode for color resolution @default 'light' */
