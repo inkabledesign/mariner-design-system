@@ -12,7 +12,7 @@ export type MarinaIconName = 'ico-bar' | 'ico-brokers' | 'ico-caffee' | 'ico-cam
 
 export type MediaIconName = 'ico-image_gallery-round' | 'ico-listen' | 'ico-listen-round' | 'ico-pause' | 'ico-play' | 'ico-screen-down' | 'ico-screen-up';
 
-export type NavIconName = 'ico-chart' | 'ico-chevron-down' | 'ico-chevron-down-flush' | 'ico-chevron-left' | 'ico-chevron-left-flush' | 'ico-chevron-left-round' | 'ico-chevron-right' | 'ico-chevron-right-flush' | 'ico-chevron-right-round' | 'ico-chevron-up' | 'ico-chevron-up-flush' | 'ico-close' | 'ico-close-round' | 'ico-filter-round' | 'ico-home-lrg' | 'ico-learn-book' | 'ico-list-round' | 'ico-plus' | 'ico-plus-round' | 'ico-quizz' | 'ico-quizz-passed' | 'ico-sort-round' | 'ico-user-round' | 'ico-vhf-radio';
+export type NavIconName = 'ico-chart' | 'ico-chevron-down' | 'ico-chevron-down-flush' | 'ico-chevron-left' | 'ico-chevron-left-flush' | 'ico-chevron-left-round' | 'ico-chevron-right' | 'ico-chevron-right-flush' | 'ico-chevron-right-round' | 'ico-chevron-up' | 'ico-chevron-up-flush' | 'ico-close' | 'ico-close-round' | 'ico-filter-round' | 'ico-home-lrg' | 'ico-learn-book' | 'ico-list-round' | 'ico-map-fill' | 'ico-plus' | 'ico-plus-round' | 'ico-quizz' | 'ico-quizz-passed' | 'ico-sort-round' | 'ico-stations' | 'ico-tools' | 'ico-user-round' | 'ico-vhf-radio';
 
 export type NavMarinaIconName = 'ico-marina' | 'ico-tides' | 'ico-weather' | 'ico-wind';
 
@@ -20,11 +20,11 @@ export type RadioIconName = 'ico-atis-enabled' | 'ico-auto-channel-disabled' | '
 
 export type SocialIconName = 'ico-chat' | 'ico-facebook' | 'ico-feed3' | 'ico-feed3-round' | 'ico-feed4-round' | 'ico-feed5' | 'ico-feed5-round' | 'ico-google' | 'ico-heart' | 'ico-heart-active' | 'ico-heart-full' | 'ico-heart-outline' | 'ico-share' | 'ico-star' | 'ico-star-outline';
 
-export type SystemIconName = 'ico-close-round-fill' | 'ico-download' | 'ico-download-round-fill' | 'ico-download-round-outline' | 'ico-downloaded' | 'ico-downloaded-round-fill' | 'ico-downloaded-round-outline' | 'ico-help-round' | 'ico-info-round' | 'ico-locked' | 'ico-locked-round' | 'ico-locked-round-fill' | 'ico-rotate-device-round' | 'ico-settings-outline' | 'ico-settings-round' | 'ico-tick-round-fill' | 'ico-trash' | 'ico-wifi-off' | 'ico-wifi-off-outline';
+export type SystemIconName = 'ico-arrow-down' | 'ico-arrow-down-circle' | 'ico-arrow-down-circle-fill' | 'ico-arrow-up' | 'ico-arrow-up-circle' | 'ico-arrow-up-circle-fill' | 'ico-close-round-fill' | 'ico-download' | 'ico-download-round-fill' | 'ico-download-round-outline' | 'ico-downloaded' | 'ico-downloaded-round-fill' | 'ico-downloaded-round-outline' | 'ico-help-round' | 'ico-info-round' | 'ico-locked' | 'ico-locked-round' | 'ico-locked-round-fill' | 'ico-rotate-device-round' | 'ico-settings-outline' | 'ico-settings-round' | 'ico-tick-round-fill' | 'ico-trash' | 'ico-wifi-off' | 'ico-wifi-off-outline';
 
 export type UIIconName = 'ico-beaufort-tool' | 'ico-buoys' | 'ico-cardinal-tool' | 'ico-chalange' | 'ico-clock' | 'ico-clock-reset' | 'ico-colregs' | 'ico-lights-tool' | 'ico-list-important-tool' | 'ico-radio-lifebouy' | 'ico-radio-tower' | 'ico-score' | 'ico-success' | 'ico-track' | 'ico-vhf-radio-tool';
 
-export type WeatherIconName = 'ico-humidity' | 'ico-pressure' | 'ico-uv' | 'ico-visibility' | 'ico-weather-clearday' | 'ico-weather-clearnight' | 'ico-weather-cloudy' | 'ico-weather-cloudyday' | 'ico-weather-cloudynight' | 'ico-weather-fog' | 'ico-weather-hail' | 'ico-weather-rain' | 'ico-weather-sleet' | 'ico-weather-snow' | 'ico-weather-thunderstorm' | 'ico-weather-tornado' | 'ico-weather-windy';
+export type WeatherIconName = 'ico-high-tide' | 'ico-humidity' | 'ico-low-tide' | 'ico-pressure' | 'ico-slack-tide' | 'ico-uv' | 'ico-visibility' | 'ico-weather-clearday' | 'ico-weather-clearnight' | 'ico-weather-cloudy' | 'ico-weather-cloudyday' | 'ico-weather-cloudynight' | 'ico-weather-fog' | 'ico-weather-hail' | 'ico-weather-rain' | 'ico-weather-sleet' | 'ico-weather-snow' | 'ico-weather-sunrise' | 'ico-weather-sunset' | 'ico-weather-thunderstorm' | 'ico-weather-tornado' | 'ico-weather-windy';
 
 
 export type IconName =

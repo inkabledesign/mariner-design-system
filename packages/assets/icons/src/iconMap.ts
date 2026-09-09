@@ -100,11 +100,14 @@ import icoFilterRound from './Nav/ico-filter-round.svg';
 import icoHomeLrg from './Nav/ico-home-lrg.svg';
 import icoLearnBook from './Nav/ico-learn-book.svg';
 import icoListRound from './Nav/ico-list-round.svg';
+import icoMapFill from './Nav/ico-map-fill.svg';
 import icoPlusRound from './Nav/ico-plus-round.svg';
 import icoPlus from './Nav/ico-plus.svg';
 import icoQuizzPassed from './Nav/ico-quizz-passed.svg';
 import icoQuizz from './Nav/ico-quizz.svg';
 import icoSortRound from './Nav/ico-sort-round.svg';
+import icoStations from './Nav/ico-stations.svg';
+import icoTools from './Nav/ico-tools.svg';
 import icoUserRound from './Nav/ico-user-round.svg';
 import icoVhfRadio from './Nav/ico-vhf-radio.svg';
 
@@ -144,6 +147,12 @@ import icoStarOutline from './Social/ico-star-outline.svg';
 import icoStar from './Social/ico-star.svg';
 
 // System svg
+import icoArrowDownCircleFill from './System/ico-arrow-down-circle-fill.svg';
+import icoArrowDownCircle from './System/ico-arrow-down-circle.svg';
+import icoArrowDown from './System/ico-arrow-down.svg';
+import icoArrowUpCircleFill from './System/ico-arrow-up-circle-fill.svg';
+import icoArrowUpCircle from './System/ico-arrow-up-circle.svg';
+import icoArrowUp from './System/ico-arrow-up.svg';
 import icoCloseRoundFill from './System/ico-close-round-fill.svg';
 import icoDownloadRoundFill from './System/ico-download-round-fill.svg';
 import icoDownloadRoundOutline from './System/ico-download-round-outline.svg';
@@ -182,8 +191,11 @@ import icoTrack from './UI/ico-track.svg';
 import icoVhfRadioTool from './UI/ico-vhf-radio-tool.svg';
 
 // Weather svg
+import icoHighTide from './Weather/ico-high-tide.svg';
 import icoHumidity from './Weather/ico-humidity.svg';
+import icoLowTide from './Weather/ico-low-tide.svg';
 import icoPressure from './Weather/ico-pressure.svg';
+import icoSlackTide from './Weather/ico-slack-tide.svg';
 import icoUv from './Weather/ico-uv.svg';
 import icoVisibility from './Weather/ico-visibility.svg';
 import icoWeatherClearday from './Weather/ico-weather-clearday.svg';
@@ -196,6 +208,8 @@ import icoWeatherHail from './Weather/ico-weather-hail.svg';
 import icoWeatherRain from './Weather/ico-weather-rain.svg';
 import icoWeatherSleet from './Weather/ico-weather-sleet.svg';
 import icoWeatherSnow from './Weather/ico-weather-snow.svg';
+import icoWeatherSunrise from './Weather/ico-weather-sunrise.svg';
+import icoWeatherSunset from './Weather/ico-weather-sunset.svg';
 import icoWeatherThunderstorm from './Weather/ico-weather-thunderstorm.svg';
 import icoWeatherTornado from './Weather/ico-weather-tornado.svg';
 import icoWeatherWindy from './Weather/ico-weather-windy.svg';
@@ -305,11 +319,14 @@ export const iconMap: IconMap = {
     'ico-home-lrg': icoHomeLrg,
     'ico-learn-book': icoLearnBook,
     'ico-list-round': icoListRound,
+    'ico-map-fill': icoMapFill,
     'ico-plus-round': icoPlusRound,
     'ico-plus': icoPlus,
     'ico-quizz-passed': icoQuizzPassed,
     'ico-quizz': icoQuizz,
     'ico-sort-round': icoSortRound,
+    'ico-stations': icoStations,
+    'ico-tools': icoTools,
     'ico-user-round': icoUserRound,
     'ico-vhf-radio': icoVhfRadio,
   },
@@ -349,6 +366,12 @@ export const iconMap: IconMap = {
     'ico-star': icoStar,
   },
   system: {
+    'ico-arrow-down-circle-fill': icoArrowDownCircleFill,
+    'ico-arrow-down-circle': icoArrowDownCircle,
+    'ico-arrow-down': icoArrowDown,
+    'ico-arrow-up-circle-fill': icoArrowUpCircleFill,
+    'ico-arrow-up-circle': icoArrowUpCircle,
+    'ico-arrow-up': icoArrowUp,
     'ico-close-round-fill': icoCloseRoundFill,
     'ico-download-round-fill': icoDownloadRoundFill,
     'ico-download-round-outline': icoDownloadRoundOutline,
@@ -387,8 +410,11 @@ export const iconMap: IconMap = {
     'ico-vhf-radio-tool': icoVhfRadioTool,
   },
   weather: {
+    'ico-high-tide': icoHighTide,
     'ico-humidity': icoHumidity,
+    'ico-low-tide': icoLowTide,
     'ico-pressure': icoPressure,
+    'ico-slack-tide': icoSlackTide,
     'ico-uv': icoUv,
     'ico-visibility': icoVisibility,
     'ico-weather-clearday': icoWeatherClearday,
@@ -401,6 +427,8 @@ export const iconMap: IconMap = {
     'ico-weather-rain': icoWeatherRain,
     'ico-weather-sleet': icoWeatherSleet,
     'ico-weather-snow': icoWeatherSnow,
+    'ico-weather-sunrise': icoWeatherSunrise,
+    'ico-weather-sunset': icoWeatherSunset,
     'ico-weather-thunderstorm': icoWeatherThunderstorm,
     'ico-weather-tornado': icoWeatherTornado,
     'ico-weather-windy': icoWeatherWindy,

@@ -5,14 +5,17 @@
   "description": "Cross-platform React Native components for Mariner applications",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-  "react-native": "index.ts",
+  "react-native": "./dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
+      "react-native": "./dist/index.js",
       "types": "./dist/index.d.ts",
       "import": "./dist/index.esm.js",
-      "require": "./dist/index.js"
-    }
+      "require": "./dist/index.js",
+      "default": "./dist/index.esm.js"
+    },
+    "./package.json": "./package.json"
   },
   "files": [
     "dist",
@@ -30,10 +33,8 @@
     "test": "echo \"No tests for components package\"",
     "lint": "echo \"No linting for components package\""
   },
-  "dependencies": {
-    "@inkabledesign/mariner-assets": "file:../assets"
-  },
   "peerDependencies": {
+    "@inkabledesign/mariner-assets": "^1.0.1",
     "@inkabledesign/mariner-theme": "*",
     "expo-image": ">=55.0.8",
     "nativewind": "^4.0.0",

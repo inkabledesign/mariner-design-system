@@ -5,18 +5,38 @@
   "description": "Icons, fonts, and images for Mariner design system",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-  "react-native": "dist/index.js",
+  "react-native": "./dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "react-native": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "default": "./dist/index.esm.js"
+    },
+    "./fonts": {
+      "react-native": "./fonts/index.ts",
+      "types": "./dist/fonts/index.d.ts",
+      "import": "./dist/fonts/index.esm.js",
+      "require": "./dist/fonts/index.js",
+      "default": "./dist/fonts/index.esm.js"
+    },
+    "./package.json": "./package.json"
+  },
   "files": [
-    "dist",
+    "dist/index.*",
+    "dist/fonts",
+    "dist/icons",
+    "dist/images",
     "icons",
     "fonts",
     "images"
   ],
   "scripts": {
     "generate:icons": "node icons/icons-gen.cjs",
-    "build": "npm run generate:icons && rollup -c && cp fonts/*.ttf dist/",
-    "dev": "rollup -c -w",
+    "build": "npm run generate:icons && rollup -c && mkdir -p dist/fonts && cp fonts/*.ttf dist/fonts/",
+    "dev": "mkdir -p dist/fonts && cp fonts/*.ttf dist/fonts/ && rollup -c -w",
     "test": "echo \"No tests for assets package\"",
     "lint": "echo \"No linting for assets package\""
   },
