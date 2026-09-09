@@ -19,6 +19,7 @@ export const brandAccent = color.light.brand.accent;
 // Material colors
 export const materialSurface = color.light.material.surface;
 export const materialAlphaDark = color.light.material.alphaDark;
+export const materialAlphaLight = color.light.material.alphaLight;
 
 // Solid colors
 export const solidColors = color.light.solid;
@@ -27,5 +28,8 @@ export const solidColors = color.light.solid;
 export const systemError = color.light.system.error;
 export const systemSuccess = color.light.system.success;
 export const systemWarning = color.light.system.warning;
+
+// Semantic text colors
+export const textColors = color.light.text;
 
 export default color;

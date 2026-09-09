@@ -2,12 +2,13 @@ import { spacing } from '../spacing';
 import { radius } from '../radius';
 import { typography } from '../typography';
 import { color } from '../colors';
+import { size } from '../size';
 
 type Breakpoint = 'mobile' | 'tablet' | 'desktop-sm' | 'desktop-lg';
 type SpacingScale = 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
-type SizeScale = 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
-type RadiusScale = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
-type TextStyles = 'heading1' | 'heading2' | 'heading3' | 'heading4' | 'heading5' | 'heading6' | 'body' | 'button' | 'input' | 'placeholder' | 'caption' | 'label' | 'footnote' | 'link';
+type SizeScale = 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+type RadiusScale = 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
+type TextStyles = 'heading1' | 'heading2' | 'heading3' | 'heading4' | 'heading5' | 'heading6' | 'body' | 'quote' | 'button' | 'input' | 'placeholder' | 'caption' | 'label' | 'footnote' | 'link' | 'number';
 type ColorValue = string;
 
 /**
@@ -23,7 +24,7 @@ export const getSpacing = (breakpoint: Breakpoint, scale: SpacingScale): number 
  * @example getSize('mobile', 'lg') // returns 32
  */
 export const getSize = (breakpoint: Breakpoint, scale: SizeScale): number => {
-  return spacing[breakpoint].spacing[scale];
+  return size[breakpoint].size[scale];
 };
 
 /**
@@ -51,17 +52,13 @@ export const getTextStyle = (
  */
 export const getColor = (
   mode: 'light' | 'dark',
-  category: 'brand' | 'material' | 'solid' | 'system',
+  category: 'brand' | 'material' | 'solid' | 'system' | 'text',
   name: string,
   variant?: string
 ): ColorValue => {
   const colorCategory = (color as any)[mode][category];
   
-  if (category === 'solid') {
-    return (colorCategory as any)[name];
-  }
-  
-  if (category === 'system' && (name === 'success' || name === 'warning')) {
+  if (category === 'solid' || category === 'text') {
     return (colorCategory as any)[name];
   }
   

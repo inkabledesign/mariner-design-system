@@ -2,6 +2,7 @@ import { color } from '../colors';
 import { typography } from '../typography';
 import { spacing } from '../spacing';
 import { radius } from '../radius';
+import { size } from '../size';
 import { useBreakpoint } from './useBreakpoint';
 import type { Theme } from '../types';
 
@@ -32,7 +33,7 @@ import type { Theme } from '../types';
 export function useDesignTokens() {
   const { breakpoint } = useBreakpoint();
 
-  const theme: Theme = { color, typography, spacing, radius };
+  const theme: Theme = { color, typography, spacing, radius, size };
 
   return {
     /** Spacing tokens for current breakpoint (hot reload) */
@@ -40,6 +41,9 @@ export function useDesignTokens() {
 
     /** Radius tokens for current breakpoint (hot reload) */
     radius: radius[breakpoint].radius,
+
+    /** Size tokens for current breakpoint (hot reload) */
+    size: size[breakpoint].size,
 
     /** Typography tokens for current breakpoint (hot reload) */
     typography: typography[breakpoint].text,

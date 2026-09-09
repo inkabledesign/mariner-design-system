@@ -13,6 +13,7 @@ export const fonts = {
   'Rajdhani-SemiBold': './Rajdhani-SemiBold.ttf',
   'Rajdhani-Bold': './Rajdhani-Bold.ttf',
   'SpaceMono-Regular': './SpaceMono-Regular.ttf',
+  'SpaceMono-Bold': './SpaceMono-Bold.ttf',
 };
 
 // Font weight mapping for easy access
@@ -22,6 +23,8 @@ export const fontWeights = {
   medium: 'Montserrat-Medium',
   semibold: 'Montserrat-SemiBold',
   bold: 'Montserrat-Bold',
+  spaceMonoRegular: 'SpaceMono-Regular',
+  spaceMonoBold: 'SpaceMono-Bold',
 };
 
 // Font family names for CSS/Tailwind usage
@@ -31,6 +34,9 @@ export const fontFamilies = {
   'font-montserrat-medium': ['Montserrat-Medium', 'sans-serif'],
   'font-montserrat-semibold': ['Montserrat-SemiBold', 'sans-serif'],
   'font-montserrat-bold': ['Montserrat-Bold', 'sans-serif'],
+  'font-space-mono': ['SpaceMono-Regular', 'monospace'],
+  'font-space-mono-regular': ['SpaceMono-Regular', 'monospace'],
+  'font-space-mono-bold': ['SpaceMono-Bold', 'monospace'],
 };
 
 /**
@@ -46,6 +52,8 @@ export const fontAssets = {
   'Montserrat-Medium': require('./Montserrat-Medium.ttf'),
   'Montserrat-SemiBold': require('./Montserrat-SemiBold.ttf'),
   'Montserrat-Bold': require('./Montserrat-Bold.ttf'),
+  'SpaceMono-Regular': require('./SpaceMono-Regular.ttf'),
+  'SpaceMono-Bold': require('./SpaceMono-Bold.ttf'),
 };
 
 export default fonts;
