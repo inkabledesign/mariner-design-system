@@ -1,11 +1,11 @@
-import React from 'react';
-import Column from '../../atoms/Column';
-import Row from '../../atoms/Row';
-import ViewStyled from '../../atoms/ViewStyled';
-import TextStyled from '../../atoms/TextStyled';
-import PrimaryImage from '../../atoms/PrimaryImage';
-import Icon from '../../atoms/Icon';
-import type { CardBoufortScaleProps } from './index.types';
+import React from "react";
+import Column from "../../atoms/Column";
+import Row from "../../atoms/Row";
+import ViewStyled from "../../atoms/ViewStyled";
+import TextStyled from "../../atoms/TextStyled";
+import PrimaryImage from "../../atoms/PrimaryImage";
+import Icon from "../../atoms/Icon";
+import type { CardBoufortScaleProps } from "./index.types";
 
 /**
  * CardBoufortScale Component (Molecule)
@@ -26,7 +26,7 @@ const CardBoufortScale = ({
   description,
   seaConditions,
   imageUrl,
-  className = '',
+  className = "",
 }: CardBoufortScaleProps) => (
   <ViewStyled
     className={`bg-material-surface-0 border border-brand-primary-20 rounded-lg p-md gap-md h-[556px] w-[369px] ${className}`.trim()}
@@ -41,7 +41,7 @@ const CardBoufortScale = ({
       {/* Upload Icon — top right */}
       <ViewStyled className="absolute top-md right-md bg-material-surface-0 rounded-full items-center justify-center">
         <Icon
-          iconName="ico-upload-image-round"
+          iconName="ico-add-image-round"
           color="text-brand-primary-100"
           className="w-[36px] h-[36px]"
         />
@@ -52,22 +52,34 @@ const CardBoufortScale = ({
         <Column className="w-full items-center justify-end">
           <Column className="w-full gap-sm">
             {description && (
-              <TextStyled textStyle="heading2" className="text-material-surface-0">
+              <TextStyled
+                textStyle="heading2"
+                className="text-material-surface-0"
+              >
                 {description}
               </TextStyled>
             )}
             <Row className="w-full gap-sm items-center">
-              <TextStyled textStyle="heading1" className="text-material-surface-0">
+              <TextStyled
+                textStyle="heading1"
+                className="text-material-surface-0"
+              >
                 F{force}
               </TextStyled>
               <Column className="flex-1 gap-xxs border-l border-brand-secondary-10 pl-sm">
                 <Row className="gap-md items-center">
                   {windSpeedKnots && (
                     <Row className="gap-xs items-end">
-                      <TextStyled textStyle="heading5" className="text-material-surface-0">
+                      <TextStyled
+                        textStyle="heading5"
+                        className="text-material-surface-0"
+                      >
                         {windSpeedKnots}
                       </TextStyled>
-                      <TextStyled textStyle="footnote" className="text-material-surface-0">
+                      <TextStyled
+                        textStyle="footnote"
+                        className="text-material-surface-0"
+                      >
                         knots
                       </TextStyled>
                     </Row>
@@ -75,10 +87,16 @@ const CardBoufortScale = ({
                   <ViewStyled className="w-px h-full bg-brand-secondary-10" />
                   {windSpeedKmh && (
                     <Row className="gap-xs items-end">
-                      <TextStyled textStyle="heading5" className="text-material-surface-0">
+                      <TextStyled
+                        textStyle="heading5"
+                        className="text-material-surface-0"
+                      >
                         {windSpeedKmh}
                       </TextStyled>
-                      <TextStyled textStyle="footnote" className="text-material-surface-0">
+                      <TextStyled
+                        textStyle="footnote"
+                        className="text-material-surface-0"
+                      >
                         km/h
                       </TextStyled>
                     </Row>
@@ -87,13 +105,22 @@ const CardBoufortScale = ({
                 <ViewStyled className="h-px w-full bg-brand-secondary-10" />
                 {waveHeightM && (
                   <Row className="gap-xxs items-center">
-                    <TextStyled textStyle="footnote" className="text-material-surface-0">
+                    <TextStyled
+                      textStyle="footnote"
+                      className="text-material-surface-0"
+                    >
                       Wave height:
                     </TextStyled>
-                    <TextStyled textStyle="heading5" className="text-material-surface-0">
+                    <TextStyled
+                      textStyle="heading5"
+                      className="text-material-surface-0"
+                    >
                       {waveHeightM}
                     </TextStyled>
-                    <TextStyled textStyle="footnote" className="text-material-surface-0">
+                    <TextStyled
+                      textStyle="footnote"
+                      className="text-material-surface-0"
+                    >
                       m
                     </TextStyled>
                   </Row>

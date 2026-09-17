@@ -1,13 +1,13 @@
-import React from 'react';
-import Column from '../../atoms/Column';
-import Row from '../../atoms/Row';
-import ViewStyled from '../../atoms/ViewStyled';
-import TextStyled from '../../atoms/TextStyled';
-import DonutStats from '../../atoms/DonutStats';
-import Divider from '../../atoms/Divider';
-import Icon from '../../atoms/Icon';
-import Badge from '../Badge';
-import type { ProgressDonutCardProps } from './index.types';
+import React from "react";
+import Column from "../../atoms/Column";
+import Row from "../../atoms/Row";
+import ViewStyled from "../../atoms/ViewStyled";
+import TextStyled from "../../atoms/TextStyled";
+import DonutStats from "../../atoms/DonutStats";
+import Divider from "../../atoms/Divider";
+import Icon from "../../atoms/Icon";
+import Badge from "../Badge";
+import type { ProgressDonutCardProps } from "./index.types";
 
 /**
  * ProgressDonutCard Component (Molecule)
@@ -28,13 +28,13 @@ const ProgressDonutCard = ({
   completed,
   total,
   subtitle,
-  type = 'lessons',
+  type = "lessons",
   totalAttempts,
   avgScorePercent,
   scoreLabel,
   scoreVariant,
   children,
-  className = '',
+  className = "",
 }: ProgressDonutCardProps) => (
   <ViewStyled
     className={`bg-material-surface-0 dark:bg-material-surface-80 border border-brand-primary-10 dark:border-brand-primary-80 rounded-md p-md ${className}`.trim()}
@@ -44,15 +44,25 @@ const ProgressDonutCard = ({
         <Row className="gap-md">
           <Icon
             className="w-xxl h-xxl"
-            iconName={type === 'lessons' ? 'ico-learn-book' : 'ico-quizz'}
+            iconName={
+              type === "lessons"
+                ? "ico-learn-book"
+                : "ico-module-quizz-round-fill"
+            }
             color="text-brand-primary-100"
           />
           <Column className="gap-xs flex-1">
-            <TextStyled textStyle="heading6" className="text-left text-material-surface-100">
+            <TextStyled
+              textStyle="heading6"
+              className="text-left text-material-surface-100"
+            >
               {title}
             </TextStyled>
             {subtitle && (
-              <TextStyled textStyle="caption" className="text-left text-material-surface-80">
+              <TextStyled
+                textStyle="caption"
+                className="text-left text-material-surface-80"
+              >
                 {subtitle}
               </TextStyled>
             )}
@@ -61,7 +71,10 @@ const ProgressDonutCard = ({
             <DonutStats percentage={percentage} size={64} strokeWidth={6} />
           </Row>
         </Row>
-        <Divider type="horizontal" className="bg-brand-primary-10 dark:bg-brand-primary-40" />
+        <Divider
+          type="horizontal"
+          className="bg-brand-primary-10 dark:bg-brand-primary-40"
+        />
         <Row className="justify-between items-center gap-md flex-1 w-full pl-xxl">
           <Column className="flex-1">
             <Row className="flex-1 w-full justify-between items-center gap-md">
@@ -78,10 +91,13 @@ const ProgressDonutCard = ({
                   fontWeight="500"
                   className="text-material-surface-100"
                 >
-                  {type === 'lessons' ? 'Completed' : 'Passed'}
+                  {type === "lessons" ? "Completed" : "Passed"}
                 </TextStyled>
               </Column>
-              <Divider type="vertical" className="bg-brand-primary-10 dark:bg-brand-primary-40" />
+              <Divider
+                type="vertical"
+                className="bg-brand-primary-10 dark:bg-brand-primary-40"
+              />
               <Column className="flex-1 w-full justify-center items-center py-xs">
                 <TextStyled
                   textStyle="heading3"
@@ -110,7 +126,10 @@ const ProgressDonutCard = ({
                   >
                     Attempts:
                   </TextStyled>
-                  <TextStyled textStyle="heading5" className="text-material-surface-100">
+                  <TextStyled
+                    textStyle="heading5"
+                    className="text-material-surface-100"
+                  >
                     {totalAttempts}
                   </TextStyled>
                 </Row>
@@ -123,7 +142,10 @@ const ProgressDonutCard = ({
               <Row className="justify-center items-center w-[40%]">
                 <Column className="gap-xs justify-center items-center">
                   <Column className="items-center justify-center">
-                    <TextStyled textStyle="heading2" className="text-material-surface-100">
+                    <TextStyled
+                      textStyle="heading2"
+                      className="text-material-surface-100"
+                    >
                       {avgScorePercent}%
                     </TextStyled>
                     <TextStyled
@@ -134,7 +156,13 @@ const ProgressDonutCard = ({
                       Avg. Score
                     </TextStyled>
                   </Column>
-                  {scoreLabel && <Badge size="sm" label={scoreLabel} variant={scoreVariant} />}
+                  {scoreLabel && (
+                    <Badge
+                      size="sm"
+                      label={scoreLabel}
+                      variant={scoreVariant}
+                    />
+                  )}
                 </Column>
               </Row>
             </>
@@ -143,7 +171,9 @@ const ProgressDonutCard = ({
       </Column>
     </Row>
     {children && (
-      <Row className="flex-1 w-full justify-center items-center pt-xl">{children}</Row>
+      <Row className="flex-1 w-full justify-center items-center pt-xl">
+        {children}
+      </Row>
     )}
   </ViewStyled>
 );

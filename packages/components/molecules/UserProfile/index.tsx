@@ -27,7 +27,13 @@ const UserProfile = ({
   className = '',
 }: UserProfileProps) => (
   <Column className={`items-center gap-sm bg-material-surface-0 p-md ${className}`.trim()}>
-    <Avatar size={84} imageUrl={imageUrl} iconName="ico-sailor" onEditPress={onEditPress} />
+    <Avatar
+      size={84}
+      imageUrl={imageUrl}
+      iconName="ico-sailor"
+      hasAddButton={Boolean(onEditPress)}
+      onEditPress={onEditPress}
+    />
     <TextStyled textStyle="heading6" className="text-brand-primary-100">
       {name}
     </TextStyled>

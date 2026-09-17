@@ -1,13 +1,15 @@
 import React from 'react';
-import PressableStyled from '../PressableStyled';
+import { Switch } from 'react-native';
 import ViewStyled from '../ViewStyled';
+import { theme } from '@inkabledesign/mariner-theme';
 import type { ToggleSwitchProps } from './index.types';
 
 /**
  * ToggleSwitch Component
  *
- * A cross-platform toggle switch following the Figma design system.
- * Uses NativeWind for styling to work on both React Native and web.
+ * A native iOS/Android toggle switch styled with design system colors.
+ * Uses the platform Switch so the toggle behaviour and animation are
+ * handled natively.
  *
  * @example
  * <ToggleSwitch
@@ -19,37 +21,28 @@ const ToggleSwitch = ({
   checked = false,
   onToggle,
   disabled = false,
+  themeMode = 'light',
   className = '',
 }: ToggleSwitchProps) => {
-  const handlePress = () => {
-    if (!disabled && onToggle) {
-      onToggle(!checked);
-    }
-  };
+  const palette = theme.color[themeMode];
+  const trackOn = palette.brand.primary['100'];
+  const trackOff = palette.material.surface['40'];
+  const thumb =
+    themeMode === 'dark'
+      ? palette.material.surface['100']
+      : palette.material.surface['0'];
 
   return (
-    <PressableStyled
-      onPress={handlePress}
-      disabled={disabled}
-      className={`
-        h-[31px] w-[52px] rounded-full overflow-hidden relative
-        ${checked ? 'bg-brand-primary-100' : 'bg-material-surface-40'}
-        ${disabled ? 'opacity-50' : ''}
-        ${className}
-      `.trim()}>
-      {/* Knob */}
-      <ViewStyled
-        className={`
-          absolute top-1/2 -translate-y-1/2
-          w-[27px] h-[27px] rounded-full
-          bg-material-surface-0
-          dark:bg-material-surface-100
-          shadow-sm
-          transition-all duration-200
-          ${checked ? 'right-[2px]' : 'left-[2px]'}
-        `.trim()}
+    <ViewStyled className={`${disabled ? 'opacity-50' : ''} ${className}`.trim()}>
+      <Switch
+        value={checked}
+        onValueChange={onToggle}
+        disabled={disabled}
+        trackColor={{ false: trackOff, true: trackOn }}
+        thumbColor={thumb}
+        ios_backgroundColor={trackOff}
       />
-    </PressableStyled>
+    </ViewStyled>
   );
 };
 

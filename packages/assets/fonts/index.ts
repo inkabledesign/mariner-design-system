@@ -65,6 +65,7 @@ export const fontAssets = {
   "Montserrat-Medium": require("./Montserrat-Medium.ttf"),
   "Montserrat-SemiBold": require("./Montserrat-SemiBold.ttf"),
   "Montserrat-Bold": require("./Montserrat-Bold.ttf"),
+  "Montserrat-Italic": require("./Montserrat-Italic.ttf"),
   Rajdhani: require("./Rajdhani-Regular.ttf"),
   "Rajdhani-Light": require("./Rajdhani-Light.ttf"),
   "Rajdhani-Regular": require("./Rajdhani-Regular.ttf"),

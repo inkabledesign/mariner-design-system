@@ -1,26 +1,30 @@
-import React from 'react';
-import { Image as ExpoImage } from 'expo-image';
-import Column from '../../atoms/Column';
-import Row from '../../atoms/Row';
-import ViewStyled from '../../atoms/ViewStyled';
-import TextStyled from '../../atoms/TextStyled';
-import Icon from '../../atoms/Icon';
-import PressableStyled from '../../atoms/PressableStyled';
-import ProgressBar from '../../atoms/ProgressBar';
-import Badge from '../Badge';
-import type { CardModuleProps, ModuleStateType, ModuleType } from './index.types';
+import React from "react";
+import { Image as ExpoImage } from "expo-image";
+import Column from "../../atoms/Column";
+import Row from "../../atoms/Row";
+import ViewStyled from "../../atoms/ViewStyled";
+import TextStyled from "../../atoms/TextStyled";
+import Icon from "../../atoms/Icon";
+import PressableStyled from "../../atoms/PressableStyled";
+import ProgressBar from "../../atoms/ProgressBar";
+import Badge from "../Badge";
+import type {
+  CardModuleProps,
+  ModuleStateType,
+  ModuleType,
+} from "./index.types";
 
 const COLOR_MAP: Record<string, { background: string }> = {
-  completed: { background: 'bg-brand-accent-100' },
-  retake: { background: 'bg-system-error-100' },
-  failed: { background: 'bg-system-error-100' },
-  quiz: { background: 'bg-brand-primary-100' },
-  lesson: { background: 'bg-material-surface-80' },
-  bundle: { background: 'bg-material-surface-80' },
+  completed: { background: "bg-brand-accent-100" },
+  retake: { background: "bg-system-error-100" },
+  failed: { background: "bg-system-error-100" },
+  quiz: { background: "bg-brand-primary-100" },
+  lesson: { background: "bg-material-surface-80" },
+  bundle: { background: "bg-material-surface-80" },
 };
 
 const getCardColors = (type?: ModuleType, state?: ModuleStateType) =>
-  (state && COLOR_MAP[state]) || COLOR_MAP[type || 'lesson'];
+  (state && COLOR_MAP[state]) || COLOR_MAP[type || "lesson"];
 
 /**
  * CardModule Component (Molecule)
@@ -37,9 +41,9 @@ const getCardColors = (type?: ModuleType, state?: ModuleStateType) =>
 const CardModule = ({
   title,
   subtitle,
-  caption = 'Completed',
+  caption = "Completed",
   captionIcon,
-  footnote = '30 min',
+  footnote = "30 min",
   footnoteIcon,
   progress = 0,
   type,
@@ -48,13 +52,15 @@ const CardModule = ({
   hasUpdate = false,
   isDownloaded = false,
   onPress,
-  className = '',
+  className = "",
 }: CardModuleProps) => {
   const { background } = getCardColors(type, state);
   const content = (
     <>
       {/* Graphic band */}
-      <ViewStyled className={`h-24 w-full overflow-hidden relative ${background}`}>
+      <ViewStyled
+        className={`h-24 w-full overflow-hidden relative ${background}`}
+      >
         {imageUrl && (
           <Row className="absolute inset-0 flex-nowrap items-end justify-end pr-md">
             <ExpoImage
@@ -68,13 +74,18 @@ const CardModule = ({
 
       {hasUpdate && (
         <ViewStyled className="absolute top-sm left-xs z-10">
-          <Badge variant="primary" size="sm" iconName="ico-download-round-fill" label="Update" />
+          <Badge
+            variant="primary"
+            size="sm"
+            iconName="ico-download-round-fill"
+            label="Update"
+          />
         </ViewStyled>
       )}
       {isDownloaded && !hasUpdate && (
         <ViewStyled className="absolute top-sm left-xs z-10">
           <Badge
-            variant={type === 'lesson' ? 'default' : 'primary'}
+            variant={type === "lesson" ? "default" : "primary"}
             size="lg"
             iconName="ico-downloaded-round-fill"
           />
@@ -104,17 +115,28 @@ const CardModule = ({
             {caption && (
               <Row className="items-center gap-xxs">
                 {captionIcon && (
-                  <Icon iconName={captionIcon} color="text-material-surface-80" className="w-4 h-4" />
+                  <Icon
+                    iconName={captionIcon}
+                    color="text-material-surface-80"
+                    className="w-4 h-4"
+                  />
                 )}
-                <TextStyled textStyle="footnote" className="text-material-surface-80">
+                <TextStyled
+                  textStyle="footnote"
+                  className="text-material-surface-80"
+                >
                   {caption}
                 </TextStyled>
               </Row>
             )}
           </Row>
           <Row className="items-center max-w-[80%] gap-xxs">
-            {state === 'completed' ? (
-              <Icon iconName="ico-success" color="text-brand-accent-100" className="w-8 h-8" />
+            {state === "completed" ? (
+              <Icon
+                iconName="ico-tick-round-fill"
+                color="text-brand-accent-100"
+                className="w-8 h-8"
+              />
             ) : footnote ? (
               <Row className="items-center gap-xxs">
                 {footnoteIcon && (
@@ -124,7 +146,10 @@ const CardModule = ({
                     className="w-4 h-4"
                   />
                 )}
-                <TextStyled textStyle="footnote" className="text-material-surface-60">
+                <TextStyled
+                  textStyle="footnote"
+                  className="text-material-surface-60"
+                >
                   {footnote}
                 </TextStyled>
               </Row>
@@ -132,11 +157,12 @@ const CardModule = ({
           </Row>
         </Row>
       </Column>
-      <ProgressBar progress={state === 'completed' ? 100 : progress} />
+      <ProgressBar progress={state === "completed" ? 100 : progress} />
     </>
   );
 
-  const cardClasses = `justify-between flex-col flex w-[48%] aspect-[16/9] rounded-md border border-brand-accent-60 dark:border-brand-accent-40 bg-material-surface-0 dark:bg-material-surface-100 overflow-hidden ${className}`.trim();
+  const cardClasses =
+    `justify-between flex-col flex w-[48%] aspect-[16/9] rounded-md border border-brand-accent-60 dark:border-brand-accent-40 bg-material-surface-0 dark:bg-material-surface-100 overflow-hidden ${className}`.trim();
 
   return onPress ? (
     <PressableStyled onPress={onPress} className={cardClasses}>

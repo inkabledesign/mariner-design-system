@@ -118,6 +118,7 @@ const HeaderTopSheet = ({
                   size={72}
                   imageUrl={imageUrl}
                   iconName={iconName}
+                  hasAddButton={Boolean(onEditPress)}
                   onEditPress={onEditPress}
                 />
                 <WaveDecoration variant="shortR" className="translate-y-md" />

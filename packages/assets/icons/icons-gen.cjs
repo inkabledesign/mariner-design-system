@@ -1,42 +1,53 @@
 /* icon‑gen.js (Node ≥18, CommonJS) */
-const fs = require('fs');
-const path = require('path');
-const cheerio = require('cheerio');
+const fs = require("fs");
+const path = require("path");
+const cheerio = require("cheerio");
 
 /* ---------- helpers ---------- */
 
 // eslint-disable-next-line no-undef
-const svgRoot = path.join(__dirname, 'src'); // Updated for src subfolder structure
+const svgRoot = path.join(__dirname, "src"); // Updated for src subfolder structure
 
 /** dash‑case → camelCase */
-const toCamel = s =>
+const toCamel = (s) =>
   s
-    .split('-')
+    .split("-")
     .map((p, i) => (i ? p.charAt(0).toUpperCase() + p.slice(1) : p))
-    .join('');
+    .join("");
 
 /** “NavMarina” → “nav_marina” */
-const toCategoryKey = folder => folder.replace(/([a-z0-9])([A-Z])/g, '$1_$2').toLowerCase();
+const toCategoryKey = (folder) =>
+  folder.replace(/([a-z0-9])([A-Z])/g, "$1_$2").toLowerCase();
 
 /** “NavMarina” → “NavMarina” → `NavMarinaIconName` */
-const toTypeName = folder => `${folder.charAt(0).toUpperCase()}${folder.slice(1)}IconName`;
+const toTypeName = (folder) =>
+  `${folder.charAt(0).toUpperCase()}${folder.slice(1)}IconName`;
 
-/* ---------- 2. collect every .svg (recursively) ---------- */
+/* ---------- 2. collect every .svg ---------- */
 
-const categories = {}; // { nav_marina: { folder: 'NavMarina', files:[{abs, name}]} }
+const categories = {}; // { nav_marina: { folder: 'NavMarina', files:[{abs, name, relativePath}]} }
 
 function walk(dir) {
-  fs.readdirSync(dir, { withFileTypes: true }).forEach(ent => {
+  fs.readdirSync(dir, { withFileTypes: true }).forEach((ent) => {
     const abs = path.join(dir, ent.name);
     if (ent.isDirectory()) return walk(abs);
-    if (!ent.isFile() || !ent.name.toLowerCase().endsWith('.svg')) return;
+    if (!ent.isFile() || !ent.name.toLowerCase().endsWith(".svg")) return;
 
     const rel = path.relative(svgRoot, abs); // e.g. Nav/ico-close.svg
-    const [folder, name] = rel.split(path.sep); // 'Nav'
+    const [folder, ...pathParts] = rel.split(path.sep);
+
+    if (pathParts.length !== 1) {
+      throw new Error(
+        `Nested icon folders are not supported: ${rel}. Move the SVG directly into its category folder.`,
+      );
+    }
+
+    const name = pathParts.at(-1);
+    const relativePath = pathParts.join(path.sep);
     const key = toCategoryKey(folder); // 'nav'
 
     categories[key] ??= { folder, files: [] };
-    categories[key].files.push({ abs, name });
+    categories[key].files.push({ abs, name, relativePath });
   });
 }
 
@@ -44,23 +55,34 @@ walk(svgRoot);
 
 /* ---------- 3. normalise SVG fill ---------- */
 
-const FILL_TAGS = 'path, circle, rect, polygon, polyline, ellipse';
+const FILL_TAGS = "path, circle, rect, polygon, polyline, ellipse";
 
-Object.values(categories).forEach(cat =>
-  cat.files.forEach(({ abs, name }) => {
-    const $ = cheerio.load(fs.readFileSync(abs, 'utf8'), { xmlMode: true });
+Object.values(categories).forEach((cat) =>
+  cat.files.forEach(({ abs, relativePath }) => {
+    const $ = cheerio.load(fs.readFileSync(abs, "utf8"), { xmlMode: true });
+    const svg = $("svg").first();
+    const missingRootAttributes = ["width", "height", "viewBox"].filter(
+      (attribute) => !svg.attr(attribute),
+    );
+
+    if (missingRootAttributes.length > 0) {
+      throw new Error(
+        `${cat.folder}/${relativePath} is missing required SVG root attributes: ${missingRootAttributes.join(", ")}`,
+      );
+    }
+
     let dirty = false;
     $(FILL_TAGS).each((_, el) => {
-      if ($(el).attr('fill') !== 'currentColor') {
-        $(el).attr('fill', 'currentColor');
+      if ($(el).attr("fill") !== "currentColor") {
+        $(el).attr("fill", "currentColor");
         dirty = true;
       }
     });
     if (dirty) {
-      fs.writeFileSync(abs, $.xml(), 'utf8');
-      console.log(`🔧  ${cat.folder}/${name} → fill="currentColor"`);
+      fs.writeFileSync(abs, $.xml(), "utf8");
+      console.log(`🔧  ${cat.folder}/${relativePath} → fill="currentColor"`);
     }
-  })
+  }),
 );
 
 /* ---------- 5. generate iconMap.ts ---------- */
@@ -69,66 +91,81 @@ const importLines = [];
 const mapLines = [];
 
 const sortedCategoryKeys = Object.keys(categories).sort((a, b) =>
-  categories[a].folder.localeCompare(categories[b].folder)
+  categories[a].folder.localeCompare(categories[b].folder),
 );
 
-sortedCategoryKeys.forEach(key => {
+sortedCategoryKeys.forEach((key) => {
   const { folder, files } = categories[key];
+  const duplicateNames = files
+    .map((file) => file.name)
+    .filter((name, index, names) => names.indexOf(name) !== index);
+
+  if (duplicateNames.length > 0) {
+    throw new Error(
+      `Duplicate icon names in ${folder}: ${[...new Set(duplicateNames)].join(", ")}`,
+    );
+  }
 
   importLines.push(`// ${folder} svg`);
   files
     .sort((a, b) => a.name.localeCompare(b.name))
-    .forEach(({ name }) => {
-      const id = toCamel(name.replace('.svg', ''));
-      importLines.push(`import ${id} from './${folder}/${name}';`);
+    .forEach(({ name, relativePath }) => {
+      const id = toCamel(`${key}-${name.replace(".svg", "")}`);
+      const importPath = relativePath.split(path.sep).join("/");
+      importLines.push(`import ${id} from './${folder}/${importPath}';`);
     });
-  importLines.push('');
+  importLines.push("");
 
   mapLines.push(`  ${key}: {`);
   files
     .sort((a, b) => a.name.localeCompare(b.name))
     .forEach(({ name }) => {
-      const id = toCamel(name.replace('.svg', ''));
-      mapLines.push(`    '${name.replace('.svg', '')}': ${id},`);
+      const id = toCamel(`${key}-${name.replace(".svg", "")}`);
+      mapLines.push(`    '${name.replace(".svg", "")}': ${id},`);
     });
-  mapLines.push('  },');
+  mapLines.push("  },");
 });
 
 importLines.push(`import { IconMap } from '../icons.type';\n`);
 
 const iconMapOut = `
-${importLines.join('\n')}
+${importLines.join("\n")}
 export const iconMap: IconMap = {
-${mapLines.join('\n')}
+${mapLines.join("\n")}
 };
 `.trimStart();
 
-fs.writeFileSync(path.join(svgRoot, 'iconMap.ts'), iconMapOut, 'utf8');
+fs.writeFileSync(path.join(svgRoot, "iconMap.ts"), iconMapOut, "utf8");
 
 /* ---------- 6. generate / update iconsvg.type.ts ---------- */
 
 const typeBlocks = [];
-const nameByTypeLines = ['export interface IconNameByType {'];
+const nameByTypeLines = ["export interface IconNameByType {"];
 
-sortedCategoryKeys.forEach(key => {
+sortedCategoryKeys.forEach((key) => {
   const { folder, files } = categories[key];
   const tName = toTypeName(folder);
   const union = files
-    .map(f => `'${f.name.replace('.svg', '')}'`)
+    .map((f) => `'${f.name.replace(".svg", "")}'`)
     .sort()
-    .join(' | ');
+    .join(" | ");
   typeBlocks.push(`export type ${tName} = ${union};\n`);
   nameByTypeLines.push(`  ${key}: ${tName};`);
 });
-nameByTypeLines.push('}');
+nameByTypeLines.push("}");
 
-const iconCategoryUnion = sortedCategoryKeys.map(k => `'${k}'`).join(' | ');
+const iconCategoryUnion = sortedCategoryKeys.map((k) => `'${k}'`).join(" | ");
 
-const iconNameUnion = sortedCategoryKeys.map(k => toTypeName(categories[k].folder)).join(' | ');
+const iconNameUnion = sortedCategoryKeys
+  .map((k) => toTypeName(categories[k].folder))
+  .join(" | ");
 
 const iconTypeUnion = sortedCategoryKeys
-  .map(k => `{ iconType: '${k}'; iconName: ${toTypeName(categories[k].folder)} }`)
-  .join(' | ');
+  .map(
+    (k) =>
+      `{ iconType: '${k}'; iconName: ${toTypeName(categories[k].folder)} }`,
+  )
+  .join(" | ");
 
 const iconMapGeneric = `
 export type IconMap = {
@@ -145,7 +182,7 @@ import { SvgProps } from 'react-native-svg';
 export type IconCategoryType =
   | ${iconCategoryUnion};
 
-${typeBlocks.join('\n')}
+${typeBlocks.join("\n")}
 
 export type IconName =
   | ${iconNameUnion};
@@ -153,44 +190,50 @@ export type IconName =
 export type IconType =
   | ${iconTypeUnion};
 
-${nameByTypeLines.join('\n')}
+${nameByTypeLines.join("\n")}
 
 ${iconMapGeneric}
 `.trim();
 
 // eslint-disable-next-line no-undef
-const typesPath = path.join(__dirname, 'icons.type.ts');
-const marker = '// AUTO-GENERATED-ICONS: DO NOT EDIT BELOW';
-let existing = fs.existsSync(typesPath) ? fs.readFileSync(typesPath, 'utf8') : '';
+const typesPath = path.join(__dirname, "icons.type.ts");
+const marker = "// AUTO-GENERATED-ICONS: DO NOT EDIT BELOW";
+let existing = fs.existsSync(typesPath)
+  ? fs.readFileSync(typesPath, "utf8")
+  : "";
 
-existing = existing.replace(new RegExp(`${marker}[\\s\\S]*$`), '').trimEnd();
-fs.writeFileSync(typesPath, `${existing}\n\n${generatedTypes}\n`, 'utf8');
+existing = existing.replace(new RegExp(`${marker}[\\s\\S]*$`), "").trimEnd();
+fs.writeFileSync(typesPath, `${existing}\n\n${generatedTypes}\n`, "utf8");
 
 /* ---------- 6b. mirror generated types into the components package ---------- */
 // Keeps `@inkabledesign/mariner-components` IconName/IconType/IconMap in sync with the
 // icons that actually ship in this assets package, so components can only reference
-// icons that exist. No assets are pulled from Figma — this only reflects the SVGs
-// already present under ./src (sourced from the Mariner / Mariner-Learning apps).
+// icons that exist. No assets are pulled from Figma — this only reflects the canonical
+// SVGs already present under ./src.
 const componentsTypesPath = path.join(
   __dirname,
-  '..',
-  '..',
-  'components',
-  'types',
-  'icons.type.ts'
+  "..",
+  "..",
+  "components",
+  "types",
+  "icons.type.ts",
 );
 if (fs.existsSync(path.dirname(componentsTypesPath))) {
   let existingComponents = fs.existsSync(componentsTypesPath)
-    ? fs.readFileSync(componentsTypesPath, 'utf8')
-    : '';
-  existingComponents = existingComponents.replace(new RegExp(`${marker}[\\s\\S]*$`), '').trimEnd();
+    ? fs.readFileSync(componentsTypesPath, "utf8")
+    : "";
+  existingComponents = existingComponents
+    .replace(new RegExp(`${marker}[\\s\\S]*$`), "")
+    .trimEnd();
   fs.writeFileSync(
     componentsTypesPath,
     `${existingComponents}\n\n${generatedTypes}\n`.trimStart(),
-    'utf8'
+    "utf8",
   );
-  console.log('🔁  Mirrored icon types → packages/components/types/icons.type.ts');
+  console.log(
+    "🔁  Mirrored icon types → packages/components/types/icons.type.ts",
+  );
 }
 
 /* ---------- 7. done ---------- */
-console.log('🎉  iconMap.ts & icons.type.ts generated!');
+console.log("🎉  iconMap.ts & icons.type.ts generated!");

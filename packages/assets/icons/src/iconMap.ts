@@ -1,436 +1,468 @@
 // Input svg
-import icoAge from './Input/ico-age.svg';
-import icoAnchorRound from './Input/ico-anchor-round.svg';
-import icoAncorRound from './Input/ico-ancor-round.svg';
-import icoAntenna from './Input/ico-antenna.svg';
-import icoApproach from './Input/ico-approach.svg';
-import icoBerthHeight from './Input/ico-berth-height.svg';
-import icoBerthRound from './Input/ico-berth-round.svg';
-import icoBerth from './Input/ico-berth.svg';
-import icoBoat_motorRound from './Input/ico-boat_motor-round.svg';
-import icoBoat_nameRound from './Input/ico-boat_name-round.svg';
-import icoBoat_sailing from './Input/ico-boat_sailing.svg';
-import icoBoatWidth from './Input/ico-boat-width.svg';
-import icoCallRound from './Input/ico-call-round.svg';
-import icoCall from './Input/ico-call.svg';
-import icoCertificateRound from './Input/ico-certificate-round.svg';
-import icoCityRound from './Input/ico-city-round.svg';
-import icoDistanceRound from './Input/ico-distance-round.svg';
-import icoEditRound from './Input/ico-edit-round.svg';
-import icoEdit from './Input/ico-edit.svg';
-import icoEmailRound from './Input/ico-email-round.svg';
-import icoFlagRound from './Input/ico-flag-round.svg';
-import icoKeyboardOutline from './Input/ico-keyboard-outline.svg';
-import icoKeyboard from './Input/ico-keyboard.svg';
-import icoPassportRound from './Input/ico-passport-round.svg';
-import icoPinRound from './Input/ico-pin-round.svg';
-import icoRadioOff from './Input/ico-radio-off.svg';
-import icoRadioOn from './Input/ico-radio-on.svg';
-import icoRegistration from './Input/ico-registration.svg';
-import icoReloadRound from './Input/ico-reload-round.svg';
-import icoSailorRound from './Input/ico-sailor-round.svg';
-import icoSailor from './Input/ico-sailor.svg';
-import icoSearch from './Input/ico-search.svg';
-import icoTickRound from './Input/ico-tick-round.svg';
-import icoTick from './Input/ico-tick.svg';
-import icoUploadImageRound from './Input/ico-upload-image-round.svg';
-import icoVoiceOutline from './Input/ico-voice-outline.svg';
-import icoVoice from './Input/ico-voice.svg';
-import icoWidthRound from './Input/ico-width-round.svg';
+import inputIcoAge from './Input/ico-age.svg';
+import inputIcoAncorRound from './Input/ico-ancor-round.svg';
+import inputIcoAntenna from './Input/ico-antenna.svg';
+import inputIcoApproach from './Input/ico-approach.svg';
+import inputIcoBerthHeight from './Input/ico-berth-height.svg';
+import inputIcoBerthRound from './Input/ico-berth-round.svg';
+import inputIcoBerth from './Input/ico-berth.svg';
+import inputIcoBoat_nameRound from './Input/ico-boat_name-round.svg';
+import inputIcoBoatMotorRound from './Input/ico-boat-motor-round.svg';
+import inputIcoBoatSailing from './Input/ico-boat-sailing.svg';
+import inputIcoBoatWidth from './Input/ico-boat-width.svg';
+import inputIcoCallRound from './Input/ico-call-round.svg';
+import inputIcoCall from './Input/ico-call.svg';
+import inputIcoCertificateRound from './Input/ico-certificate-round.svg';
+import inputIcoCityRound from './Input/ico-city-round.svg';
+import inputIcoCrewRound from './Input/ico-crew-round.svg';
+import inputIcoCrew from './Input/ico-crew.svg';
+import inputIcoDistanceRound from './Input/ico-distance-round.svg';
+import inputIcoEditRound from './Input/ico-edit-round.svg';
+import inputIcoEdit from './Input/ico-edit.svg';
+import inputIcoEmailRound from './Input/ico-email-round.svg';
+import inputIcoFlagRound from './Input/ico-flag-round.svg';
+import inputIcoKeyboardOutline from './Input/ico-keyboard-outline.svg';
+import inputIcoKeyboard from './Input/ico-keyboard.svg';
+import inputIcoPassportRound from './Input/ico-passport-round.svg';
+import inputIcoPinRound from './Input/ico-pin-round.svg';
+import inputIcoRadioOff from './Input/ico-radio-off.svg';
+import inputIcoRadioOn from './Input/ico-radio-on.svg';
+import inputIcoRegistration from './Input/ico-registration.svg';
+import inputIcoSailorRound from './Input/ico-sailor-round.svg';
+import inputIcoSailor from './Input/ico-sailor.svg';
+import inputIcoSearch from './Input/ico-search.svg';
+import inputIcoVoiceOutline from './Input/ico-voice-outline.svg';
+import inputIcoVoice from './Input/ico-voice.svg';
+import inputIcoWidthRound from './Input/ico-width-round.svg';
 
 // Map svg
-import icoDistance from './Map/ico-distance.svg';
-import icoLocatioon from './Map/ico-locatioon.svg';
-import icoMapRound from './Map/ico-map-round.svg';
-import icoMylocation from './Map/ico-mylocation.svg';
-import icoPin from './Map/ico-pin.svg';
+import mapIcoDistance from './Map/ico-distance.svg';
+import mapIcoLocatioon from './Map/ico-locatioon.svg';
+import mapIcoMapRound from './Map/ico-map-round.svg';
+import mapIcoMarinaBold from './Map/ico-marina-bold.svg';
+import mapIcoMylocation from './Map/ico-mylocation.svg';
+import mapIcoPin from './Map/ico-pin.svg';
 
 // Marina svg
-import icoBar from './Marina/ico-bar.svg';
-import icoBrokers from './Marina/ico-brokers.svg';
-import icoCaffee from './Marina/ico-caffee.svg';
-import icoCamping from './Marina/ico-camping.svg';
-import icoCarpark from './Marina/ico-carpark.svg';
-import icoCctv from './Marina/ico-cctv.svg';
-import icoChandlery from './Marina/ico-chandlery.svg';
-import icoCharters from './Marina/ico-charters.svg';
-import icoCrane from './Marina/ico-crane.svg';
-import icoDiesel from './Marina/ico-diesel.svg';
-import icoDrystorage from './Marina/ico-drystorage.svg';
-import icoElectricity from './Marina/ico-electricity.svg';
-import icoGas from './Marina/ico-gas.svg';
-import icoGated from './Marina/ico-gated.svg';
-import icoHotel from './Marina/ico-hotel.svg';
-import icoLoundry from './Marina/ico-loundry.svg';
-import icoPetrol from './Marina/ico-petrol.svg';
-import icoRepair from './Marina/ico-repair.svg';
-import icoRestaurant from './Marina/ico-restaurant.svg';
-import icoSchool from './Marina/ico-school.svg';
-import icoShop from './Marina/ico-shop.svg';
-import icoShower from './Marina/ico-shower.svg';
-import icoSlipway from './Marina/ico-slipway.svg';
-import icoToilet from './Marina/ico-toilet.svg';
-import icoWater from './Marina/ico-water.svg';
-import icoWifi from './Marina/ico-wifi.svg';
+import marinaIcoBar from './Marina/ico-bar.svg';
+import marinaIcoBrokers from './Marina/ico-brokers.svg';
+import marinaIcoCaffee from './Marina/ico-caffee.svg';
+import marinaIcoCamping from './Marina/ico-camping.svg';
+import marinaIcoCarpark from './Marina/ico-carpark.svg';
+import marinaIcoCctv from './Marina/ico-cctv.svg';
+import marinaIcoChandlery from './Marina/ico-chandlery.svg';
+import marinaIcoCharters from './Marina/ico-charters.svg';
+import marinaIcoCrane from './Marina/ico-crane.svg';
+import marinaIcoDiesel from './Marina/ico-diesel.svg';
+import marinaIcoDrystorage from './Marina/ico-drystorage.svg';
+import marinaIcoElectricity from './Marina/ico-electricity.svg';
+import marinaIcoGas from './Marina/ico-gas.svg';
+import marinaIcoGated from './Marina/ico-gated.svg';
+import marinaIcoHotel from './Marina/ico-hotel.svg';
+import marinaIcoLoundry from './Marina/ico-loundry.svg';
+import marinaIcoPetrol from './Marina/ico-petrol.svg';
+import marinaIcoRepair from './Marina/ico-repair.svg';
+import marinaIcoRestaurant from './Marina/ico-restaurant.svg';
+import marinaIcoSchool from './Marina/ico-school.svg';
+import marinaIcoShop from './Marina/ico-shop.svg';
+import marinaIcoShower from './Marina/ico-shower.svg';
+import marinaIcoSlipway from './Marina/ico-slipway.svg';
+import marinaIcoToilet from './Marina/ico-toilet.svg';
+import marinaIcoWater from './Marina/ico-water.svg';
+import marinaIcoWifi from './Marina/ico-wifi.svg';
 
 // Media svg
-import icoImage_galleryRound from './Media/ico-image_gallery-round.svg';
-import icoListenRound from './Media/ico-listen-round.svg';
-import icoListen from './Media/ico-listen.svg';
-import icoPause from './Media/ico-pause.svg';
-import icoPlay from './Media/ico-play.svg';
-import icoScreenDown from './Media/ico-screen-down.svg';
-import icoScreenUp from './Media/ico-screen-up.svg';
+import mediaIcoCamera from './Media/ico-camera.svg';
+import mediaIcoListenRound from './Media/ico-listen-round.svg';
+import mediaIcoListen from './Media/ico-listen.svg';
+import mediaIcoPause from './Media/ico-pause.svg';
+import mediaIcoPlay from './Media/ico-play.svg';
+import mediaIcoScreenDown from './Media/ico-screen-down.svg';
+import mediaIcoScreenUp from './Media/ico-screen-up.svg';
+import mediaIcoVideo from './Media/ico-video.svg';
+import mediaIcoVolumeFull from './Media/ico-volume-full.svg';
+import mediaIcoVolumeHalf from './Media/ico-volume-half.svg';
+import mediaIcoVolumeLow from './Media/ico-volume-low.svg';
+import mediaIcoVolumeMute from './Media/ico-volume-mute.svg';
 
 // Nav svg
-import icoChart from './Nav/ico-chart.svg';
-import icoChevronDownFlush from './Nav/ico-chevron-down-flush.svg';
-import icoChevronDown from './Nav/ico-chevron-down.svg';
-import icoChevronLeftFlush from './Nav/ico-chevron-left-flush.svg';
-import icoChevronLeftRound from './Nav/ico-chevron-left-round.svg';
-import icoChevronLeft from './Nav/ico-chevron-left.svg';
-import icoChevronRightFlush from './Nav/ico-chevron-right-flush.svg';
-import icoChevronRightRound from './Nav/ico-chevron-right-round.svg';
-import icoChevronRight from './Nav/ico-chevron-right.svg';
-import icoChevronUpFlush from './Nav/ico-chevron-up-flush.svg';
-import icoChevronUp from './Nav/ico-chevron-up.svg';
-import icoCloseRound from './Nav/ico-close-round.svg';
-import icoClose from './Nav/ico-close.svg';
-import icoFilterRound from './Nav/ico-filter-round.svg';
-import icoHomeLrg from './Nav/ico-home-lrg.svg';
-import icoLearnBook from './Nav/ico-learn-book.svg';
-import icoListRound from './Nav/ico-list-round.svg';
-import icoMapFill from './Nav/ico-map-fill.svg';
-import icoPlusRound from './Nav/ico-plus-round.svg';
-import icoPlus from './Nav/ico-plus.svg';
-import icoQuizzPassed from './Nav/ico-quizz-passed.svg';
-import icoQuizz from './Nav/ico-quizz.svg';
-import icoSortRound from './Nav/ico-sort-round.svg';
-import icoStations from './Nav/ico-stations.svg';
-import icoTools from './Nav/ico-tools.svg';
-import icoUserRound from './Nav/ico-user-round.svg';
-import icoVhfRadio from './Nav/ico-vhf-radio.svg';
-
-// NavMarina svg
-import icoMarina from './NavMarina/ico-marina.svg';
-import icoTides from './NavMarina/ico-tides.svg';
-import icoWeather from './NavMarina/ico-weather.svg';
-import icoWind from './NavMarina/ico-wind.svg';
-
-// Radio svg
-import icoAtisEnabled from './Radio/ico-atis-enabled.svg';
-import icoAutoChannelDisabled from './Radio/ico-auto-channel-disabled.svg';
-import icoAutoChannelEnabled from './Radio/ico-auto-channel-enabled.svg';
-import icoGps from './Radio/ico-gps.svg';
-import icoLocalReciver from './Radio/ico-local-reciver.svg';
-import icoMessage from './Radio/ico-message.svg';
-import icoPositionTracking from './Radio/ico-position-tracking.svg';
-import icoRadioDown from './Radio/ico-radio-down.svg';
-import icoRadioUp from './Radio/ico-radio-up.svg';
-import icoSavedChannel from './Radio/ico-saved-channel.svg';
-
-// Social svg
-import icoChat from './Social/ico-chat.svg';
-import icoFacebook from './Social/ico-facebook.svg';
-import icoFeed3Round from './Social/ico-feed3-round.svg';
-import icoFeed3 from './Social/ico-feed3.svg';
-import icoFeed4Round from './Social/ico-feed4-round.svg';
-import icoFeed5Round from './Social/ico-feed5-round.svg';
-import icoFeed5 from './Social/ico-feed5.svg';
-import icoGoogle from './Social/ico-google.svg';
-import icoHeartActive from './Social/ico-heart-active.svg';
-import icoHeartFull from './Social/ico-heart-full.svg';
-import icoHeartOutline from './Social/ico-heart-outline.svg';
-import icoHeart from './Social/ico-heart.svg';
-import icoShare from './Social/ico-share.svg';
-import icoStarOutline from './Social/ico-star-outline.svg';
-import icoStar from './Social/ico-star.svg';
+import navIcoChart from './Nav/ico-chart.svg';
+import navIcoHomeLrg from './Nav/ico-home-lrg.svg';
+import navIcoLearnBook from './Nav/ico-learn-book.svg';
+import navIcoMapFill from './Nav/ico-map-fill.svg';
+import navIcoMarina from './Nav/ico-marina.svg';
+import navIcoQuizzPassed from './Nav/ico-quizz-passed.svg';
+import navIcoStations from './Nav/ico-stations.svg';
+import navIcoTides from './Nav/ico-tides.svg';
+import navIcoTools from './Nav/ico-tools.svg';
+import navIcoWeather from './Nav/ico-weather.svg';
+import navIcoWind from './Nav/ico-wind.svg';
 
 // System svg
-import icoArrowDownCircleFill from './System/ico-arrow-down-circle-fill.svg';
-import icoArrowDownCircle from './System/ico-arrow-down-circle.svg';
-import icoArrowDown from './System/ico-arrow-down.svg';
-import icoArrowUpCircleFill from './System/ico-arrow-up-circle-fill.svg';
-import icoArrowUpCircle from './System/ico-arrow-up-circle.svg';
-import icoArrowUp from './System/ico-arrow-up.svg';
-import icoCloseRoundFill from './System/ico-close-round-fill.svg';
-import icoDownloadRoundFill from './System/ico-download-round-fill.svg';
-import icoDownloadRoundOutline from './System/ico-download-round-outline.svg';
-import icoDownload from './System/ico-download.svg';
-import icoDownloadedRoundFill from './System/ico-downloaded-round-fill.svg';
-import icoDownloadedRoundOutline from './System/ico-downloaded-round-outline.svg';
-import icoDownloaded from './System/ico-downloaded.svg';
-import icoHelpRound from './System/ico-help-round.svg';
-import icoInfoRound from './System/ico-info-round.svg';
-import icoLockedRoundFill from './System/ico-locked-round-fill.svg';
-import icoLockedRound from './System/ico-locked-round.svg';
-import icoLocked from './System/ico-locked.svg';
-import icoRotateDeviceRound from './System/ico-rotate-device-round.svg';
-import icoSettingsOutline from './System/ico-settings-outline.svg';
-import icoSettingsRound from './System/ico-settings-round.svg';
-import icoTickRoundFill from './System/ico-tick-round-fill.svg';
-import icoTrash from './System/ico-trash.svg';
-import icoWifiOffOutline from './System/ico-wifi-off-outline.svg';
-import icoWifiOff from './System/ico-wifi-off.svg';
+import systemIcoAddImageRound from './System/ico-add-image-round.svg';
+import systemIcoArrowDownCircleFill from './System/ico-arrow-down-circle-fill.svg';
+import systemIcoArrowDownCircle from './System/ico-arrow-down-circle.svg';
+import systemIcoArrowDown from './System/ico-arrow-down.svg';
+import systemIcoArrowUpCircleFill from './System/ico-arrow-up-circle-fill.svg';
+import systemIcoArrowUpRound from './System/ico-arrow-up-round.svg';
+import systemIcoArrowUp from './System/ico-arrow-up.svg';
+import systemIcoChat from './System/ico-chat.svg';
+import systemIcoChevronDownFlush from './System/ico-chevron-down-flush.svg';
+import systemIcoChevronDown from './System/ico-chevron-down.svg';
+import systemIcoChevronLeftFlush from './System/ico-chevron-left-flush.svg';
+import systemIcoChevronLeftRound from './System/ico-chevron-left-round.svg';
+import systemIcoChevronLeft from './System/ico-chevron-left.svg';
+import systemIcoChevronRightFlush from './System/ico-chevron-right-flush.svg';
+import systemIcoChevronRightRound from './System/ico-chevron-right-round.svg';
+import systemIcoChevronRight from './System/ico-chevron-right.svg';
+import systemIcoChevronUpFlush from './System/ico-chevron-up-flush.svg';
+import systemIcoChevronUp from './System/ico-chevron-up.svg';
+import systemIcoCloseRoundFill from './System/ico-close-round-fill.svg';
+import systemIcoCloseRound from './System/ico-close-round.svg';
+import systemIcoClose from './System/ico-close.svg';
+import systemIcoDownloadRoundFill from './System/ico-download-round-fill.svg';
+import systemIcoDownloadRound from './System/ico-download-round.svg';
+import systemIcoDownload from './System/ico-download.svg';
+import systemIcoDownloadedRoundFill from './System/ico-downloaded-round-fill.svg';
+import systemIcoDownloadedRound from './System/ico-downloaded-round.svg';
+import systemIcoDownloaded from './System/ico-downloaded.svg';
+import systemIcoFacebookRound from './System/ico-facebook-round.svg';
+import systemIcoFilterRound from './System/ico-filter-round.svg';
+import systemIcoGoogleRound from './System/ico-google-round.svg';
+import systemIcoHeartOutline from './System/ico-heart-outline.svg';
+import systemIcoHeart from './System/ico-heart.svg';
+import systemIcoImageGalleryRound from './System/ico-image-gallery-round.svg';
+import systemIcoInfoRound from './System/ico-info-round.svg';
+import systemIcoListRound from './System/ico-list-round.svg';
+import systemIcoLockedRoundFill from './System/ico-locked-round-fill.svg';
+import systemIcoLockedRound from './System/ico-locked-round.svg';
+import systemIcoLocked from './System/ico-locked.svg';
+import systemIcoMoreRoundFill from './System/ico-more-round-fill.svg';
+import systemIcoMoreRound from './System/ico-more-round.svg';
+import systemIcoMore from './System/ico-more.svg';
+import systemIcoPlusRoundFill from './System/ico-plus-round-fill.svg';
+import systemIcoPlusRound from './System/ico-plus-round.svg';
+import systemIcoPlus from './System/ico-plus.svg';
+import systemIcoReloadRound from './System/ico-reload-round.svg';
+import systemIcoRotateDeviceRound from './System/ico-rotate-device-round.svg';
+import systemIcoSettingsFill from './System/ico-settings-fill.svg';
+import systemIcoSettingsOutline from './System/ico-settings-outline.svg';
+import systemIcoSettingsRoundFill from './System/ico-settings-round-fill.svg';
+import systemIcoSettingsRound from './System/ico-settings-round.svg';
+import systemIcoSettings from './System/ico-settings.svg';
+import systemIcoShare from './System/ico-share.svg';
+import systemIcoSortRound from './System/ico-sort-round.svg';
+import systemIcoStarOutline from './System/ico-star-outline.svg';
+import systemIcoStar from './System/ico-star.svg';
+import systemIcoTickRoundFill from './System/ico-tick-round-fill.svg';
+import systemIcoTickRound from './System/ico-tick-round.svg';
+import systemIcoTick from './System/ico-tick.svg';
+import systemIcoTrash from './System/ico-trash.svg';
+import systemIcoUserRound from './System/ico-user-round.svg';
+import systemIcoWarning from './System/ico-warning.svg';
+import systemIcoWifiOffOutline from './System/ico-wifi-off-outline.svg';
+import systemIcoWifiOff from './System/ico-wifi-off.svg';
 
 // UI svg
-import icoBeaufortTool from './UI/ico-beaufort-tool.svg';
-import icoBuoys from './UI/ico-buoys.svg';
-import icoCardinalTool from './UI/ico-cardinal-tool.svg';
-import icoChalange from './UI/ico-chalange.svg';
-import icoClockReset from './UI/ico-clock-reset.svg';
-import icoClock from './UI/ico-clock.svg';
-import icoColregs from './UI/ico-colregs.svg';
-import icoLightsTool from './UI/ico-lights-tool.svg';
-import icoListImportantTool from './UI/ico-list-important-tool.svg';
-import icoRadioLifebouy from './UI/ico-radio-lifebouy.svg';
-import icoRadioTower from './UI/ico-radio-tower.svg';
-import icoScore from './UI/ico-score.svg';
-import icoSuccess from './UI/ico-success.svg';
-import icoTrack from './UI/ico-track.svg';
-import icoVhfRadioTool from './UI/ico-vhf-radio-tool.svg';
+import uiIcoAward from './UI/ico-award.svg';
+import uiIcoBuoysModuleRoundFill from './UI/ico-buoys-module-round-fill.svg';
+import uiIcoClock from './UI/ico-clock.svg';
+import uiIcoColregsModuleRoundFill from './UI/ico-colregs-module-round-fill.svg';
+import uiIcoFeedImageRound from './UI/ico-feed-image-round.svg';
+import uiIcoFeedImage from './UI/ico-feed-image.svg';
+import uiIcoFeedRound from './UI/ico-feed-round.svg';
+import uiIcoFeed from './UI/ico-feed.svg';
+import uiIcoList from './UI/ico-list.svg';
+import uiIcoModuleBuoy from './UI/ico-module-buoy.svg';
+import uiIcoModuleColregs from './UI/ico-module-colregs.svg';
+import uiIcoModuleQuizzRoundFill from './UI/ico-module-quizz-round-fill.svg';
+import uiIcoModuleRadioRoundFill from './UI/ico-module-radio-round-fill.svg';
+import uiIcoModuleRadio from './UI/ico-module-radio.svg';
+import uiIcoModuleSafety from './UI/ico-module-safety.svg';
+import uiIcoModuleSeamanshipRoundFill from './UI/ico-module-seamanship-round-fill.svg';
+import uiIcoModuleSeamanship from './UI/ico-module-seamanship.svg';
+import uiIcoModuleTrackRoundFill from './UI/ico-module-track-round-fill.svg';
+import uiIcoModuleWeatherRoundFill from './UI/ico-module-weather-round-fill.svg';
+import uiIcoModuleWeather from './UI/ico-module-weather.svg';
+import uiIcoModuleWindRoundFill from './UI/ico-module-wind-round-fill.svg';
+import uiIcoModuleWind from './UI/ico-module-wind.svg';
+import uiIcoPostRound from './UI/ico-post-round.svg';
+import uiIcoPost from './UI/ico-post.svg';
+import uiIcoQuizzTime from './UI/ico-quizz-time.svg';
+import uiIcoSafetyRoundFill from './UI/ico-safety-round-fill.svg';
+import uiIcoScore from './UI/ico-score.svg';
+import uiIcoTimer from './UI/ico-timer.svg';
+import uiIcoToolBeaufort from './UI/ico-tool-beaufort.svg';
+import uiIcoToolCardinal from './UI/ico-tool-cardinal.svg';
+import uiIcoToolImportant from './UI/ico-tool-important.svg';
+import uiIcoToolLights from './UI/ico-tool-lights.svg';
+import uiIcoToolVhfRadio from './UI/ico-tool-vhf-radio.svg';
 
 // Weather svg
-import icoHighTide from './Weather/ico-high-tide.svg';
-import icoHumidity from './Weather/ico-humidity.svg';
-import icoLowTide from './Weather/ico-low-tide.svg';
-import icoPressure from './Weather/ico-pressure.svg';
-import icoSlackTide from './Weather/ico-slack-tide.svg';
-import icoUv from './Weather/ico-uv.svg';
-import icoVisibility from './Weather/ico-visibility.svg';
-import icoWeatherClearday from './Weather/ico-weather-clearday.svg';
-import icoWeatherClearnight from './Weather/ico-weather-clearnight.svg';
-import icoWeatherCloudy from './Weather/ico-weather-cloudy.svg';
-import icoWeatherCloudyday from './Weather/ico-weather-cloudyday.svg';
-import icoWeatherCloudynight from './Weather/ico-weather-cloudynight.svg';
-import icoWeatherFog from './Weather/ico-weather-fog.svg';
-import icoWeatherHail from './Weather/ico-weather-hail.svg';
-import icoWeatherRain from './Weather/ico-weather-rain.svg';
-import icoWeatherSleet from './Weather/ico-weather-sleet.svg';
-import icoWeatherSnow from './Weather/ico-weather-snow.svg';
-import icoWeatherSunrise from './Weather/ico-weather-sunrise.svg';
-import icoWeatherSunset from './Weather/ico-weather-sunset.svg';
-import icoWeatherThunderstorm from './Weather/ico-weather-thunderstorm.svg';
-import icoWeatherTornado from './Weather/ico-weather-tornado.svg';
-import icoWeatherWindy from './Weather/ico-weather-windy.svg';
+import weatherIcoFirst_quarter from './Weather/ico-first_quarter.svg';
+import weatherIcoFullmoon from './Weather/ico-fullmoon.svg';
+import weatherIcoHighTide from './Weather/ico-high-tide.svg';
+import weatherIcoHumidity from './Weather/ico-humidity.svg';
+import weatherIcoLowTide from './Weather/ico-low-tide.svg';
+import weatherIcoNew_moon from './Weather/ico-new_moon.svg';
+import weatherIcoPressure from './Weather/ico-pressure.svg';
+import weatherIcoSlackTide from './Weather/ico-slack-tide.svg';
+import weatherIcoThird_quater from './Weather/ico-third_quater.svg';
+import weatherIcoUv from './Weather/ico-uv.svg';
+import weatherIcoVisibility from './Weather/ico-visibility.svg';
+import weatherIcoWaning_cresent from './Weather/ico-waning_cresent.svg';
+import weatherIcoWanining_gibbous from './Weather/ico-wanining_gibbous.svg';
+import weatherIcoWaxing_cresen from './Weather/ico-waxing_cresen.svg';
+import weatherIcoWaxing_gibbous from './Weather/ico-waxing_gibbous.svg';
+import weatherIcoWeatherClearday from './Weather/ico-weather-clearday.svg';
+import weatherIcoWeatherClearnight from './Weather/ico-weather-clearnight.svg';
+import weatherIcoWeatherCloudy from './Weather/ico-weather-cloudy.svg';
+import weatherIcoWeatherCloudyday from './Weather/ico-weather-cloudyday.svg';
+import weatherIcoWeatherCloudynight from './Weather/ico-weather-cloudynight.svg';
+import weatherIcoWeatherFog from './Weather/ico-weather-fog.svg';
+import weatherIcoWeatherHail from './Weather/ico-weather-hail.svg';
+import weatherIcoWeatherRain from './Weather/ico-weather-rain.svg';
+import weatherIcoWeatherSleet from './Weather/ico-weather-sleet.svg';
+import weatherIcoWeatherSnow from './Weather/ico-weather-snow.svg';
+import weatherIcoWeatherSunrise from './Weather/ico-weather-sunrise.svg';
+import weatherIcoWeatherSunset from './Weather/ico-weather-sunset.svg';
+import weatherIcoWeatherThunderstorm from './Weather/ico-weather-thunderstorm.svg';
+import weatherIcoWeatherTornado from './Weather/ico-weather-tornado.svg';
+import weatherIcoWeatherWindy from './Weather/ico-weather-windy.svg';
 
 import { IconMap } from '../icons.type';
 
 export const iconMap: IconMap = {
   input: {
-    'ico-age': icoAge,
-    'ico-anchor-round': icoAnchorRound,
-    'ico-ancor-round': icoAncorRound,
-    'ico-antenna': icoAntenna,
-    'ico-approach': icoApproach,
-    'ico-berth-height': icoBerthHeight,
-    'ico-berth-round': icoBerthRound,
-    'ico-berth': icoBerth,
-    'ico-boat_motor-round': icoBoat_motorRound,
-    'ico-boat_name-round': icoBoat_nameRound,
-    'ico-boat_sailing': icoBoat_sailing,
-    'ico-boat-width': icoBoatWidth,
-    'ico-call-round': icoCallRound,
-    'ico-call': icoCall,
-    'ico-certificate-round': icoCertificateRound,
-    'ico-city-round': icoCityRound,
-    'ico-distance-round': icoDistanceRound,
-    'ico-edit-round': icoEditRound,
-    'ico-edit': icoEdit,
-    'ico-email-round': icoEmailRound,
-    'ico-flag-round': icoFlagRound,
-    'ico-keyboard-outline': icoKeyboardOutline,
-    'ico-keyboard': icoKeyboard,
-    'ico-passport-round': icoPassportRound,
-    'ico-pin-round': icoPinRound,
-    'ico-radio-off': icoRadioOff,
-    'ico-radio-on': icoRadioOn,
-    'ico-registration': icoRegistration,
-    'ico-reload-round': icoReloadRound,
-    'ico-sailor-round': icoSailorRound,
-    'ico-sailor': icoSailor,
-    'ico-search': icoSearch,
-    'ico-tick-round': icoTickRound,
-    'ico-tick': icoTick,
-    'ico-upload-image-round': icoUploadImageRound,
-    'ico-voice-outline': icoVoiceOutline,
-    'ico-voice': icoVoice,
-    'ico-width-round': icoWidthRound,
+    'ico-age': inputIcoAge,
+    'ico-ancor-round': inputIcoAncorRound,
+    'ico-antenna': inputIcoAntenna,
+    'ico-approach': inputIcoApproach,
+    'ico-berth-height': inputIcoBerthHeight,
+    'ico-berth-round': inputIcoBerthRound,
+    'ico-berth': inputIcoBerth,
+    'ico-boat_name-round': inputIcoBoat_nameRound,
+    'ico-boat-motor-round': inputIcoBoatMotorRound,
+    'ico-boat-sailing': inputIcoBoatSailing,
+    'ico-boat-width': inputIcoBoatWidth,
+    'ico-call-round': inputIcoCallRound,
+    'ico-call': inputIcoCall,
+    'ico-certificate-round': inputIcoCertificateRound,
+    'ico-city-round': inputIcoCityRound,
+    'ico-crew-round': inputIcoCrewRound,
+    'ico-crew': inputIcoCrew,
+    'ico-distance-round': inputIcoDistanceRound,
+    'ico-edit-round': inputIcoEditRound,
+    'ico-edit': inputIcoEdit,
+    'ico-email-round': inputIcoEmailRound,
+    'ico-flag-round': inputIcoFlagRound,
+    'ico-keyboard-outline': inputIcoKeyboardOutline,
+    'ico-keyboard': inputIcoKeyboard,
+    'ico-passport-round': inputIcoPassportRound,
+    'ico-pin-round': inputIcoPinRound,
+    'ico-radio-off': inputIcoRadioOff,
+    'ico-radio-on': inputIcoRadioOn,
+    'ico-registration': inputIcoRegistration,
+    'ico-sailor-round': inputIcoSailorRound,
+    'ico-sailor': inputIcoSailor,
+    'ico-search': inputIcoSearch,
+    'ico-voice-outline': inputIcoVoiceOutline,
+    'ico-voice': inputIcoVoice,
+    'ico-width-round': inputIcoWidthRound,
   },
   map: {
-    'ico-distance': icoDistance,
-    'ico-locatioon': icoLocatioon,
-    'ico-map-round': icoMapRound,
-    'ico-mylocation': icoMylocation,
-    'ico-pin': icoPin,
+    'ico-distance': mapIcoDistance,
+    'ico-locatioon': mapIcoLocatioon,
+    'ico-map-round': mapIcoMapRound,
+    'ico-marina-bold': mapIcoMarinaBold,
+    'ico-mylocation': mapIcoMylocation,
+    'ico-pin': mapIcoPin,
   },
   marina: {
-    'ico-bar': icoBar,
-    'ico-brokers': icoBrokers,
-    'ico-caffee': icoCaffee,
-    'ico-camping': icoCamping,
-    'ico-carpark': icoCarpark,
-    'ico-cctv': icoCctv,
-    'ico-chandlery': icoChandlery,
-    'ico-charters': icoCharters,
-    'ico-crane': icoCrane,
-    'ico-diesel': icoDiesel,
-    'ico-drystorage': icoDrystorage,
-    'ico-electricity': icoElectricity,
-    'ico-gas': icoGas,
-    'ico-gated': icoGated,
-    'ico-hotel': icoHotel,
-    'ico-loundry': icoLoundry,
-    'ico-petrol': icoPetrol,
-    'ico-repair': icoRepair,
-    'ico-restaurant': icoRestaurant,
-    'ico-school': icoSchool,
-    'ico-shop': icoShop,
-    'ico-shower': icoShower,
-    'ico-slipway': icoSlipway,
-    'ico-toilet': icoToilet,
-    'ico-water': icoWater,
-    'ico-wifi': icoWifi,
+    'ico-bar': marinaIcoBar,
+    'ico-brokers': marinaIcoBrokers,
+    'ico-caffee': marinaIcoCaffee,
+    'ico-camping': marinaIcoCamping,
+    'ico-carpark': marinaIcoCarpark,
+    'ico-cctv': marinaIcoCctv,
+    'ico-chandlery': marinaIcoChandlery,
+    'ico-charters': marinaIcoCharters,
+    'ico-crane': marinaIcoCrane,
+    'ico-diesel': marinaIcoDiesel,
+    'ico-drystorage': marinaIcoDrystorage,
+    'ico-electricity': marinaIcoElectricity,
+    'ico-gas': marinaIcoGas,
+    'ico-gated': marinaIcoGated,
+    'ico-hotel': marinaIcoHotel,
+    'ico-loundry': marinaIcoLoundry,
+    'ico-petrol': marinaIcoPetrol,
+    'ico-repair': marinaIcoRepair,
+    'ico-restaurant': marinaIcoRestaurant,
+    'ico-school': marinaIcoSchool,
+    'ico-shop': marinaIcoShop,
+    'ico-shower': marinaIcoShower,
+    'ico-slipway': marinaIcoSlipway,
+    'ico-toilet': marinaIcoToilet,
+    'ico-water': marinaIcoWater,
+    'ico-wifi': marinaIcoWifi,
   },
   media: {
-    'ico-image_gallery-round': icoImage_galleryRound,
-    'ico-listen-round': icoListenRound,
-    'ico-listen': icoListen,
-    'ico-pause': icoPause,
-    'ico-play': icoPlay,
-    'ico-screen-down': icoScreenDown,
-    'ico-screen-up': icoScreenUp,
+    'ico-camera': mediaIcoCamera,
+    'ico-listen-round': mediaIcoListenRound,
+    'ico-listen': mediaIcoListen,
+    'ico-pause': mediaIcoPause,
+    'ico-play': mediaIcoPlay,
+    'ico-screen-down': mediaIcoScreenDown,
+    'ico-screen-up': mediaIcoScreenUp,
+    'ico-video': mediaIcoVideo,
+    'ico-volume-full': mediaIcoVolumeFull,
+    'ico-volume-half': mediaIcoVolumeHalf,
+    'ico-volume-low': mediaIcoVolumeLow,
+    'ico-volume-mute': mediaIcoVolumeMute,
   },
   nav: {
-    'ico-chart': icoChart,
-    'ico-chevron-down-flush': icoChevronDownFlush,
-    'ico-chevron-down': icoChevronDown,
-    'ico-chevron-left-flush': icoChevronLeftFlush,
-    'ico-chevron-left-round': icoChevronLeftRound,
-    'ico-chevron-left': icoChevronLeft,
-    'ico-chevron-right-flush': icoChevronRightFlush,
-    'ico-chevron-right-round': icoChevronRightRound,
-    'ico-chevron-right': icoChevronRight,
-    'ico-chevron-up-flush': icoChevronUpFlush,
-    'ico-chevron-up': icoChevronUp,
-    'ico-close-round': icoCloseRound,
-    'ico-close': icoClose,
-    'ico-filter-round': icoFilterRound,
-    'ico-home-lrg': icoHomeLrg,
-    'ico-learn-book': icoLearnBook,
-    'ico-list-round': icoListRound,
-    'ico-map-fill': icoMapFill,
-    'ico-plus-round': icoPlusRound,
-    'ico-plus': icoPlus,
-    'ico-quizz-passed': icoQuizzPassed,
-    'ico-quizz': icoQuizz,
-    'ico-sort-round': icoSortRound,
-    'ico-stations': icoStations,
-    'ico-tools': icoTools,
-    'ico-user-round': icoUserRound,
-    'ico-vhf-radio': icoVhfRadio,
-  },
-  nav_marina: {
-    'ico-marina': icoMarina,
-    'ico-tides': icoTides,
-    'ico-weather': icoWeather,
-    'ico-wind': icoWind,
-  },
-  radio: {
-    'ico-atis-enabled': icoAtisEnabled,
-    'ico-auto-channel-disabled': icoAutoChannelDisabled,
-    'ico-auto-channel-enabled': icoAutoChannelEnabled,
-    'ico-gps': icoGps,
-    'ico-local-reciver': icoLocalReciver,
-    'ico-message': icoMessage,
-    'ico-position-tracking': icoPositionTracking,
-    'ico-radio-down': icoRadioDown,
-    'ico-radio-up': icoRadioUp,
-    'ico-saved-channel': icoSavedChannel,
-  },
-  social: {
-    'ico-chat': icoChat,
-    'ico-facebook': icoFacebook,
-    'ico-feed3-round': icoFeed3Round,
-    'ico-feed3': icoFeed3,
-    'ico-feed4-round': icoFeed4Round,
-    'ico-feed5-round': icoFeed5Round,
-    'ico-feed5': icoFeed5,
-    'ico-google': icoGoogle,
-    'ico-heart-active': icoHeartActive,
-    'ico-heart-full': icoHeartFull,
-    'ico-heart-outline': icoHeartOutline,
-    'ico-heart': icoHeart,
-    'ico-share': icoShare,
-    'ico-star-outline': icoStarOutline,
-    'ico-star': icoStar,
+    'ico-chart': navIcoChart,
+    'ico-home-lrg': navIcoHomeLrg,
+    'ico-learn-book': navIcoLearnBook,
+    'ico-map-fill': navIcoMapFill,
+    'ico-marina': navIcoMarina,
+    'ico-quizz-passed': navIcoQuizzPassed,
+    'ico-stations': navIcoStations,
+    'ico-tides': navIcoTides,
+    'ico-tools': navIcoTools,
+    'ico-weather': navIcoWeather,
+    'ico-wind': navIcoWind,
   },
   system: {
-    'ico-arrow-down-circle-fill': icoArrowDownCircleFill,
-    'ico-arrow-down-circle': icoArrowDownCircle,
-    'ico-arrow-down': icoArrowDown,
-    'ico-arrow-up-circle-fill': icoArrowUpCircleFill,
-    'ico-arrow-up-circle': icoArrowUpCircle,
-    'ico-arrow-up': icoArrowUp,
-    'ico-close-round-fill': icoCloseRoundFill,
-    'ico-download-round-fill': icoDownloadRoundFill,
-    'ico-download-round-outline': icoDownloadRoundOutline,
-    'ico-download': icoDownload,
-    'ico-downloaded-round-fill': icoDownloadedRoundFill,
-    'ico-downloaded-round-outline': icoDownloadedRoundOutline,
-    'ico-downloaded': icoDownloaded,
-    'ico-help-round': icoHelpRound,
-    'ico-info-round': icoInfoRound,
-    'ico-locked-round-fill': icoLockedRoundFill,
-    'ico-locked-round': icoLockedRound,
-    'ico-locked': icoLocked,
-    'ico-rotate-device-round': icoRotateDeviceRound,
-    'ico-settings-outline': icoSettingsOutline,
-    'ico-settings-round': icoSettingsRound,
-    'ico-tick-round-fill': icoTickRoundFill,
-    'ico-trash': icoTrash,
-    'ico-wifi-off-outline': icoWifiOffOutline,
-    'ico-wifi-off': icoWifiOff,
+    'ico-add-image-round': systemIcoAddImageRound,
+    'ico-arrow-down-circle-fill': systemIcoArrowDownCircleFill,
+    'ico-arrow-down-circle': systemIcoArrowDownCircle,
+    'ico-arrow-down': systemIcoArrowDown,
+    'ico-arrow-up-circle-fill': systemIcoArrowUpCircleFill,
+    'ico-arrow-up-round': systemIcoArrowUpRound,
+    'ico-arrow-up': systemIcoArrowUp,
+    'ico-chat': systemIcoChat,
+    'ico-chevron-down-flush': systemIcoChevronDownFlush,
+    'ico-chevron-down': systemIcoChevronDown,
+    'ico-chevron-left-flush': systemIcoChevronLeftFlush,
+    'ico-chevron-left-round': systemIcoChevronLeftRound,
+    'ico-chevron-left': systemIcoChevronLeft,
+    'ico-chevron-right-flush': systemIcoChevronRightFlush,
+    'ico-chevron-right-round': systemIcoChevronRightRound,
+    'ico-chevron-right': systemIcoChevronRight,
+    'ico-chevron-up-flush': systemIcoChevronUpFlush,
+    'ico-chevron-up': systemIcoChevronUp,
+    'ico-close-round-fill': systemIcoCloseRoundFill,
+    'ico-close-round': systemIcoCloseRound,
+    'ico-close': systemIcoClose,
+    'ico-download-round-fill': systemIcoDownloadRoundFill,
+    'ico-download-round': systemIcoDownloadRound,
+    'ico-download': systemIcoDownload,
+    'ico-downloaded-round-fill': systemIcoDownloadedRoundFill,
+    'ico-downloaded-round': systemIcoDownloadedRound,
+    'ico-downloaded': systemIcoDownloaded,
+    'ico-facebook-round': systemIcoFacebookRound,
+    'ico-filter-round': systemIcoFilterRound,
+    'ico-google-round': systemIcoGoogleRound,
+    'ico-heart-outline': systemIcoHeartOutline,
+    'ico-heart': systemIcoHeart,
+    'ico-image-gallery-round': systemIcoImageGalleryRound,
+    'ico-info-round': systemIcoInfoRound,
+    'ico-list-round': systemIcoListRound,
+    'ico-locked-round-fill': systemIcoLockedRoundFill,
+    'ico-locked-round': systemIcoLockedRound,
+    'ico-locked': systemIcoLocked,
+    'ico-more-round-fill': systemIcoMoreRoundFill,
+    'ico-more-round': systemIcoMoreRound,
+    'ico-more': systemIcoMore,
+    'ico-plus-round-fill': systemIcoPlusRoundFill,
+    'ico-plus-round': systemIcoPlusRound,
+    'ico-plus': systemIcoPlus,
+    'ico-reload-round': systemIcoReloadRound,
+    'ico-rotate-device-round': systemIcoRotateDeviceRound,
+    'ico-settings-fill': systemIcoSettingsFill,
+    'ico-settings-outline': systemIcoSettingsOutline,
+    'ico-settings-round-fill': systemIcoSettingsRoundFill,
+    'ico-settings-round': systemIcoSettingsRound,
+    'ico-settings': systemIcoSettings,
+    'ico-share': systemIcoShare,
+    'ico-sort-round': systemIcoSortRound,
+    'ico-star-outline': systemIcoStarOutline,
+    'ico-star': systemIcoStar,
+    'ico-tick-round-fill': systemIcoTickRoundFill,
+    'ico-tick-round': systemIcoTickRound,
+    'ico-tick': systemIcoTick,
+    'ico-trash': systemIcoTrash,
+    'ico-user-round': systemIcoUserRound,
+    'ico-warning': systemIcoWarning,
+    'ico-wifi-off-outline': systemIcoWifiOffOutline,
+    'ico-wifi-off': systemIcoWifiOff,
   },
   ui: {
-    'ico-beaufort-tool': icoBeaufortTool,
-    'ico-buoys': icoBuoys,
-    'ico-cardinal-tool': icoCardinalTool,
-    'ico-chalange': icoChalange,
-    'ico-clock-reset': icoClockReset,
-    'ico-clock': icoClock,
-    'ico-colregs': icoColregs,
-    'ico-lights-tool': icoLightsTool,
-    'ico-list-important-tool': icoListImportantTool,
-    'ico-radio-lifebouy': icoRadioLifebouy,
-    'ico-radio-tower': icoRadioTower,
-    'ico-score': icoScore,
-    'ico-success': icoSuccess,
-    'ico-track': icoTrack,
-    'ico-vhf-radio-tool': icoVhfRadioTool,
+    'ico-award': uiIcoAward,
+    'ico-buoys-module-round-fill': uiIcoBuoysModuleRoundFill,
+    'ico-clock': uiIcoClock,
+    'ico-colregs-module-round-fill': uiIcoColregsModuleRoundFill,
+    'ico-feed-image-round': uiIcoFeedImageRound,
+    'ico-feed-image': uiIcoFeedImage,
+    'ico-feed-round': uiIcoFeedRound,
+    'ico-feed': uiIcoFeed,
+    'ico-list': uiIcoList,
+    'ico-module-buoy': uiIcoModuleBuoy,
+    'ico-module-colregs': uiIcoModuleColregs,
+    'ico-module-quizz-round-fill': uiIcoModuleQuizzRoundFill,
+    'ico-module-radio-round-fill': uiIcoModuleRadioRoundFill,
+    'ico-module-radio': uiIcoModuleRadio,
+    'ico-module-safety': uiIcoModuleSafety,
+    'ico-module-seamanship-round-fill': uiIcoModuleSeamanshipRoundFill,
+    'ico-module-seamanship': uiIcoModuleSeamanship,
+    'ico-module-track-round-fill': uiIcoModuleTrackRoundFill,
+    'ico-module-weather-round-fill': uiIcoModuleWeatherRoundFill,
+    'ico-module-weather': uiIcoModuleWeather,
+    'ico-module-wind-round-fill': uiIcoModuleWindRoundFill,
+    'ico-module-wind': uiIcoModuleWind,
+    'ico-post-round': uiIcoPostRound,
+    'ico-post': uiIcoPost,
+    'ico-quizz-time': uiIcoQuizzTime,
+    'ico-safety-round-fill': uiIcoSafetyRoundFill,
+    'ico-score': uiIcoScore,
+    'ico-timer': uiIcoTimer,
+    'ico-tool-beaufort': uiIcoToolBeaufort,
+    'ico-tool-cardinal': uiIcoToolCardinal,
+    'ico-tool-important': uiIcoToolImportant,
+    'ico-tool-lights': uiIcoToolLights,
+    'ico-tool-vhf-radio': uiIcoToolVhfRadio,
   },
   weather: {
-    'ico-high-tide': icoHighTide,
-    'ico-humidity': icoHumidity,
-    'ico-low-tide': icoLowTide,
-    'ico-pressure': icoPressure,
-    'ico-slack-tide': icoSlackTide,
-    'ico-uv': icoUv,
-    'ico-visibility': icoVisibility,
-    'ico-weather-clearday': icoWeatherClearday,
-    'ico-weather-clearnight': icoWeatherClearnight,
-    'ico-weather-cloudy': icoWeatherCloudy,
-    'ico-weather-cloudyday': icoWeatherCloudyday,
-    'ico-weather-cloudynight': icoWeatherCloudynight,
-    'ico-weather-fog': icoWeatherFog,
-    'ico-weather-hail': icoWeatherHail,
-    'ico-weather-rain': icoWeatherRain,
-    'ico-weather-sleet': icoWeatherSleet,
-    'ico-weather-snow': icoWeatherSnow,
-    'ico-weather-sunrise': icoWeatherSunrise,
-    'ico-weather-sunset': icoWeatherSunset,
-    'ico-weather-thunderstorm': icoWeatherThunderstorm,
-    'ico-weather-tornado': icoWeatherTornado,
-    'ico-weather-windy': icoWeatherWindy,
+    'ico-first_quarter': weatherIcoFirst_quarter,
+    'ico-fullmoon': weatherIcoFullmoon,
+    'ico-high-tide': weatherIcoHighTide,
+    'ico-humidity': weatherIcoHumidity,
+    'ico-low-tide': weatherIcoLowTide,
+    'ico-new_moon': weatherIcoNew_moon,
+    'ico-pressure': weatherIcoPressure,
+    'ico-slack-tide': weatherIcoSlackTide,
+    'ico-third_quater': weatherIcoThird_quater,
+    'ico-uv': weatherIcoUv,
+    'ico-visibility': weatherIcoVisibility,
+    'ico-waning_cresent': weatherIcoWaning_cresent,
+    'ico-wanining_gibbous': weatherIcoWanining_gibbous,
+    'ico-waxing_cresen': weatherIcoWaxing_cresen,
+    'ico-waxing_gibbous': weatherIcoWaxing_gibbous,
+    'ico-weather-clearday': weatherIcoWeatherClearday,
+    'ico-weather-clearnight': weatherIcoWeatherClearnight,
+    'ico-weather-cloudy': weatherIcoWeatherCloudy,
+    'ico-weather-cloudyday': weatherIcoWeatherCloudyday,
+    'ico-weather-cloudynight': weatherIcoWeatherCloudynight,
+    'ico-weather-fog': weatherIcoWeatherFog,
+    'ico-weather-hail': weatherIcoWeatherHail,
+    'ico-weather-rain': weatherIcoWeatherRain,
+    'ico-weather-sleet': weatherIcoWeatherSleet,
+    'ico-weather-snow': weatherIcoWeatherSnow,
+    'ico-weather-sunrise': weatherIcoWeatherSunrise,
+    'ico-weather-sunset': weatherIcoWeatherSunset,
+    'ico-weather-thunderstorm': weatherIcoWeatherThunderstorm,
+    'ico-weather-tornado': weatherIcoWeatherTornado,
+    'ico-weather-windy': weatherIcoWeatherWindy,
   },
 };

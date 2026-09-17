@@ -27,11 +27,43 @@ const typescriptPlugin = (declaration = true) =>
     declarationMap: declaration,
   });
 
+const svgPlugin = () =>
+  svgr({
+    native: true,
+    svgoConfig: {
+      plugins: [
+        {
+          name: "preset-default",
+          params: {
+            overrides: {
+              // Icons are sized by their consumers. Keep each asset's authored
+              // coordinate system so width/height props scale instead of clip.
+              removeViewBox: false,
+            },
+          },
+        },
+        "prefixIds",
+      ],
+    },
+  });
+
+const svgViewBoxGuard = () => ({
+  name: "mariner-svg-viewbox-guard",
+  transform(code, id) {
+    if (id.endsWith(".svg") && !/\bviewBox\b/.test(code)) {
+      this.error(
+        `Generated SVG component is missing its viewBox: ${id}. Icon sizing would clip instead of scale.`,
+      );
+    }
+    return null;
+  },
+});
+
 export default [
   {
     input: "index.ts",
     output: outputs(pkg.main, pkg.module),
-    plugins: [svgr({ native: true }), json(), typescriptPlugin()],
+    plugins: [svgPlugin(), svgViewBoxGuard(), json(), typescriptPlugin()],
     external: ["react", "react-native", "react-native-svg"],
   },
   {

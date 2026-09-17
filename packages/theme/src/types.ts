@@ -1,4 +1,4 @@
-export type ScaleKey = 'mobile' | 'tablet' | 'desktop-sm' | 'desktop-lg';
+export type ScaleKey = "mobile" | "tablet" | "desktop-sm" | "desktop-lg";
 
 export interface ColorPalette {
   light: ThemeColors;
@@ -32,38 +32,38 @@ export interface ThemeColors {
 }
 
 export interface ColorScale {
-  '5': string;
-  '10': string;
-  '20': string;
-  '40': string;
-  '60': string;
-  '80': string;
-  '100': string;
+  "5": string;
+  "10": string;
+  "20": string;
+  "40": string;
+  "60": string;
+  "80": string;
+  "100": string;
 }
 
 export interface AlphaColorScale extends ColorScale {
-  '0': string;
+  "0": string;
 }
 
 export interface PrimaryColorScale extends ColorScale {
   dark: string;
-  'alpha-5': string;
-  'alpha-10': string;
-  'alpha-20': string;
-  'alpha-40': string;
-  'alpha-60': string;
-  'alpha-80': string;
-  'alpha-100': string;
+  "alpha-5": string;
+  "alpha-10": string;
+  "alpha-20": string;
+  "alpha-40": string;
+  "alpha-60": string;
+  "alpha-80": string;
+  "alpha-100": string;
 }
 
 export interface AccentColorScale extends ColorScale {
-  'alpha-5': string;
-  'alpha-10': string;
-  'alpha-20': string;
-  'alpha-40': string;
-  'alpha-60': string;
-  'alpha-80': string;
-  'alpha-100': string;
+  "alpha-5": string;
+  "alpha-10": string;
+  "alpha-20": string;
+  "alpha-40": string;
+  "alpha-60": string;
+  "alpha-80": string;
+  "alpha-100": string;
 }
 
 export interface SurfaceColorScale extends AlphaColorScale {
@@ -140,6 +140,7 @@ export interface RadiusValues {
 export type RadiusScale = Record<ScaleKey, { radius: RadiusValues }>;
 
 export interface SizeValues {
+  xxxs: number;
   xxs: number;
   xs: number;
   sm: number;
@@ -147,7 +148,10 @@ export interface SizeValues {
   lg: number;
   xl: number;
   xxl: number;
+  xxxl: number;
 }
+
+export type IconSize = keyof SizeValues;
 
 export type SizeScale = Record<ScaleKey, { size: SizeValues }>;
 

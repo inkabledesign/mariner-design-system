@@ -85,6 +85,15 @@ Components are **pure presentational** — no internal state management, no busi
 - **NEVER** use `expo-av` — it is deprecated. Use `expo-audio` in consumer apps only.
 - Component library must not bundle audio/video playback logic
 
+### Conditional Rendering (no Figma `hasX`/`showX` props)
+
+Figma uses boolean props (`hasCaption`, `hasLeading`, `showValue`, `hasTrailingIconOne`) because it has no other way to toggle elements. **Do NOT port these flags into code.**
+
+- Content strings render iff provided: `{caption && <TextStyled>{caption}</TextStyled>}` — no `hasCaption`/`showLabel`/`showTitle`
+- Mutually exclusive slots (leading/trailing) use a union-type prop, e.g. `leading?: 'icon' | 'switch' | 'radio' | 'avatar'` — omitted means not rendered
+- Optional sub-elements render iff their value prop is provided (e.g. `leadingProgress`, `trailingIconTwo`)
+- Do not give content props Figma placeholder defaults ("Label", "Text", "Caption", "Value") — undefined renders nothing
+
 ### Theme Mode & Breakpoint Props
 
 Components that directly access token values accept:

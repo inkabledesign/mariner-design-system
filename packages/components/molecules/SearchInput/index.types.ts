@@ -16,7 +16,7 @@ export interface SearchInputProps extends Omit<TextInputProps, 'style'> {
    * @default 'Search for marina'
    */
   placeholder?: string;
-  
+
   /**
    * Change handler
    */

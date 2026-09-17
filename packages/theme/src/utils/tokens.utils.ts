@@ -1,21 +1,49 @@
-import { spacing } from '../spacing';
-import { radius } from '../radius';
-import { typography } from '../typography';
-import { color } from '../colors';
-import { size } from '../size';
+import { spacing } from "../spacing";
+import { radius } from "../radius";
+import { typography } from "../typography";
+import { color } from "../colors";
+import { size } from "../size";
 
-type Breakpoint = 'mobile' | 'tablet' | 'desktop-sm' | 'desktop-lg';
-type SpacingScale = 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
-type SizeScale = 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
-type RadiusScale = 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl';
-type TextStyles = 'heading1' | 'heading2' | 'heading3' | 'heading4' | 'heading5' | 'heading6' | 'body' | 'quote' | 'button' | 'input' | 'placeholder' | 'caption' | 'label' | 'footnote' | 'link' | 'number';
+type Breakpoint = "mobile" | "tablet" | "desktop-sm" | "desktop-lg";
+type SpacingScale = "xxs" | "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
+type SizeScale =
+  | "xxxs"
+  | "xxs"
+  | "xs"
+  | "sm"
+  | "md"
+  | "lg"
+  | "xl"
+  | "xxl"
+  | "xxxl";
+type RadiusScale = "xxs" | "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
+type TextStyles =
+  | "heading1"
+  | "heading2"
+  | "heading3"
+  | "heading4"
+  | "heading5"
+  | "heading6"
+  | "body"
+  | "quote"
+  | "button"
+  | "input"
+  | "placeholder"
+  | "caption"
+  | "label"
+  | "footnote"
+  | "link"
+  | "number";
 type ColorValue = string;
 
 /**
  * Get spacing value for a specific breakpoint and scale
  * @example getSpacing('mobile', 'md') // returns 12
  */
-export const getSpacing = (breakpoint: Breakpoint, scale: SpacingScale): number => {
+export const getSpacing = (
+  breakpoint: Breakpoint,
+  scale: SpacingScale,
+): number => {
   return spacing[breakpoint].spacing[scale];
 };
 
@@ -31,7 +59,10 @@ export const getSize = (breakpoint: Breakpoint, scale: SizeScale): number => {
  * Get radius value for a specific breakpoint and scale
  * @example getRadius('mobile', 'md') // returns 12
  */
-export const getRadius = (breakpoint: Breakpoint, scale: RadiusScale): number => {
+export const getRadius = (
+  breakpoint: Breakpoint,
+  scale: RadiusScale,
+): number => {
   return radius[breakpoint].radius[scale];
 };
 
@@ -39,10 +70,7 @@ export const getRadius = (breakpoint: Breakpoint, scale: RadiusScale): number =>
  * Get text style for a specific breakpoint and style name
  * @example getTextStyle('mobile', 'heading1')
  */
-export const getTextStyle = (
-  breakpoint: Breakpoint,
-  styleName: TextStyles
-) => {
+export const getTextStyle = (breakpoint: Breakpoint, styleName: TextStyles) => {
   return typography[breakpoint].text[styleName];
 };
 
@@ -51,23 +79,23 @@ export const getTextStyle = (
  * @example getColor('light', 'brand', 'primary', '100') // returns '#262ebc'
  */
 export const getColor = (
-  mode: 'light' | 'dark',
-  category: 'brand' | 'material' | 'solid' | 'system' | 'text',
+  mode: "light" | "dark",
+  category: "brand" | "material" | "solid" | "system" | "text",
   name: string,
-  variant?: string
+  variant?: string,
 ): ColorValue => {
   const colorCategory = (color as any)[mode][category];
-  
-  if (category === 'solid' || category === 'text') {
+
+  if (category === "solid" || category === "text") {
     return (colorCategory as any)[name];
   }
-  
+
   const colorGroup = (colorCategory as any)[name];
-  
+
   if (variant) {
     return colorGroup[variant];
   }
-  
+
   return colorGroup;
 };
 
@@ -75,17 +103,20 @@ export const getColor = (
  * Determine current breakpoint based on screen width
  */
 export const getCurrentBreakpoint = (width: number): Breakpoint => {
-  if (width < 640) return 'mobile';
-  if (width < 768) return 'tablet';
-  if (width < 1024) return 'desktop-sm';
-  return 'desktop-lg';
+  if (width < 640) return "mobile";
+  if (width < 768) return "tablet";
+  if (width < 1024) return "desktop-sm";
+  return "desktop-lg";
 };
 
 /**
  * Get responsive value based on current breakpoint
  * @example getResponsiveValue(1024, { 'mobile': 16, 'tablet': 24, 'desktop-sm': 32, 'desktop-lg': 48 })
  */
-export const getResponsiveValue = <T>(width: number, values: Record<Breakpoint, T>): T => {
+export const getResponsiveValue = <T>(
+  width: number,
+  values: Record<Breakpoint, T>,
+): T => {
   const breakpoint = getCurrentBreakpoint(width);
   return values[breakpoint];
 };

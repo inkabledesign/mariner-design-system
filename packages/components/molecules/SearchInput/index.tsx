@@ -65,7 +65,7 @@ const SearchInput = forwardRef<TextInput, SearchInputProps>(
     return (
       <ViewStyled 
         style={containerStyle}
-        className={`flex-1 flex-row items-center bg-material-surface-0 border border-brand-primary-20 rounded-[36px] px-md py-xxs gap-xxs ${className || ''}`}
+        className={`flex-1 flex-row items-center bg-material-surface-light border border-brand-primary-20 rounded-[52px] px-md py-xxs gap-xxs ${className || ''}`}
       >
         {/* Search Icon */}
         {showIcon && (
@@ -90,6 +90,7 @@ const SearchInput = forwardRef<TextInput, SearchInputProps>(
           value={value}
           onChangeText={onChangeText}
           placeholder={placeholder}
+          
           placeholderTextColor={theme.color[themeMode].material.surface['40']}
           style={{
             flex: 1,

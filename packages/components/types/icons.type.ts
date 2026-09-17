@@ -2,36 +2,30 @@
 import { SvgProps } from 'react-native-svg';
 
 export type IconCategoryType =
-  | 'input' | 'map' | 'marina' | 'media' | 'nav' | 'nav_marina' | 'radio' | 'social' | 'system' | 'ui' | 'weather';
+  | 'input' | 'map' | 'marina' | 'media' | 'nav' | 'system' | 'ui' | 'weather';
 
-export type InputIconName = 'ico-age' | 'ico-anchor-round' | 'ico-ancor-round' | 'ico-antenna' | 'ico-approach' | 'ico-berth' | 'ico-berth-height' | 'ico-berth-round' | 'ico-boat-width' | 'ico-boat_motor-round' | 'ico-boat_name-round' | 'ico-boat_sailing' | 'ico-call' | 'ico-call-round' | 'ico-certificate-round' | 'ico-city-round' | 'ico-distance-round' | 'ico-edit' | 'ico-edit-round' | 'ico-email-round' | 'ico-flag-round' | 'ico-keyboard' | 'ico-keyboard-outline' | 'ico-passport-round' | 'ico-pin-round' | 'ico-radio-off' | 'ico-radio-on' | 'ico-registration' | 'ico-reload-round' | 'ico-sailor' | 'ico-sailor-round' | 'ico-search' | 'ico-tick' | 'ico-tick-round' | 'ico-upload-image-round' | 'ico-voice' | 'ico-voice-outline' | 'ico-width-round';
+export type InputIconName = 'ico-age' | 'ico-ancor-round' | 'ico-antenna' | 'ico-approach' | 'ico-berth' | 'ico-berth-height' | 'ico-berth-round' | 'ico-boat-motor-round' | 'ico-boat-sailing' | 'ico-boat-width' | 'ico-boat_name-round' | 'ico-call' | 'ico-call-round' | 'ico-certificate-round' | 'ico-city-round' | 'ico-crew' | 'ico-crew-round' | 'ico-distance-round' | 'ico-edit' | 'ico-edit-round' | 'ico-email-round' | 'ico-flag-round' | 'ico-keyboard' | 'ico-keyboard-outline' | 'ico-passport-round' | 'ico-pin-round' | 'ico-radio-off' | 'ico-radio-on' | 'ico-registration' | 'ico-sailor' | 'ico-sailor-round' | 'ico-search' | 'ico-voice' | 'ico-voice-outline' | 'ico-width-round';
 
-export type MapIconName = 'ico-distance' | 'ico-locatioon' | 'ico-map-round' | 'ico-mylocation' | 'ico-pin';
+export type MapIconName = 'ico-distance' | 'ico-locatioon' | 'ico-map-round' | 'ico-marina-bold' | 'ico-mylocation' | 'ico-pin';
 
 export type MarinaIconName = 'ico-bar' | 'ico-brokers' | 'ico-caffee' | 'ico-camping' | 'ico-carpark' | 'ico-cctv' | 'ico-chandlery' | 'ico-charters' | 'ico-crane' | 'ico-diesel' | 'ico-drystorage' | 'ico-electricity' | 'ico-gas' | 'ico-gated' | 'ico-hotel' | 'ico-loundry' | 'ico-petrol' | 'ico-repair' | 'ico-restaurant' | 'ico-school' | 'ico-shop' | 'ico-shower' | 'ico-slipway' | 'ico-toilet' | 'ico-water' | 'ico-wifi';
 
-export type MediaIconName = 'ico-image_gallery-round' | 'ico-listen' | 'ico-listen-round' | 'ico-pause' | 'ico-play' | 'ico-screen-down' | 'ico-screen-up';
+export type MediaIconName = 'ico-camera' | 'ico-listen' | 'ico-listen-round' | 'ico-pause' | 'ico-play' | 'ico-screen-down' | 'ico-screen-up' | 'ico-video' | 'ico-volume-full' | 'ico-volume-half' | 'ico-volume-low' | 'ico-volume-mute';
 
-export type NavIconName = 'ico-chart' | 'ico-chevron-down' | 'ico-chevron-down-flush' | 'ico-chevron-left' | 'ico-chevron-left-flush' | 'ico-chevron-left-round' | 'ico-chevron-right' | 'ico-chevron-right-flush' | 'ico-chevron-right-round' | 'ico-chevron-up' | 'ico-chevron-up-flush' | 'ico-close' | 'ico-close-round' | 'ico-filter-round' | 'ico-home-lrg' | 'ico-learn-book' | 'ico-list-round' | 'ico-map-fill' | 'ico-plus' | 'ico-plus-round' | 'ico-quizz' | 'ico-quizz-passed' | 'ico-sort-round' | 'ico-stations' | 'ico-tools' | 'ico-user-round' | 'ico-vhf-radio';
+export type NavIconName = 'ico-chart' | 'ico-home-lrg' | 'ico-learn-book' | 'ico-map-fill' | 'ico-marina' | 'ico-quizz-passed' | 'ico-stations' | 'ico-tides' | 'ico-tools' | 'ico-weather' | 'ico-wind';
 
-export type NavMarinaIconName = 'ico-marina' | 'ico-tides' | 'ico-weather' | 'ico-wind';
+export type SystemIconName = 'ico-add-image-round' | 'ico-arrow-down' | 'ico-arrow-down-circle' | 'ico-arrow-down-circle-fill' | 'ico-arrow-up' | 'ico-arrow-up-circle-fill' | 'ico-arrow-up-round' | 'ico-chat' | 'ico-chevron-down' | 'ico-chevron-down-flush' | 'ico-chevron-left' | 'ico-chevron-left-flush' | 'ico-chevron-left-round' | 'ico-chevron-right' | 'ico-chevron-right-flush' | 'ico-chevron-right-round' | 'ico-chevron-up' | 'ico-chevron-up-flush' | 'ico-close' | 'ico-close-round' | 'ico-close-round-fill' | 'ico-download' | 'ico-download-round' | 'ico-download-round-fill' | 'ico-downloaded' | 'ico-downloaded-round' | 'ico-downloaded-round-fill' | 'ico-facebook-round' | 'ico-filter-round' | 'ico-google-round' | 'ico-heart' | 'ico-heart-outline' | 'ico-image-gallery-round' | 'ico-info-round' | 'ico-list-round' | 'ico-locked' | 'ico-locked-round' | 'ico-locked-round-fill' | 'ico-more' | 'ico-more-round' | 'ico-more-round-fill' | 'ico-plus' | 'ico-plus-round' | 'ico-plus-round-fill' | 'ico-reload-round' | 'ico-rotate-device-round' | 'ico-settings' | 'ico-settings-fill' | 'ico-settings-outline' | 'ico-settings-round' | 'ico-settings-round-fill' | 'ico-share' | 'ico-sort-round' | 'ico-star' | 'ico-star-outline' | 'ico-tick' | 'ico-tick-round' | 'ico-tick-round-fill' | 'ico-trash' | 'ico-user-round' | 'ico-warning' | 'ico-wifi-off' | 'ico-wifi-off-outline';
 
-export type RadioIconName = 'ico-atis-enabled' | 'ico-auto-channel-disabled' | 'ico-auto-channel-enabled' | 'ico-gps' | 'ico-local-reciver' | 'ico-message' | 'ico-position-tracking' | 'ico-radio-down' | 'ico-radio-up' | 'ico-saved-channel';
+export type UIIconName = 'ico-award' | 'ico-buoys-module-round-fill' | 'ico-clock' | 'ico-colregs-module-round-fill' | 'ico-feed' | 'ico-feed-image' | 'ico-feed-image-round' | 'ico-feed-round' | 'ico-list' | 'ico-module-buoy' | 'ico-module-colregs' | 'ico-module-quizz-round-fill' | 'ico-module-radio' | 'ico-module-radio-round-fill' | 'ico-module-safety' | 'ico-module-seamanship' | 'ico-module-seamanship-round-fill' | 'ico-module-track-round-fill' | 'ico-module-weather' | 'ico-module-weather-round-fill' | 'ico-module-wind' | 'ico-module-wind-round-fill' | 'ico-post' | 'ico-post-round' | 'ico-quizz-time' | 'ico-safety-round-fill' | 'ico-score' | 'ico-timer' | 'ico-tool-beaufort' | 'ico-tool-cardinal' | 'ico-tool-important' | 'ico-tool-lights' | 'ico-tool-vhf-radio';
 
-export type SocialIconName = 'ico-chat' | 'ico-facebook' | 'ico-feed3' | 'ico-feed3-round' | 'ico-feed4-round' | 'ico-feed5' | 'ico-feed5-round' | 'ico-google' | 'ico-heart' | 'ico-heart-active' | 'ico-heart-full' | 'ico-heart-outline' | 'ico-share' | 'ico-star' | 'ico-star-outline';
-
-export type SystemIconName = 'ico-arrow-down' | 'ico-arrow-down-circle' | 'ico-arrow-down-circle-fill' | 'ico-arrow-up' | 'ico-arrow-up-circle' | 'ico-arrow-up-circle-fill' | 'ico-close-round-fill' | 'ico-download' | 'ico-download-round-fill' | 'ico-download-round-outline' | 'ico-downloaded' | 'ico-downloaded-round-fill' | 'ico-downloaded-round-outline' | 'ico-help-round' | 'ico-info-round' | 'ico-locked' | 'ico-locked-round' | 'ico-locked-round-fill' | 'ico-rotate-device-round' | 'ico-settings-outline' | 'ico-settings-round' | 'ico-tick-round-fill' | 'ico-trash' | 'ico-wifi-off' | 'ico-wifi-off-outline';
-
-export type UIIconName = 'ico-beaufort-tool' | 'ico-buoys' | 'ico-cardinal-tool' | 'ico-chalange' | 'ico-clock' | 'ico-clock-reset' | 'ico-colregs' | 'ico-lights-tool' | 'ico-list-important-tool' | 'ico-radio-lifebouy' | 'ico-radio-tower' | 'ico-score' | 'ico-success' | 'ico-track' | 'ico-vhf-radio-tool';
-
-export type WeatherIconName = 'ico-high-tide' | 'ico-humidity' | 'ico-low-tide' | 'ico-pressure' | 'ico-slack-tide' | 'ico-uv' | 'ico-visibility' | 'ico-weather-clearday' | 'ico-weather-clearnight' | 'ico-weather-cloudy' | 'ico-weather-cloudyday' | 'ico-weather-cloudynight' | 'ico-weather-fog' | 'ico-weather-hail' | 'ico-weather-rain' | 'ico-weather-sleet' | 'ico-weather-snow' | 'ico-weather-sunrise' | 'ico-weather-sunset' | 'ico-weather-thunderstorm' | 'ico-weather-tornado' | 'ico-weather-windy';
+export type WeatherIconName = 'ico-first_quarter' | 'ico-fullmoon' | 'ico-high-tide' | 'ico-humidity' | 'ico-low-tide' | 'ico-new_moon' | 'ico-pressure' | 'ico-slack-tide' | 'ico-third_quater' | 'ico-uv' | 'ico-visibility' | 'ico-waning_cresent' | 'ico-wanining_gibbous' | 'ico-waxing_cresen' | 'ico-waxing_gibbous' | 'ico-weather-clearday' | 'ico-weather-clearnight' | 'ico-weather-cloudy' | 'ico-weather-cloudyday' | 'ico-weather-cloudynight' | 'ico-weather-fog' | 'ico-weather-hail' | 'ico-weather-rain' | 'ico-weather-sleet' | 'ico-weather-snow' | 'ico-weather-sunrise' | 'ico-weather-sunset' | 'ico-weather-thunderstorm' | 'ico-weather-tornado' | 'ico-weather-windy';
 
 
 export type IconName =
-  | InputIconName | MapIconName | MarinaIconName | MediaIconName | NavIconName | NavMarinaIconName | RadioIconName | SocialIconName | SystemIconName | UIIconName | WeatherIconName;
+  | InputIconName | MapIconName | MarinaIconName | MediaIconName | NavIconName | SystemIconName | UIIconName | WeatherIconName;
 
 export type IconType =
-  | { iconType: 'input'; iconName: InputIconName } | { iconType: 'map'; iconName: MapIconName } | { iconType: 'marina'; iconName: MarinaIconName } | { iconType: 'media'; iconName: MediaIconName } | { iconType: 'nav'; iconName: NavIconName } | { iconType: 'nav_marina'; iconName: NavMarinaIconName } | { iconType: 'radio'; iconName: RadioIconName } | { iconType: 'social'; iconName: SocialIconName } | { iconType: 'system'; iconName: SystemIconName } | { iconType: 'ui'; iconName: UIIconName } | { iconType: 'weather'; iconName: WeatherIconName };
+  | { iconType: 'input'; iconName: InputIconName } | { iconType: 'map'; iconName: MapIconName } | { iconType: 'marina'; iconName: MarinaIconName } | { iconType: 'media'; iconName: MediaIconName } | { iconType: 'nav'; iconName: NavIconName } | { iconType: 'system'; iconName: SystemIconName } | { iconType: 'ui'; iconName: UIIconName } | { iconType: 'weather'; iconName: WeatherIconName };
 
 export interface IconNameByType {
   input: InputIconName;
@@ -39,9 +33,6 @@ export interface IconNameByType {
   marina: MarinaIconName;
   media: MediaIconName;
   nav: NavIconName;
-  nav_marina: NavMarinaIconName;
-  radio: RadioIconName;
-  social: SocialIconName;
   system: SystemIconName;
   ui: UIIconName;
   weather: WeatherIconName;

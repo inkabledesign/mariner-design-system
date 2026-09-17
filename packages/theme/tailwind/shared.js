@@ -32,7 +32,10 @@ const safelist = [
   { pattern: /^font-montserrat(-(light|regular|medium|semibold|bold))?$/ },
   { pattern: /^font-rajdhani(-(light|regular|medium|semibold|bold))?$/ },
   { pattern: /^font-space-mono(-(regular|bold))?$/ },
-  { pattern: /^(w|h|min-w|min-h|max-w|max-h)-(xxs|xs|sm|md|lg|xl|xxl)$/ },
+  {
+    pattern:
+      /^(w|h|min-w|min-h|max-w|max-h)-(xxxs|xxs|xs|sm|md|lg|xl|xxl|xxxl)$/,
+  },
   { pattern: /^(w|h)-(4|6|8|10|12|14|16|20|24)$/ },
 ];
 
