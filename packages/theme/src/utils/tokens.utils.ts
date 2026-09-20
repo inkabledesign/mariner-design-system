@@ -5,7 +5,16 @@ import { color } from "../colors";
 import { size } from "../size";
 
 type Breakpoint = "mobile" | "tablet" | "desktop-sm" | "desktop-lg";
-type SpacingScale = "xxs" | "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
+type SpacingScale =
+  | "xxxs"
+  | "xxs"
+  | "xs"
+  | "sm"
+  | "md"
+  | "lg"
+  | "xl"
+  | "xxl"
+  | "xxxl";
 type SizeScale =
   | "xxxs"
   | "xxs"
@@ -16,7 +25,16 @@ type SizeScale =
   | "xl"
   | "xxl"
   | "xxxl";
-type RadiusScale = "xxs" | "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
+type RadiusScale =
+  | "xxxs"
+  | "xxs"
+  | "xs"
+  | "sm"
+  | "md"
+  | "lg"
+  | "xl"
+  | "xxl"
+  | "xxxl";
 type TextStyles =
   | "heading1"
   | "heading2"
@@ -27,6 +45,7 @@ type TextStyles =
   | "body"
   | "quote"
   | "button"
+  | "button-sml"
   | "input"
   | "placeholder"
   | "caption"

@@ -20,12 +20,12 @@ export default function BadgeExamples() {
           Primary Variant
         </TextStyled>
         <Row className="gap-md flex-wrap">
-          <Badge label="Available" variant="primary" size="lg" hasIcon={true} hasText={true} />
-          <Badge label="Available" variant="primary" size="lg" hasIcon={false} hasText={true} />
-          <Badge variant="primary" size="lg" hasIcon={true} hasText={false} />
-          <Badge label="Available" variant="primary" size="sm" hasIcon={true} hasText={true} />
-          <Badge label="Available" variant="primary" size="sm" hasIcon={false} hasText={true} />
-          <Badge variant="primary" size="sm" hasIcon={true} hasText={false} />
+          <Badge label="Available" variant="primary" size="lg" iconName="ico-tick-round" />
+          <Badge label="Available" variant="primary" size="lg" />
+          <Badge variant="primary" size="lg" iconName="ico-tick-round" />
+          <Badge label="Available" variant="primary" size="sm" iconName="ico-tick-round" />
+          <Badge label="Available" variant="primary" size="sm" />
+          <Badge variant="primary" size="sm" iconName="ico-tick-round" />
         </Row>
       </Column>
 
@@ -35,12 +35,12 @@ export default function BadgeExamples() {
           Secondary Variant
         </TextStyled>
         <Row className="gap-md flex-wrap">
-          <Badge label="Available" variant="secondary" size="lg" hasIcon={true} hasText={true} />
-          <Badge label="Available" variant="secondary" size="lg" hasIcon={false} hasText={true} />
-          <Badge variant="secondary" size="lg" hasIcon={true} hasText={false} />
-          <Badge label="Available" variant="secondary" size="sm" hasIcon={true} hasText={true} />
-          <Badge label="Available" variant="secondary" size="sm" hasIcon={false} hasText={true} />
-          <Badge variant="secondary" size="sm" hasIcon={true} hasText={false} />
+          <Badge label="Available" variant="secondary" size="lg" iconName="ico-tick-round" />
+          <Badge label="Available" variant="secondary" size="lg" />
+          <Badge variant="secondary" size="lg" iconName="ico-tick-round" />
+          <Badge label="Available" variant="secondary" size="sm" iconName="ico-tick-round" />
+          <Badge label="Available" variant="secondary" size="sm" />
+          <Badge variant="secondary" size="sm" iconName="ico-tick-round" />
         </Row>
       </Column>
 
@@ -50,12 +50,12 @@ export default function BadgeExamples() {
           Danger Variant
         </TextStyled>
         <Row className="gap-md flex-wrap">
-          <Badge label="Unavailable" variant="danger" size="lg" hasIcon={true} hasText={true} />
-          <Badge label="Unavailable" variant="danger" size="lg" hasIcon={false} hasText={true} />
-          <Badge variant="danger" size="lg" hasIcon={true} hasText={false} />
-          <Badge label="Unavailable" variant="danger" size="sm" hasIcon={true} hasText={true} />
-          <Badge label="Unavailable" variant="danger" size="sm" hasIcon={false} hasText={true} />
-          <Badge variant="danger" size="sm" hasIcon={true} hasText={false} />
+          <Badge label="Unavailable" variant="danger" size="lg" iconName="ico-close-round" />
+          <Badge label="Unavailable" variant="danger" size="lg" />
+          <Badge variant="danger" size="lg" iconName="ico-close-round" />
+          <Badge label="Unavailable" variant="danger" size="sm" iconName="ico-close-round" />
+          <Badge label="Unavailable" variant="danger" size="sm" />
+          <Badge variant="danger" size="sm" iconName="ico-close-round" />
         </Row>
       </Column>
 
@@ -65,12 +65,12 @@ export default function BadgeExamples() {
           Success Variant
         </TextStyled>
         <Row className="gap-md flex-wrap">
-          <Badge label="Complete" variant="success" size="lg" hasIcon={true} hasText={true} />
-          <Badge label="Complete" variant="success" size="lg" hasIcon={false} hasText={true} />
-          <Badge variant="success" size="lg" hasIcon={true} hasText={false} />
-          <Badge label="Complete" variant="success" size="sm" hasIcon={true} hasText={true} />
-          <Badge label="Complete" variant="success" size="sm" hasIcon={false} hasText={true} />
-          <Badge variant="success" size="sm" hasIcon={true} hasText={false} />
+          <Badge label="Complete" variant="success" size="lg" iconName="ico-tick-round" />
+          <Badge label="Complete" variant="success" size="lg" />
+          <Badge variant="success" size="lg" iconName="ico-tick-round" />
+          <Badge label="Complete" variant="success" size="sm" iconName="ico-tick-round" />
+          <Badge label="Complete" variant="success" size="sm" />
+          <Badge variant="success" size="sm" iconName="ico-tick-round" />
         </Row>
       </Column>
 
@@ -80,12 +80,12 @@ export default function BadgeExamples() {
           Warning Variant
         </TextStyled>
         <Row className="gap-md flex-wrap">
-          <Badge label="Pending" variant="warning" size="lg" hasIcon={true} hasText={true} />
-          <Badge label="Pending" variant="warning" size="lg" hasIcon={false} hasText={true} />
-          <Badge variant="warning" size="lg" hasIcon={true} hasText={false} />
-          <Badge label="Pending" variant="warning" size="sm" hasIcon={true} hasText={true} />
-          <Badge label="Pending" variant="warning" size="sm" hasIcon={false} hasText={true} />
-          <Badge variant="warning" size="sm" hasIcon={true} hasText={false} />
+          <Badge label="Pending" variant="warning" size="lg" iconName="ico-info-round" />
+          <Badge label="Pending" variant="warning" size="lg" />
+          <Badge variant="warning" size="lg" iconName="ico-info-round" />
+          <Badge label="Pending" variant="warning" size="sm" iconName="ico-info-round" />
+          <Badge label="Pending" variant="warning" size="sm" />
+          <Badge variant="warning" size="sm" iconName="ico-info-round" />
         </Row>
       </Column>
 
@@ -109,7 +109,7 @@ export default function BadgeExamples() {
         <Row className="gap-md flex-wrap">
           <Badge label="Available" variant="success" size="sm" />
           <Badge label="Coming Soon" variant="warning" size="sm" />
-          <Badge label="Locked" variant="danger" size="sm" hasIcon={false} />
+          <Badge label="Locked" variant="danger" size="sm" />
           <Badge label="Update" variant="danger" size="sm" />
           <Badge label="Premium" variant="primary" size="lg" />
           <Badge label="Beta" variant="warning" size="lg" />

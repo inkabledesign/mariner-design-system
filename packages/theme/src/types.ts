@@ -93,6 +93,7 @@ export interface TypographyTextScale {
   body: TypographyToken;
   quote: TypographyToken;
   button: TypographyToken;
+  "button-sml": TypographyToken;
   input: TypographyToken;
   placeholder: TypographyToken;
   caption: TypographyToken;
@@ -114,6 +115,7 @@ export interface TypographyToken {
 }
 
 export interface SpacingValues {
+  xxxs: number;
   xxs: number;
   xs: number;
   sm: number;
@@ -127,6 +129,7 @@ export interface SpacingValues {
 export type SpacingScale = Record<ScaleKey, { spacing: SpacingValues }>;
 
 export interface RadiusValues {
+  xxxs: number;
   xxs: number;
   xs: number;
   sm: number;

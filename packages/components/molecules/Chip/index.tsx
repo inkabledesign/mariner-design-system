@@ -11,49 +11,64 @@ import type { ChipProps } from './index.types';
  *
  * A pill-shaped input/filter chip with optional leading and trailing icons and
  * a selected state.
- * Source: Mariner-Library / Molecules / Chips/InputChip (Figma).
+ * Source: Mariner-Library / Molecules / Chips/InputChip (Figma, node 286:16571).
  *
  * Design specs:
- * - Shape: pill (rounded-full), py sm, leading sm / trailing lg, gap xs
- * - Typography: footnote (13.3px / 500)
- * - unselected: surface-0 bg, primary-5 border, primary-80 text
- * - selected: primary-10 bg, primary-100 text
+ * - Shape: pill (radius-xxl), 34px height, brand-primary-20 border
+ * - Typography: footnote (13px / 600)
+ * - unselected: surface-light bg, primary-80 content
+ * - selected: primary-10 bg (secondary-10 when icon-only), primary-100 content
+ * - Padding: lg on edges next to text, sm on edges next to an 18px icon,
+ *   xxs for icon-only chips (24px icon)
+ * - Trailing: filter chips default to ico-chevron-down, removable chips use ico-close
  *
  * @example
- * <Chip type="icon" label="Find nearest" iconName="ico-mylocation" selected />
+ * <Chip type="icon" label="Find nearest" selected />
+ * <Chip type="filter" label="Filter" />
+ * <Chip type="text" label="Marinas" selected trailingIconName="ico-close" />
  */
 const Chip = ({
   label,
   type = 'text',
   selected = false,
-  hasText = true,
-  iconName = 'ico-mylocation',
-  trailingIconName = 'ico-filter-round',
+  iconName,
+  trailingIconName,
   onPress,
   className = '',
 }: ChipProps) => {
-  const showLeading = type === 'icon';
-  const showTrailing = type === 'filter';
-  const showText = hasText && !!label;
+  const leadingIconName = iconName ?? (type === 'icon' ? 'ico-mylocation' : undefined);
+  const resolvedTrailingIconName =
+    trailingIconName ?? (type === 'filter' ? 'ico-chevron-down' : undefined);
 
-  const bg = selected ? 'bg-brand-primary-10' : 'bg-material-surface-0';
-  const textColor = selected ? 'text-brand-primary-100' : 'text-brand-primary-80';
-  const iconColor: SVGColor = selected ? 'text-brand-primary-100' : 'text-brand-primary-80';
+  const hasLabel = !!label;
+  const iconOnly = !hasLabel && !!leadingIconName !== !!resolvedTrailingIconName;
 
-  const padding = showText ? 'pl-sm pr-lg py-sm' : 'p-xxs';
+  const bg = selected
+    ? iconOnly
+      ? 'bg-brand-secondary-10'
+      : 'bg-brand-primary-10'
+    : 'bg-material-surface-light';
+  const contentColor: SVGColor = selected ? 'text-brand-primary-100' : 'text-brand-primary-80';
+
+  const padding = iconOnly
+    ? 'p-xxs'
+    : `h-[34px] py-sm ${leadingIconName ? 'pl-sm' : 'pl-lg'} ${resolvedTrailingIconName ? 'pr-sm' : 'pr-lg'}`;
+  const iconSize = iconOnly ? 'w-[24px] h-[24px]' : 'w-[18px] h-[18px]';
 
   return (
-    <PressableStyled onPress={onPress}>
+    <PressableStyled onPress={onPress} className="self-start">
       <Row
-        className={`items-center gap-xs rounded-full border border-brand-primary-5 self-start ${bg} ${padding} ${className}`.trim()}>
-        {showLeading && <Icon iconName={iconName} color={iconColor} className="w-[18px] h-[18px]" />}
-        {showText && (
-          <TextStyled textStyle="footnote" className={textColor}>
+        className={`items-center gap-xs overflow-hidden rounded-full border border-brand-primary-20 ${bg} ${padding} ${className}`.trim()}>
+        {leadingIconName && (
+          <Icon iconName={leadingIconName} color={contentColor} className={iconSize} />
+        )}
+        {hasLabel && (
+          <TextStyled textStyle="footnote" className={contentColor}>
             {label}
           </TextStyled>
         )}
-        {showTrailing && (
-          <Icon iconName={trailingIconName} color={iconColor} className="w-[18px] h-[18px]" />
+        {resolvedTrailingIconName && (
+          <Icon iconName={resolvedTrailingIconName} color={contentColor} className={iconSize} />
         )}
       </Row>
     </PressableStyled>

@@ -81,6 +81,7 @@ function buildTheme(scales) {
       extend: {
         colors: makeColorTheme("light"),
         borderRadius: {
+          xxxs: `${radius.xxxs}px`,
           xxs: `${radius.xxs}px`,
           xs: `${radius.xs}px`,
           sm: `${radius.sm}px`,
@@ -108,6 +109,7 @@ function buildTheme(scales) {
           "montserrat-medium": ["Montserrat-Medium", "sans-serif"],
           "montserrat-semibold": ["Montserrat-SemiBold", "sans-serif"],
           "montserrat-bold": ["Montserrat-Bold", "sans-serif"],
+          "montserrat-italic": ["Montserrat-Italic", "sans-serif"],
           rajdhani: ["Rajdhani", "sans-serif"],
           "rajdhani-light": ["Rajdhani-Light", "sans-serif"],
           "rajdhani-regular": ["Rajdhani-Regular", "sans-serif"],

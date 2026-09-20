@@ -1,5 +1,6 @@
 import React from "react";
 import Avatar from "../Avatar";
+import Badge from "../Badge";
 import CircleProgress from "../../atoms/CircleProgress";
 import Column from "../../atoms/Column";
 import Icon from "../../atoms/Icon";
@@ -62,6 +63,9 @@ const ListItem = ({
   trailing,
   trailingIconOne = "ico-chevron-right",
   trailingIconTwo,
+  badgeLabel,
+  badgeVariant = "primary",
+  badgeIconName,
   checked = false,
   onToggle,
   onPress,
@@ -117,7 +121,7 @@ const ListItem = ({
     }
   })();
 
-  const hasTrailingContent = Boolean(value || trailing);
+  const hasTrailingContent = Boolean(value || trailing || badgeLabel);
 
   const content = (
     <Row
@@ -178,6 +182,15 @@ const ListItem = ({
           )}
           {trailing === "radio" && (
             <RadioIndicator checked={checked} onPress={handleToggle} />
+          )}
+          {badgeLabel && (
+            <Badge
+              label={badgeLabel}
+              variant={badgeVariant}
+              size="sm"
+              iconName={badgeIconName}
+              themeMode={themeMode}
+            />
           )}
           {trailing === "icon" && trailingIconTwo && (
             <Icon

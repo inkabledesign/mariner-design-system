@@ -13,6 +13,7 @@ import type { ButtonProps } from './index.types';
  *
  * Features:
  * - Three variants: primary, secondary, text
+ * - Two sizes: md (32-36px), lg (48px)
  * - Optional icons (left, right, or none)
  * - Rounded or sharp corners
  * - Icon-only mode (no text)
@@ -21,7 +22,7 @@ import type { ButtonProps } from './index.types';
  * Design Specs:
  * - Border radius: radius-xxl (36px) for round variant
  * - Padding: Varies by configuration
- * - Typography: button (16px Montserrat Bold, line-height 28px)
+ * - Typography: button (16px Montserrat Bold) for lg, button-sml (13px) for md
  * - Border: brand-accent-100 (#a68756)
  *
  * @example
@@ -45,11 +46,20 @@ import type { ButtonProps } from './index.types';
  *   iconPosition="left"
  *   iconName="ico-berth-round"
  * />
+ *
+ * @example
+ * // Compact md button
+ * <Button
+ *   text="Button text"
+ *   variant="primary"
+ *   size="md"
+ * />
  */
 const Button = ({
   text,
   variant = 'primary',
   radius = 'round',
+  size = 'lg',
   iconPosition = 'none',
   iconName,
   iconType = 'input',
@@ -59,6 +69,7 @@ const Button = ({
 }: ButtonProps) => {
   const hasText = !!text;
   const hasIcon = iconPosition !== 'none' && iconName;
+  const isMd = size === 'md';
 
   // Get colors based on variant
   const getColors = () => {
@@ -90,31 +101,31 @@ const Button = ({
 
   const colors = getColors();
 
-  // Get padding based on configuration
-  const getPadding = () => {
+  // Get height and padding based on size and configuration
+  const getSizing = () => {
     if (!hasText && hasIcon) {
       // Icon-only button
-      return 'p-md';
+      return isMd ? 'w-9 h-9' : 'w-xl h-xl';
     }
 
     if (hasIcon && hasText) {
       // Button with icon and text
-      if (iconPosition === 'left') {
-        return 'pl-lg pr-xl py-md';
-      } else if (iconPosition === 'right') {
-        return 'pl-xl pr-lg py-md';
+      if (isMd) {
+        return iconPosition === 'left' ? 'h-9 pl-sm pr-lg' : 'h-9 pl-lg pr-sm';
       }
+      return iconPosition === 'left' ? 'h-xl pl-sm pr-xl' : 'h-xl pl-xl pr-sm';
     }
 
     // Text-only button
     if (variant === 'text') {
-      return 'px-lg py-md';
+      return isMd ? 'px-lg py-xs' : 'px-lg py-md';
     }
 
-    return 'px-xl py-md';
+    return isMd ? 'h-lg px-xl' : 'h-xl px-xl';
   };
 
-  const padding = getPadding();
+  const sizing = getSizing();
+  const gap = isMd ? 'gap-sm' : 'gap-lg';
   const borderRadius = radius === 'round' ? 'rounded-2xl' : '';
   const border = variant !== 'text' ? 'border' : '';
 
@@ -127,26 +138,27 @@ const Button = ({
         ${colors.border}
         ${border}
         ${borderRadius}
-        ${padding}
-        flex-row items-center justify-center gap-md max-h-[56px]
+        ${sizing}
+        ${gap}
+        flex-row items-center justify-center
         ${disabled ? 'opacity-50' : ''}
         ${className}
       `.trim()}>
       {/* Left Icon */}
       {hasIcon && iconPosition === 'left' && (
-        <Icon iconName={iconName as any} color={colors.icon as any} className="w-6 h-6" />
+        <Icon iconName={iconName as any} iconSize={isMd ? 'md' : 'lg'} color={colors.icon as any} />
       )}
 
       {/* Text */}
       {hasText && (
-        <TextStyled textStyle="button" className={colors.text}>
+        <TextStyled textStyle={isMd ? 'button-sml' : 'button'} className={colors.text}>
           {text}
         </TextStyled>
       )}
 
       {/* Right Icon */}
       {hasIcon && iconPosition === 'right' && (
-        <Icon iconName={iconName as any} color={colors.icon as any} className="w-6 h-6" />
+        <Icon iconName={iconName as any} iconSize={isMd ? 'md' : 'lg'} color={colors.icon as any} />
       )}
     </PressableStyled>
   );

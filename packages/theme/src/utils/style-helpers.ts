@@ -4,9 +4,20 @@ export function getColorFromClass(
   colorClass: string,
   themeMode: 'light' | 'dark' = 'light'
 ): string {
-  const match = colorClass.match(
-    /^text-(solid|brand|material|system|text)-(.+)$/,
-  );
+  // `colorClass` may hold several tokens (e.g. "text-material-surface-100
+  // dark:text-material-surface-0"). In dark mode a `dark:` token takes
+  // precedence and resolves against the light palette — matching NativeWind,
+  // where `dark:` variants emit the static (light) color behind a dark-mode
+  // selector. Base `text-` tokens resolve against the active palette.
+  const tokens = colorClass.split(/\s+/);
+  const baseToken = tokens.find(token => token.startsWith('text-'));
+  const darkToken = tokens.find(token => token.startsWith('dark:text-'));
+
+  const useDarkOverride = themeMode === 'dark' && darkToken !== undefined;
+  const activeToken = useDarkOverride ? darkToken.slice(5) : baseToken;
+  const theme = useDarkOverride ? color.light : color[themeMode];
+
+  const match = activeToken?.match(/^text-(solid|brand|material|system|text)-(.+)$/);
   if (!match) return '#000';
 
   const [, category, remainder] = match;
@@ -16,7 +27,6 @@ export function getColorFromClass(
   const name = segments
     .join('-')
     .replace(/-([a-z])/g, (_, letter: string) => letter.toUpperCase());
-  const theme = color[themeMode];
 
   try {
     if (category === 'solid' || category === 'text') {

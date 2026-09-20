@@ -1,6 +1,6 @@
 {
-  "mobile-sm": { "spacing": { "xxs": 4, "xs": 6, "sm": 8, "md": 12, "lg": 16, "xl": 24, "xxl": 32, "xxxl": 56 } },
-  "tablet-md": { "spacing": { "xxs": 6, "xs": 6, "sm": 8, "md": 12, "lg": 16, "xl": 24, "xxl": 32, "xxxl": 56 } },
-  "desktop-sm": { "spacing": { "xxs": 4, "xs": 6, "sm": 8, "md": 12, "lg": 16, "xl": 24, "xxl": 32, "xxxl": 56 } },
-  "desktop-lg": { "spacing": { "xxs": 4, "xs": 6, "sm": 8, "md": 12, "lg": 16, "xl": 24, "xxl": 32, "xxxl": 56 } }
+  "mobile-sm": { "spacing": { "xxxs": 2, "xxs": 4, "xs": 6, "sm": 8, "md": 12, "lg": 16, "xl": 24, "xxl": 32, "xxxl": 56 } },
+  "tablet-md": { "spacing": { "xxxs": 2, "xxs": 4, "xs": 6, "sm": 8, "md": 12, "lg": 16, "xl": 24, "xxl": 32, "xxxl": 56 } },
+  "desktop-sm": { "spacing": { "xxxs": 2, "xxs": 4, "xs": 6, "sm": 8, "md": 12, "lg": 16, "xl": 24, "xxl": 32, "xxxl": 56 } },
+  "desktop-lg": { "spacing": { "xxxs": 2, "xxs": 4, "xs": 6, "sm": 8, "md": 12, "lg": 16, "xl": 24, "xxl": 32, "xxxl": 56 } }
 }

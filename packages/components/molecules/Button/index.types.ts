@@ -1,5 +1,6 @@
 export type ButtonVariant = 'primary' | 'secondary' | 'text';
 export type ButtonRadius = 'round' | 'none';
+export type ButtonSize = 'md' | 'lg';
 export type ButtonIconPosition = 'left' | 'right' | 'none';
 
 export interface ButtonProps {
@@ -24,6 +25,14 @@ export interface ButtonProps {
    * @default 'round'
    */
   radius?: ButtonRadius;
+
+  /**
+   * Button size
+   * - md: Compact — 32px height text-only, 36px with icons (button-sml typography)
+   * - lg: Default — 48px height (button typography)
+   * @default 'lg'
+   */
+  size?: ButtonSize;
   
   /**
    * Icon position relative to text

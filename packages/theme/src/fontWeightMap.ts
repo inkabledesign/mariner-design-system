@@ -40,3 +40,16 @@ export function getFontFamilyNameForWeight(weight: string | number): string {
   const weightStr = String(weight);
   return fontWeightToFontFamily[weightStr] || 'Montserrat-Regular';
 }
+
+/**
+ * Convert a font asset family name to its Tailwind font-family class.
+ * 'SpaceMono-Regular' → 'font-space-mono-regular'
+ * 'Montserrat-Italic' → 'font-montserrat-italic'
+ * 'Montserrat-SemiBold' → 'font-montserrat-semibold'
+ */
+export function getFontFamilyClass(fontFamily: string): string {
+  const [family, ...rest] = fontFamily.split('-');
+  const familyKebab = family.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
+  const style = rest.join('-').toLowerCase();
+  return style ? `font-${familyKebab}-${style}` : `font-${familyKebab}`;
+}

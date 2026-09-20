@@ -76,7 +76,21 @@ type SystemColor =
   | "text-system-warning-80"
   | "text-system-warning-100";
 
-export type SVGColor = BrandColor | MaterialColor | SolidColor | SystemColor;
+type TextColor =
+  | "text-text-primary"
+  | "text-text-secondary"
+  | "text-text-accent"
+  | "text-text-dark-primary"
+  | "text-text-dark-secondary"
+  | "text-text-light-primary"
+  | "text-text-light-secondary";
+
+export type SVGColor =
+  | BrandColor
+  | MaterialColor
+  | SolidColor
+  | SystemColor
+  | TextColor;
 
 export type IconProps<T extends IconCategoryType = IconCategoryType> = {
   iconType?: T;

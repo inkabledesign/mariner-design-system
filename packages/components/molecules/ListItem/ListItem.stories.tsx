@@ -20,6 +20,11 @@ const meta: Meta<typeof ListItem> = {
       control: { type: "select" },
       options: ["light", "dark"],
     },
+    badgeVariant: {
+      control: { type: "select" },
+      options: ["primary", "secondary", "danger", "success", "warning"],
+    },
+    badgeLabel: { control: { type: "text" } },
   },
   args: {
     label: "Label",
@@ -63,6 +68,23 @@ export const ValueAndChevron: Story = {
   args: {
     title: "Depth",
     value: "4.2 m",
+    trailing: "icon",
+  },
+};
+
+export const WithBadge: Story = {
+  args: {
+    title: "Module",
+    badgeLabel: "New",
+    badgeVariant: "primary",
+  },
+};
+
+export const BadgeAndChevron: Story = {
+  args: {
+    title: "Module",
+    badgeLabel: "Update",
+    badgeVariant: "danger",
     trailing: "icon",
   },
 };

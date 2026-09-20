@@ -3,7 +3,7 @@ import ViewStyled from '../../atoms/ViewStyled';
 import Row from '../../atoms/Row';
 import Icon from '../../atoms/Icon';
 import TextStyled from '../../atoms/TextStyled';
-import SearchInput from '../SearchInput';
+import SearchInput from '../Input/SearchInput';
 import { theme } from '@inkabledesign/mariner-theme';
 import type { HeaderTopBarProps } from './index.types';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';

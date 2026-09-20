@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text } from 'react-native';
 import type { StyledTextProps } from './index.types';
-import { theme, getFontFamilyForWeight } from '@inkabledesign/mariner-theme';
+import { theme, getFontFamilyForWeight, getFontFamilyClass } from '@inkabledesign/mariner-theme';
 // Removed useTheme import to prevent render-time state updates
 
 const TextStyled: React.FC<StyledTextProps> = ({
@@ -33,16 +33,17 @@ const TextStyled: React.FC<StyledTextProps> = ({
       const fontFamilyClass = getFontFamilyForWeight(fontWeight);
       classes.push(fontFamilyClass);
     } else if (textStyle) {
-      // Get the font weight from textStyle and map to the correct font family
       // Use breakpoint to select the correct typography scale
       const typography = theme.typography[breakpoint].text;
       const textStyleConfig = typography[textStyle as keyof typeof typography];
 
-      if (textStyleConfig && 'fontWeight' in textStyleConfig) {
-        const fontFamilyClass = getFontFamilyForWeight(textStyleConfig.fontWeight);
-        classes.push(fontFamilyClass);
+      // Resolve the font class from the token's fontFamily (e.g. SpaceMono-Regular
+      // → font-space-mono-regular); fall back to the weight-based Montserrat map.
+      if (textStyleConfig && 'fontFamily' in textStyleConfig && textStyleConfig.fontFamily) {
+        classes.push(getFontFamilyClass(textStyleConfig.fontFamily));
+      } else if (textStyleConfig && 'fontWeight' in textStyleConfig) {
+        classes.push(getFontFamilyForWeight(textStyleConfig.fontWeight));
       } else {
-        // Fallback to regular weight
         classes.push('font-montserrat-regular');
       }
     }

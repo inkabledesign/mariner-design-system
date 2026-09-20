@@ -1,4 +1,5 @@
 import type { IconName } from "../../types/icons.type";
+import type { BadgeVariant } from "../Badge/index.types";
 
 /** Leading slot content type. Not rendered when omitted. */
 export type ListItemLeading = "avatar" | "icon" | "switch" | "radio";
@@ -45,6 +46,15 @@ export interface ListItemProps {
 
   /** Secondary trailing icon glyph, rendered left of icon one when provided (trailing="icon"). */
   trailingIconTwo?: IconName;
+
+  /** Trailing badge label. A sm Badge renders between the trailing control and icons when provided. */
+  badgeLabel?: string;
+
+  /** Trailing badge variant. @default 'primary' */
+  badgeVariant?: BadgeVariant;
+
+  /** Trailing badge icon. Rendered when provided. */
+  badgeIconName?: IconName;
 
   /** Checked state for switch/radio (leading or trailing). */
   checked?: boolean;

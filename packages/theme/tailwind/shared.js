@@ -21,15 +21,15 @@ const safelist = [
       /^(bg|text|border)-(primary|secondary|accent|surface|alphaDark|alphaLight|error|success|warning)-(dark|light|0|5|10|20|40|60|80|100)$/,
     variants: darkVariant,
   },
-  { pattern: /^(p|m|gap)-(xxs|xs|sm|md|lg|xl|xxl|xxxl)$/ },
-  { pattern: /^(px|py|pt|pb|pl|pr)-(xxs|xs|sm|md|lg|xl|xxl|xxxl)$/ },
-  { pattern: /^(mx|my|mt|mb|ml|mr)-(xxs|xs|sm|md|lg|xl|xxl|xxxl)$/ },
-  { pattern: /^rounded-(xxs|xs|sm|md|lg|xl|2xl|3xl|xxl|xxxl)$/ },
+  { pattern: /^(p|m|gap)-(xxxs|xxs|xs|sm|md|lg|xl|xxl|xxxl)$/ },
+  { pattern: /^(px|py|pt|pb|pl|pr)-(xxxs|xxs|xs|sm|md|lg|xl|xxl|xxxl)$/ },
+  { pattern: /^(mx|my|mt|mb|ml|mr)-(xxxs|xxs|xs|sm|md|lg|xl|xxl|xxxl)$/ },
+  { pattern: /^rounded-(xxxs|xxs|xs|sm|md|lg|xl|2xl|3xl|xxl|xxxl)$/ },
   {
     pattern:
-      /^text-(heading1|heading2|heading3|heading4|heading5|heading6|body|quote|button|input|placeholder|caption|label|footnote|link|number)$/,
+      /^text-(heading1|heading2|heading3|heading4|heading5|heading6|body|quote|button|button-sml|input|placeholder|caption|label|footnote|link|number)$/,
   },
-  { pattern: /^font-montserrat(-(light|regular|medium|semibold|bold))?$/ },
+  { pattern: /^font-montserrat(-(light|regular|medium|semibold|bold|italic))?$/ },
   { pattern: /^font-rajdhani(-(light|regular|medium|semibold|bold))?$/ },
   { pattern: /^font-space-mono(-(regular|bold))?$/ },
   {

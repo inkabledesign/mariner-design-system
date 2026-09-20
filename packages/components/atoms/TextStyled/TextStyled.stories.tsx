@@ -10,7 +10,7 @@ const meta: Meta<typeof TextStyled> = {
       control: { type: 'select' },
       options: [
         'heading1', 'heading2', 'heading3', 'heading4', 'heading5', 'heading6',
-        'body', 'button', 'input', 'placeholder', 'caption', 'label', 'footnote', 'link',
+        'body', 'button', 'button-sml', 'input', 'placeholder', 'caption', 'label', 'footnote', 'link',
       ],
     },
     children: { control: { type: 'text' } },
