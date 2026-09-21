@@ -137,6 +137,7 @@ import systemIcoListRound from './System/ico-list-round.svg';
 import systemIcoLockedRoundFill from './System/ico-locked-round-fill.svg';
 import systemIcoLockedRound from './System/ico-locked-round.svg';
 import systemIcoLocked from './System/ico-locked.svg';
+import systemIcoMinus from './System/ico-minus.svg';
 import systemIcoMoreRoundFill from './System/ico-more-round-fill.svg';
 import systemIcoMoreRound from './System/ico-more-round.svg';
 import systemIcoMore from './System/ico-more.svg';
@@ -372,6 +373,7 @@ export const iconMap: IconMap = {
     'ico-locked-round-fill': systemIcoLockedRoundFill,
     'ico-locked-round': systemIcoLockedRound,
     'ico-locked': systemIcoLocked,
+    'ico-minus': systemIcoMinus,
     'ico-more-round-fill': systemIcoMoreRoundFill,
     'ico-more-round': systemIcoMoreRound,
     'ico-more': systemIcoMore,

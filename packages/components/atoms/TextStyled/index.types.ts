@@ -34,6 +34,9 @@ export interface StyledTextProps {
   // Text truncation
   numberOfLines?: number;
 
+  // Allow the user to select text
+  selectable?: boolean;
+
   // Additional styles
   style?: RNTextStyle;
   className?: string;

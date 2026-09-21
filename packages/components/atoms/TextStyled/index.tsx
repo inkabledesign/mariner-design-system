@@ -15,6 +15,7 @@ const TextStyled: React.FC<StyledTextProps> = ({
   colorVariant,
   textAlign,
   numberOfLines,
+  selectable,
   style,
   className,
 }) => {
@@ -120,7 +121,11 @@ const TextStyled: React.FC<StyledTextProps> = ({
   const content = text !== undefined ? text : children;
 
   return (
-    <Text style={style} className={combinedClassName} numberOfLines={numberOfLines}>
+    <Text
+      style={style}
+      className={combinedClassName}
+      numberOfLines={numberOfLines}
+      selectable={selectable}>
       {content}
     </Text>
   );
