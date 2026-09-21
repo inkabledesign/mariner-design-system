@@ -22,6 +22,7 @@
       "require": "./dist/fonts/index.js",
       "default": "./dist/fonts/index.esm.js"
     },
+    "./images/*": "./images/*",
     "./package.json": "./package.json"
   },
   "files": [

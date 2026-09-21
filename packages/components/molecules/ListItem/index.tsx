@@ -1,4 +1,5 @@
 import React from "react";
+import { View } from "react-native";
 import Avatar from "../Avatar";
 import Badge from "../Badge";
 import CircleProgress from "../../atoms/CircleProgress";
@@ -74,6 +75,19 @@ const ListItem = ({
 }: ListItemProps) => {
   const handleToggle = onToggle ? () => onToggle(!checked) : undefined;
 
+  // A switch row behaves like a settings row: the whole row is the toggle
+  // target and the Switch is display-only, so taps anywhere register once on
+  // every platform. A row with its own onPress keeps the Switch interactive.
+  const toggleable = Boolean(onToggle) && (leading === "switch" || trailing === "switch");
+  const rowIsToggle = toggleable && !onPress;
+  const pressHandler = onPress ?? (rowIsToggle ? handleToggle : undefined);
+  const switchInteractive = !rowIsToggle;
+
+  // A consumer-supplied `bg-*` class is a deliberate surface override — the
+  // default surface must be dropped entirely, since stylesheet order (not
+  // className order) decides conflicting utilities.
+  const surfaceClass = /(^|\s)bg-/.test(className) ? '' : 'bg-material-surface-light';
+
   const leadingContent = (() => {
     switch (leading) {
       case "avatar":
@@ -87,11 +101,13 @@ const ListItem = ({
         );
       case "switch":
         return (
-          <ToggleSwitch
-            checked={checked}
-            onToggle={onToggle}
-            themeMode={themeMode}
-          />
+          <View pointerEvents={switchInteractive ? "auto" : "none"}>
+            <ToggleSwitch
+              checked={checked}
+              onToggle={onToggle}
+              themeMode={themeMode}
+            />
+          </View>
         );
       case "radio":
         return <RadioIndicator checked={checked} onPress={handleToggle} />;
@@ -125,7 +141,7 @@ const ListItem = ({
 
   const content = (
     <Row
-      className={`min-h-[52px] w-full items-center gap-md border-b border-brand-primary-10 bg-material-surface-light px-lg py-xs ${className}`.trim()}
+      className={`min-h-[52px] w-full items-center gap-md border-b border-brand-primary-10 ${surfaceClass} px-lg py-xs ${className}`.trim()}
     >
       {leadingContent && (
         <Row className="shrink-0 items-center gap-[10px]">{leadingContent}</Row>
@@ -174,11 +190,13 @@ const ListItem = ({
             </Row>
           )}
           {trailing === "switch" && (
-            <ToggleSwitch
-              checked={checked}
-              onToggle={onToggle}
-              themeMode={themeMode}
-            />
+            <View pointerEvents={switchInteractive ? "auto" : "none"}>
+              <ToggleSwitch
+                checked={checked}
+                onToggle={onToggle}
+                themeMode={themeMode}
+              />
+            </View>
           )}
           {trailing === "radio" && (
             <RadioIndicator checked={checked} onPress={handleToggle} />
@@ -211,13 +229,14 @@ const ListItem = ({
     </Row>
   );
 
-  if (!onPress) return content;
+  if (!pressHandler) return content;
 
   return (
     <PressableStyled
-      accessibilityRole="button"
+      accessibilityRole={rowIsToggle ? "switch" : "button"}
+      accessibilityState={rowIsToggle ? { checked } : undefined}
       className="w-full border-0 bg-transparent p-0"
-      onPress={onPress}
+      onPress={pressHandler}
     >
       {content}
     </PressableStyled>

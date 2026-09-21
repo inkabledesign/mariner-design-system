@@ -83,7 +83,7 @@ const Button = ({
         };
       case 'secondary':
         return {
-          bg: 'bg-material-surface-0',
+          bg: 'bg-material-surface-light',
           text: 'text-brand-primary-100',
           icon: 'text-brand-primary-100',
           border: 'border-brand-accent-100',

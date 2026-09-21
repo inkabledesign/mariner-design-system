@@ -1,8 +1,8 @@
 export interface UserProfileProps {
   /**
-   * User's display name.
+   * User's display name. Hidden when omitted.
    */
-  name: string;
+  name?: string;
 
   /**
    * Avatar image URL. Falls back to an icon tile when omitted.
@@ -23,6 +23,11 @@ export interface UserProfileProps {
    * Edit affordance handler — shows the badge on the avatar.
    */
   onEditPress?: () => void;
+
+  /**
+   * Theme mode for color resolution @default 'light'
+   */
+  themeMode?: 'light' | 'dark';
 
   /**
    * Additional Tailwind classes for the container.

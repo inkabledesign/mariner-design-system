@@ -37,15 +37,21 @@ const InputDate = ({ label, day, month, year, onPress, className = '' }: InputDa
         </ViewStyled>
       )}
       <PressableStyled onPress={onPress}>
-        <Row className="items-center rounded-sm border border-brand-primary-5 bg-material-surface-light p-xs">
+        <Row className="items-center rounded-sm border border-brand-primary-20 bg-material-surface-light px-xxs py-xs">
           {segments.map((segment, index) => (
             <React.Fragment key={segment.key}>
               {index > 0 && <ViewStyled className="w-px h-9 bg-brand-primary-10" />}
-              <Column className="flex-1 items-center">
-                <TextStyled textStyle="label" className="text-brand-primary-80">
+              <Column className="min-w-xl flex-1 items-start px-xxs">
+                <TextStyled
+                  textStyle="label"
+                  textAlign="center"
+                  className="w-full text-brand-primary-80">
                   {segment.label}
                 </TextStyled>
-                <TextStyled textStyle="heading6" className="text-material-surface-80">
+                <TextStyled
+                  textStyle="heading6"
+                  textAlign="center"
+                  className="w-full text-material-surface-80">
                   {values[segment.key] ?? ''}
                 </TextStyled>
               </Column>

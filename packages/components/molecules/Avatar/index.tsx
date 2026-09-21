@@ -74,7 +74,7 @@ const Avatar = ({
   return (
     <ViewStyled
       style={[{ width: size, height: size, borderRadius: size / 2 }, style]}
-      className={`relative items-center justify-center bg-material-surface-0 ${className}`.trim()}
+      className={`relative items-center justify-center bg-material-surface-light ${className}`.trim()}
     >
       <ViewStyled
         className="absolute rounded-full border border-brand-accent-100"
