@@ -1,7 +1,8 @@
 import React from 'react';
-import { Dimensions } from 'react-native';
+import { Dimensions, View } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
-import Animated, {
+import {
+  createAnimatedComponent,
   useSharedValue,
   useAnimatedStyle,
   withTiming,
@@ -12,6 +13,11 @@ import Animated, {
 } from 'react-native-reanimated';
 import ViewStyled from '../../atoms/ViewStyled';
 import type { SwipeableCardStackProps } from './index.types';
+
+// NOTE: use createAnimatedComponent rather than Animated.View — in the
+// Rollup-bundled output `Animated` resolves to the module namespace, which
+// does not expose `View` as a named export.
+const AnimatedView = createAnimatedComponent(View);
 
 const { height: SCREEN_HEIGHT } = Dimensions.get('window');
 
@@ -90,14 +96,14 @@ const SwipeableCard = <T,>({
 
   return (
     <GestureDetector gesture={panGesture}>
-      <Animated.View
+      <AnimatedView
         style={[
           { position: 'absolute', width: '100%', alignItems: 'center', zIndex: -index },
           animatedCardStyle,
         ]}
       >
         {renderCard(item, index)}
-      </Animated.View>
+      </AnimatedView>
     </GestureDetector>
   );
 };

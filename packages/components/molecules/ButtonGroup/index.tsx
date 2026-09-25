@@ -1,6 +1,7 @@
 import React from 'react';
 import { Pressable, View, StyleSheet } from 'react-native';
-import Animated, {
+import {
+  createAnimatedComponent,
   useAnimatedStyle,
   withSpring,
   useSharedValue,
@@ -14,6 +15,11 @@ import { theme } from '@inkabledesign/mariner-theme';
 import type { ButtonGroupProps } from './index.types';
 import Column from '../../atoms/Column';
 import Row from '../../atoms/Row';
+
+// NOTE: use createAnimatedComponent rather than Animated.View — in the
+// Rollup-bundled output `Animated` resolves to the module namespace, which
+// does not expose `View` as a named export.
+const AnimatedView = createAnimatedComponent(View);
 
 /**
  * ButtonGroup Component - iOS 16+ Style Segmented Control
@@ -125,7 +131,7 @@ const ButtonGroup = ({
             ${className}
           `.trim()}>
           {/* Sliding background indicator */}
-          <Animated.View
+          <AnimatedView
             style={[
               styles.slidingBackground,
               {

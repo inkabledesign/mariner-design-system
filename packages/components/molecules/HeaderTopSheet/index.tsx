@@ -1,5 +1,6 @@
 import React from 'react';
-import Animated, { useAnimatedStyle } from 'react-native-reanimated';
+import { View } from 'react-native';
+import { createAnimatedComponent, useAnimatedStyle } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import ViewStyled from '../../atoms/ViewStyled';
 import Row from '../../atoms/Row';
@@ -9,6 +10,11 @@ import WaveDecoration from '../../atoms/WaveDecoration';
 import Avatar from '../Avatar';
 import { theme } from '@inkabledesign/mariner-theme';
 import type { HeaderTopSheetProps } from './index.types';
+
+// NOTE: use createAnimatedComponent rather than Animated.View — in the
+// Rollup-bundled output `Animated` resolves to the module namespace, which
+// does not expose `View` as a named export.
+const AnimatedView = createAnimatedComponent(View);
 
 // Worklet-safe validation utility
 const isValidValue = (value: number) => {
@@ -80,7 +86,7 @@ const HeaderTopSheet = ({
   });
 
   return (
-    <Animated.View
+    <AnimatedView
       style={[
         {
           flex: 1,
@@ -91,7 +97,7 @@ const HeaderTopSheet = ({
         animatedContainerStyle,
       ]}
     >
-      <Animated.View
+      <AnimatedView
         style={[
           {
             flex: 1,
@@ -109,7 +115,7 @@ const HeaderTopSheet = ({
         ]}
       >
         {showTopSection && (
-          <Animated.View style={animatedAvatarStyle}>
+          <AnimatedView style={animatedAvatarStyle}>
             <ViewStyled className="relative overflow-hidden pt-md pb-md">
               <Row className="items-center justify-center gap-sm">
                 <WaveDecoration variant="shortL" className="translate-y-md" />
@@ -124,9 +130,9 @@ const HeaderTopSheet = ({
                 <WaveDecoration variant="shortR" className="translate-y-md" />
               </Row>
             </ViewStyled>
-          </Animated.View>
+          </AnimatedView>
         )}
-        <Animated.View
+        <AnimatedView
           style={[{ flex: 1, alignItems: 'center', flexDirection: 'column' }, animatedContentStyle]}
         >
           {title && (
@@ -140,7 +146,7 @@ const HeaderTopSheet = ({
             />
           )}
           {showDetails && (
-            <Animated.View style={animatedDetailsStyle}>
+            <AnimatedView style={animatedDetailsStyle}>
               <Row className="gap-xs items-center justify-center min-h-[21px]">
                 {rating !== undefined && (
                   <ViewStyled className="border-brand-secondary-5 rounded-md px-xxs py-0 flex-row items-center gap-xxs">
@@ -170,16 +176,16 @@ const HeaderTopSheet = ({
                   />
                 )}
               </Row>
-            </Animated.View>
+            </AnimatedView>
           )}
-        </Animated.View>
+        </AnimatedView>
         {children && (
           <ViewStyled className="w-full px-md pb-md items-center justify-center">
             {children}
           </ViewStyled>
         )}
-      </Animated.View>
-    </Animated.View>
+      </AnimatedView>
+    </AnimatedView>
   );
 };
 

@@ -1,11 +1,20 @@
 import React from 'react';
-import { Platform, type StyleProp, type ViewStyle } from 'react-native';
-import Animated, { useAnimatedStyle, useDerivedValue } from 'react-native-reanimated';
+import { Platform, View, type StyleProp, type ViewStyle } from 'react-native';
+import {
+  createAnimatedComponent,
+  useAnimatedStyle,
+  useDerivedValue,
+} from 'react-native-reanimated';
 import Row from '../../atoms/Row';
 import TextStyled from '../../atoms/TextStyled';
 import ProgressBar from '../../atoms/ProgressBar';
 import { theme } from '@inkabledesign/mariner-theme';
 import type { ModuleProgressProps } from './index.types';
+
+// NOTE: use createAnimatedComponent rather than Animated.View — in the
+// Rollup-bundled output `Animated` resolves to the module namespace, which
+// does not expose `View` as a named export.
+const AnimatedView = createAnimatedComponent(View);
 
 // Worklet-safe validation utility
 const isValidValue = (value: number) => {
@@ -72,7 +81,7 @@ const ModuleProgress = ({
   });
 
   return (
-    <Animated.View
+    <AnimatedView
       style={[
         {
           borderRadius: theme.radius.mobile.radius.xl,
@@ -83,7 +92,7 @@ const ModuleProgress = ({
         animatedContainerStyle,
       ]}
     >
-      <Animated.View style={animatedLabelStyle}>
+      <AnimatedView style={animatedLabelStyle}>
         <Row className="items-center justify-between w-full">
           <TextStyled textStyle="label" className="text-brand-primary-100">
             Module progress
@@ -92,14 +101,14 @@ const ModuleProgress = ({
             {Math.round(clampedProgress)}%
           </TextStyled>
         </Row>
-      </Animated.View>
+      </AnimatedView>
       <ProgressBar
         progress={clampedProgress}
         animatedProgressLBarStyle={animatedProgressBarStyle as unknown as StyleProp<ViewStyle>}
         style={variant}
         height={3}
       />
-    </Animated.View>
+    </AnimatedView>
   );
 };
 

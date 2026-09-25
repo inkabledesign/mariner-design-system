@@ -1,11 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { View, type LayoutChangeEvent } from 'react-native';
-import Animated, { useSharedValue, useAnimatedStyle, withTiming } from 'react-native-reanimated';
+import {
+  createAnimatedComponent,
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+} from 'react-native-reanimated';
 import Row from '../../atoms/Row';
 import ViewStyled from '../../atoms/ViewStyled';
 import TilePrice from '../TilePrice';
 import { theme } from '@inkabledesign/mariner-theme';
 import type { PricingSelectorProps } from './index.types';
+
+// NOTE: use createAnimatedComponent rather than Animated.View — in the
+// Rollup-bundled output `Animated` resolves to the module namespace, which
+// does not expose `View` as a named export.
+const AnimatedView = createAnimatedComponent(View);
 
 /**
  * PricingSelector Component (Molecule)
@@ -67,7 +77,7 @@ const PricingSelector = ({
         </Row>
       </View>
       {pricingData.length > 0 && rowHeight > 0 && (
-        <Animated.View
+        <AnimatedView
           pointerEvents="none"
           style={[
             animatedOverlayStyle,

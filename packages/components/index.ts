@@ -111,6 +111,8 @@ export { default as InputDateRange } from './molecules/Input/InputDateRange';
 export { default as InputTileSelect } from './molecules/Input/InputTileSelect';
 export { default as SearchInput } from './molecules/Input/SearchInput';
 export { default as SectionAdvertsRail } from './molecules/SectionAdvertsRail';
+export { default as SegmentControl } from './molecules/SegmentControl';
+export { default as SegmentControlItem } from './molecules/SegmentControlItem';
 export { default as SoundShapes } from './molecules/SoundShapes';
 export { default as TabBar } from './molecules/TabBar';
 export { default as TabItem } from './molecules/TabItem';

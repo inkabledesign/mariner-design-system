@@ -1,7 +1,8 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { Pressable, LayoutChangeEvent, View } from 'react-native';
 import Row from '../../atoms/Row';
-import Animated, {
+import {
+  createAnimatedComponent,
   useAnimatedStyle,
   useSharedValue,
   withTiming,
@@ -12,6 +13,11 @@ import ViewStyled from '../../atoms/ViewStyled';
 import TextStyled from '../../atoms/TextStyled';
 import { theme } from '@inkabledesign/mariner-theme';
 import type { TabBarProps } from './index.types';
+
+// NOTE: use createAnimatedComponent rather than Animated.View — in the
+// Rollup-bundled output `Animated` resolves to the module namespace, which
+// does not expose `View` as a named export.
+const AnimatedView = createAnimatedComponent(View);
 
 /**
  * TabBar - Animated tab bar with sliding indicator
@@ -242,7 +248,7 @@ const TabBar = ({
         ))}
 
         {/* Animated indicator - now sibling of tabs */}
-        <Animated.View
+        <AnimatedView
           style={[
             indicatorStyle,
             {
