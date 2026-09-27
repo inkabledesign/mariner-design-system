@@ -74,12 +74,12 @@ const SegmentControl = ({
     );
   }, [indicatorIndex, reduceMotion, selectedIndex]);
 
-  const indicatorAnimatedStyle = useAnimatedStyle(
-    () => ({
-      transform: [{ translateX: indicatorIndex.get() * itemWidth }],
-    }),
-    [itemWidth]
-  );
+  // NOTE: no deps array — Reanimated mutates the passed array
+  // (dependencies.push), which crashes under React Compiler's memoized
+  // literals. The worklets plugin captures itemWidth via __closure.
+  const indicatorAnimatedStyle = useAnimatedStyle(() => ({
+    transform: [{ translateX: indicatorIndex.get() * itemWidth }],
+  }));
 
   return (
     <ViewStyled

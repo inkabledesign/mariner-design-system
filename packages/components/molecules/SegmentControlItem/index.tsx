@@ -75,7 +75,7 @@ const SegmentControlItem = ({
       className={className}
       accessibilityState={{ selected: isActive }}>
       <ViewStyled
-        className={`w-full items-baseline justify-center px-lg ${
+        className={`w-full justify-center px-lg ${
           size === 'lg' ? 'h-12' : 'h-9'
         }`}
         style={selectionStyle}>

@@ -198,7 +198,10 @@ const TabBar = ({
       }
     }
     return 0;
-  }, [scrollX, maxScrollX, isReady, tabMeasurements, tabs.length]);
+    // NOTE: no deps array — Reanimated mutates the passed array
+    // (dependencies.push), which crashes under React Compiler's memoized
+    // literals. The worklets plugin captures inputs via __closure.
+  });
 
   // Animated style for the indicator
   const indicatorStyle = useAnimatedStyle(() => {

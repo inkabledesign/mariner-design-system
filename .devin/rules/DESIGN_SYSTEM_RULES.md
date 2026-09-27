@@ -305,3 +305,18 @@ Consumer passes `themeMode` and `breakpoint` props to theme-aware components:
 ```
 
 Tailwind dark mode is handled via the `dark:` class prefix, controlled by the consumer's Tailwind config.
+
+---
+
+## 11. Figma MCP — Required for Design-to-Code
+
+When translating Figma designs to code, ALWAYS get measurements and specs via
+Figma MCP tools (`get_design_context`, `get_screenshot`, `get_variable_defs`).
+Never estimate spacing, sizes, or typography from screenshots alone.
+
+- If the Figma MCP server is unavailable or not connected, fix the connection
+  FIRST — do not proceed with design-to-code work on guesses.
+- Generated code reports wrapper/auto-layout **frame** sizes, which can differ
+  from what nested icon/component instances actually render (e.g. a 20px icon
+  inside a 32px frame). Verify rendered sizes against `get_screenshot` and
+  inspector values, not just the emitted classes.

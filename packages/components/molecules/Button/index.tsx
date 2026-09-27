@@ -125,7 +125,11 @@ const Button = ({
   };
 
   const sizing = getSizing();
-  const gap = isMd ? 'gap-sm' : 'gap-lg';
+  const gap = 'gap-lg';
+  // Figma Buttons/Button icon slots: sm renders the icon at 20px (no 20px size
+  // token, so use w-5/h-5); lg renders it at 32px (size token lg).
+  const iconSize = isMd ? undefined : 'lg';
+  const iconSizeClass = isMd ? 'w-5 h-5' : undefined;
   const borderRadius = radius === 'round' ? 'rounded-2xl' : '';
   const border = variant !== 'text' ? 'border' : '';
 
@@ -146,19 +150,29 @@ const Button = ({
       `.trim()}>
       {/* Left Icon */}
       {hasIcon && iconPosition === 'left' && (
-        <Icon iconName={iconName as any} iconSize={isMd ? 'md' : 'lg'} color={colors.icon as any} />
+        <Icon iconName={iconName as any} iconSize={iconSize} className={iconSizeClass} color={colors.icon as any} />
       )}
 
       {/* Text */}
       {hasText && (
-        <TextStyled textStyle={isMd ? 'button-sml' : 'button'} className={colors.text}>
+        // The button-sml/button tokens clamp lineHeight to fontSize; iOS
+        // top-anchors the run in that shrunken line box, so the label sits
+        // ~2px high. A line box ≥ the font's natural height lets items-center
+        // center the glyphs optically (matches Figma's rendering).
+        // includeFontPadding removes Android's extra in-box font padding —
+        // ignored on iOS/web.
+        <TextStyled
+          textStyle={isMd ? 'button-sml' : 'button'}
+          className={colors.text}
+          style={{ lineHeight: isMd ? 20 : 24, includeFontPadding: false }}
+        >
           {text}
         </TextStyled>
       )}
 
       {/* Right Icon */}
       {hasIcon && iconPosition === 'right' && (
-        <Icon iconName={iconName as any} iconSize={isMd ? 'md' : 'lg'} color={colors.icon as any} />
+        <Icon iconName={iconName as any} iconSize={iconSize} className={iconSizeClass} color={colors.icon as any} />
       )}
     </PressableStyled>
   );
