@@ -36,12 +36,14 @@ import inputIcoVoice from './Input/ico-voice.svg';
 import inputIcoWidthRound from './Input/ico-width-round.svg';
 
 // Map svg
+import mapIcoDirection from './Map/ico-direction.svg';
 import mapIcoDistance from './Map/ico-distance.svg';
 import mapIcoLocatioon from './Map/ico-locatioon.svg';
 import mapIcoMapRound from './Map/ico-map-round.svg';
 import mapIcoMarinaBold from './Map/ico-marina-bold.svg';
 import mapIcoMylocation from './Map/ico-mylocation.svg';
 import mapIcoPin from './Map/ico-pin.svg';
+import mapIcoSlack from './Map/ico-slack.svg';
 
 // Marina svg
 import marinaIcoBar from './Marina/ico-bar.svg';
@@ -272,12 +274,14 @@ export const iconMap: IconMap = {
     'ico-width-round': inputIcoWidthRound,
   },
   map: {
+    'ico-direction': mapIcoDirection,
     'ico-distance': mapIcoDistance,
     'ico-locatioon': mapIcoLocatioon,
     'ico-map-round': mapIcoMapRound,
     'ico-marina-bold': mapIcoMarinaBold,
     'ico-mylocation': mapIcoMylocation,
     'ico-pin': mapIcoPin,
+    'ico-slack': mapIcoSlack,
   },
   marina: {
     'ico-bar': marinaIcoBar,
