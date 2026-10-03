@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { View } from 'react-native';
-import Svg, { Defs, LinearGradient, RadialGradient, Stop, Rect } from 'react-native-svg';
+import { Svg, Defs, LinearGradient, RadialGradient, Stop, Rect } from 'react-native-svg';
 import Animated, {
   useSharedValue,
   useAnimatedProps,

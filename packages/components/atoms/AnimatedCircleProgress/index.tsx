@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { View } from "react-native";
-import Svg, { Circle, G } from "react-native-svg";
+import { Svg, Circle, G } from "react-native-svg";
 import Animated, {
   useSharedValue,
   useAnimatedProps,
