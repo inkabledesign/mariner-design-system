@@ -43,7 +43,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
 }) => {
   // Clamp progress between 0 and 100
   const clampedProgress = Math.min(Math.max(progress, 0), 100);
-  const progressWidth = `${clampedProgress}%`;
+  const progressWidth: `${number}%` = `${clampedProgress}%`;
 
   // Get colors based on style variant
   const getColors = () => {

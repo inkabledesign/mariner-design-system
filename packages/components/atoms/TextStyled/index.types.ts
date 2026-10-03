@@ -1,6 +1,5 @@
 import type { TextStyle as RNTextStyle } from 'react-native';
-import type { TextStyles } from '@/style/tokens.types';
-import type { Breakpoint } from '@inkabledesign/mariner-theme';
+import type { Breakpoint, TypographyTextScale } from '@inkabledesign/mariner-theme';
 
 export interface StyledTextProps {
   /** Breakpoint for responsive typography resolution @default 'mobile' */
@@ -10,7 +9,7 @@ export interface StyledTextProps {
   children?: React.ReactNode;
 
   // Typography
-  textStyle?: keyof TextStyles;
+  textStyle?: keyof TypographyTextScale;
 
   /**
    * Font weight override

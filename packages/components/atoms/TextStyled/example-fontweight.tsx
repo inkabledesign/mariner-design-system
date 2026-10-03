@@ -1,5 +1,5 @@
 import React from 'react';
-import Column from '@/components/atoms/Column';
+import Column from '../Column';
 import TextStyled from './index';
 
 /**
