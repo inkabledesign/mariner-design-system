@@ -85,6 +85,15 @@ Components are **pure presentational** — no internal state management, no busi
 - **NEVER** use `expo-av` — it is deprecated. Use `expo-audio` in consumer apps only.
 - Component library must not bundle audio/video playback logic
 
+### Conditional Rendering (no Figma `hasX`/`showX` props)
+
+Figma uses boolean props (`hasCaption`, `hasLeading`, `showValue`, `hasTrailingIconOne`) because it has no other way to toggle elements. **Do NOT port these flags into code.**
+
+- Content strings render iff provided: `{caption && <TextStyled>{caption}</TextStyled>}` — no `hasCaption`/`showLabel`/`showTitle`
+- Mutually exclusive slots (leading/trailing) use a union-type prop, e.g. `leading?: 'icon' | 'switch' | 'radio' | 'avatar'` — omitted means not rendered
+- Optional sub-elements render iff their value prop is provided (e.g. `leadingProgress`, `trailingIconTwo`)
+- Do not give content props Figma placeholder defaults ("Label", "Text", "Caption", "Value") — undefined renders nothing
+
 ### Theme Mode & Breakpoint Props
 
 Components that directly access token values accept:
@@ -215,14 +224,17 @@ Breakpoints: `mobile`, `tablet`, `desktop-sm`, `desktop-lg` (Tailwind defaults: 
 
 | Dependency | Version |
 |-----------|---------|
-| Expo SDK | 55 |
-| React | 19.x |
-| React Native | 0.83.x |
+| Expo SDK | 57 |
+| React | 19.2.x |
+| React Native | 0.86.x |
 | NativeWind | 4.x |
 | Tailwind CSS | 3.4.x |
-| react-native-reanimated | 4.x |
+| react-native-reanimated | 4.5.x |
+| react-native-worklets | 0.10.x |
 | react-native-svg | 15.x |
-| TypeScript | 5.x |
+| react-native-gesture-handler | 2.32.x |
+| react-native-safe-area-context | 5.7.x |
+| TypeScript | 6.x |
 
 ---
 
@@ -293,3 +305,18 @@ Consumer passes `themeMode` and `breakpoint` props to theme-aware components:
 ```
 
 Tailwind dark mode is handled via the `dark:` class prefix, controlled by the consumer's Tailwind config.
+
+---
+
+## 11. Figma MCP — Required for Design-to-Code
+
+When translating Figma designs to code, ALWAYS get measurements and specs via
+Figma MCP tools (`get_design_context`, `get_screenshot`, `get_variable_defs`).
+Never estimate spacing, sizes, or typography from screenshots alone.
+
+- If the Figma MCP server is unavailable or not connected, fix the connection
+  FIRST — do not proceed with design-to-code work on guesses.
+- Generated code reports wrapper/auto-layout **frame** sizes, which can differ
+  from what nested icon/component instances actually render (e.g. a 20px icon
+  inside a 32px frame). Verify rendered sizes against `get_screenshot` and
+  inspector values, not just the emitted classes.

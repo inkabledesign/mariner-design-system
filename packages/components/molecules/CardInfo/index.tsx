@@ -1,10 +1,10 @@
-import React from 'react';
-import Column from '../../atoms/Column';
-import Row from '../../atoms/Row';
-import ViewStyled from '../../atoms/ViewStyled';
-import TextStyled from '../../atoms/TextStyled';
-import Icon from '../../atoms/Icon';
-import type { CardInfoProps } from './index.types';
+import React from "react";
+import Column from "../../atoms/Column";
+import Row from "../../atoms/Row";
+import ViewStyled from "../../atoms/ViewStyled";
+import TextStyled from "../../atoms/TextStyled";
+import Icon from "../../atoms/Icon";
+import type { CardInfoProps } from "./index.types";
 
 /**
  * CardInfo Component
@@ -34,48 +34,48 @@ import type { CardInfoProps } from './index.types';
  * />
  */
 const CardInfo = ({
-  title = 'Offline access',
-  subtitle = 'Download module for offline access',
-  body = 'This module includes pictures, videos, and audio. To avoid using up your mobile data, we recommend downloading it over Wi-Fi.',
-  iconName = 'ico-close-round',
-  type = 'danger',
-  className = '',
+  title = "Offline access",
+  subtitle = "Download module for offline access",
+  body = "This module includes pictures, videos, and audio. To avoid using up your mobile data, we recommend downloading it over Wi-Fi.",
+  iconName = "ico-close-round",
+  type = "danger",
+  className = "",
   children,
 }: CardInfoProps) => {
   // Determine colors based on type
   const getColors = () => {
     switch (type) {
-      case 'danger':
+      case "danger":
         return {
-          bg: 'bg-system-error-5',
-          border: 'border-system-error-40',
-          icon: 'text-system-error-100',
+          bg: "bg-system-error-5",
+          border: "border-system-error-40",
+          icon: "text-system-error-100",
         };
-      case 'warning':
+      case "warning":
         return {
-          bg: 'bg-system-warning-5',
-          border: 'border-system-warning-40',
-          icon: 'text-system-warning-100',
+          bg: "bg-system-warning-5",
+          border: "border-system-warning-40",
+          icon: "text-system-warning-100",
         };
-      case 'success':
+      case "success":
         return {
-          bg: 'bg-system-success-5',
-          border: 'border-system-success-40',
-          icon: 'text-system-success-100',
-          iconName: 'ico-tick-circle',
+          bg: "bg-system-success-5",
+          border: "border-system-success-40",
+          icon: "text-system-success-100",
+          iconName: "ico-tick-round-fill",
         };
-      case 'info':
+      case "info":
         return {
-          bg: 'bg-brand-primary-alpha-5',
-          border: 'border-brand-primary-alpha-40',
-          icon: 'text-brand-primary-100',
+          bg: "bg-brand-primary-alpha-5",
+          border: "border-brand-primary-alpha-40",
+          icon: "text-brand-primary-100",
         };
-      case 'generic':
+      case "generic":
       default:
         return {
-          bg: 'bg-material-alphaDark-5',
-          border: 'border-material-alphaDark-40',
-          icon: 'text-material-surface-100',
+          bg: "bg-material-alphaDark-5",
+          border: "border-material-alphaDark-40",
+          icon: "text-material-surface-100",
         };
     }
   };
@@ -92,26 +92,37 @@ const CardInfo = ({
         pl-sm pr-md pt-sm pb-lg
         w-full
         ${className}
-      `.trim()}>
+      `.trim()}
+    >
       <Column className="gap-xs">
         <Row className="gap-xs items-start">
           {/* Icon */}
           <ViewStyled className="w-6 h-6 flex-shrink-0">
-            <Icon iconName={iconName} color={colors.icon as any} className="w-6 h-6" />
+            <Icon
+              iconName={iconName}
+              color={colors.icon as any}
+              className="w-6 h-6"
+            />
           </ViewStyled>
           {/* Content Column */}
           <Column className="flex-1 gap-xs">
             {/* Title and Subtitle Row */}
             <Column className="gap-xs">
               <Row className="items-center justify-between">
-                <TextStyled textStyle="heading6" className="text-material-surface-80 flex-1">
+                <TextStyled
+                  textStyle="heading6"
+                  className="text-material-surface-80 flex-1"
+                >
                   {title}
                 </TextStyled>
               </Row>
 
               {subtitle && (
                 <Row className="gap-xs items-center">
-                  <TextStyled textStyle="footnote" className="text-material-surface-80 flex-1">
+                  <TextStyled
+                    textStyle="footnote"
+                    className="text-material-surface-80 flex-1"
+                  >
                     {subtitle}
                   </TextStyled>
                 </Row>
@@ -119,7 +130,10 @@ const CardInfo = ({
               {/* Body Text */}
               {body && (
                 <Row className="gap-xs items-center justify-center">
-                  <TextStyled textStyle="footnote" className="text-material-surface-60 flex-1">
+                  <TextStyled
+                    textStyle="footnote"
+                    className="text-material-surface-60 flex-1"
+                  >
                     {body}
                     {children}
                   </TextStyled>

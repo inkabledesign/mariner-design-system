@@ -72,6 +72,30 @@ export default function ButtonExamples() {
         iconType="input"
       />
 
+      {/* Medium (md) Size Variants */}
+      <Button 
+        text="Medium Button" 
+        variant="primary"
+        size="md"
+      />
+
+      <Button 
+        text="Medium with Left Icon" 
+        variant="primary"
+        size="md"
+        iconPosition="left"
+        iconName="ico-berth-round"
+        iconType="input"
+      />
+
+      <Button 
+        variant="secondary"
+        size="md"
+        iconPosition="left"
+        iconName="ico-berth-round"
+        iconType="input"
+      />
+
       {/* Text Variant */}
       <Button 
         text="Text Button" 

@@ -1,49 +1,9 @@
-import type { RadiusScale } from './types';
+import radiusJson from './radius.json';
 
-/**
- * Design System Radius Tokens
- * 
- * Edit these values and see changes instantly with hot reload!
- */
+/** Figma modes map to code breakpoints as SML → mobile, MED → tablet, LRG → desktop. */
 export const radiusData = {
-  "mobile": {
-    "radius": {
-      "xs": 4,
-      "sm": 6,
-      "md": 12,
-      "lg": 18,
-      "xl": 24,
-      "xxl": 36
-    }
-  },
-  "tablet": {
-    "radius": {
-      "xs": 6,
-      "sm": 8,
-      "md": 16,
-      "lg": 24,
-      "xl": 32,
-      "xxl": 48
-    }
-  },
-  "desktop-sm": {
-    "radius": {
-      "xs": 8,
-      "sm": 12,
-      "md": 20,
-      "lg": 32,
-      "xl": 48,
-      "xxl": 64
-    }
-  },
-  "desktop-lg": {
-    "radius": {
-      "xs": 12,
-      "sm": 16,
-      "md": 24,
-      "lg": 48,
-      "xl": 64,
-      "xxl": 96
-    }
-  }
+  mobile: radiusJson['mobile-sm'],
+  tablet: radiusJson['tablet-md'],
+  'desktop-sm': radiusJson['desktop-sm'],
+  'desktop-lg': radiusJson['desktop-lg'],
 } as const;

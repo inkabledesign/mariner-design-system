@@ -1,18 +1,21 @@
 {
   "name": "@inkabledesign/mariner-components",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "description": "Cross-platform React Native components for Mariner applications",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-  "react-native": "index.ts",
+  "react-native": "./dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
+      "react-native": "./dist/index.js",
       "types": "./dist/index.d.ts",
       "import": "./dist/index.esm.js",
-      "require": "./dist/index.js"
-    }
+      "require": "./dist/index.js",
+      "default": "./dist/index.esm.js"
+    },
+    "./package.json": "./package.json"
   },
   "files": [
     "dist",
@@ -30,19 +33,17 @@
     "test": "echo \"No tests for components package\"",
     "lint": "echo \"No linting for components package\""
   },
-  "dependencies": {
-    "@inkabledesign/mariner-assets": "file:../assets"
-  },
   "peerDependencies": {
+    "@inkabledesign/mariner-assets": "^1.0.1",
     "@inkabledesign/mariner-theme": "*",
-    "expo-image": "~55.0.0",
+    "expo-image": ">=55.0.8",
     "nativewind": "^4.0.0",
     "react": "^19.0.0",
-    "react-native": "^0.83.0",
-    "react-native-gesture-handler": "^2.14.0",
-    "react-native-reanimated": "^4.0.0",
-    "react-native-safe-area-context": "^5.0.0",
-    "react-native-svg": "^15.0.0",
+    "react-native": ">=0.83.0",
+    "react-native-gesture-handler": ">=2.30.0",
+    "react-native-reanimated": ">=4.2.1",
+    "react-native-safe-area-context": ">=5.6.2",
+    "react-native-svg": "^15.15.4",
     "tailwindcss": "^3.4.0"
   },
   "peerDependenciesMeta": {

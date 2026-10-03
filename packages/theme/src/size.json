@@ -1,46 +1,54 @@
 {
   "mobile-sm": {
     "size": {
+      "xxxs": 6,
       "xxs": 8,
       "xs": 12,
       "sm": 16,
       "md": 24,
       "lg": 32,
       "xl": 48,
-      "xxl": 56
+      "xxl": 56,
+      "xxxl": 72
     }
   },
   "tablet-md": {
     "size": {
+      "xxxs": 6,
       "xxs": 8,
       "xs": 12,
       "sm": 16,
       "md": 24,
       "lg": 32,
       "xl": 48,
-      "xxl": 56
+      "xxl": 56,
+      "xxxl": 72
     }
   },
   "desktop-sm": {
     "size": {
+      "xxxs": 6,
       "xxs": 8,
       "xs": 12,
       "sm": 16,
       "md": 24,
       "lg": 32,
       "xl": 48,
-      "xxl": 56
+      "xxl": 56,
+      "xxxl": 72
     }
   },
   "desktop-lg": {
     "size": {
+      "xxxs": 6,
       "xxs": 8,
       "xs": 12,
       "sm": 16,
       "md": 24,
       "lg": 32,
       "xl": 48,
-      "xxl": 56
+      "xxl": 56,
+      "xxxl": 72
     }
   }
 }

@@ -1,1 +1,1 @@
-export type { TableCellProps } from '@/components/organisms/Table/index.types';
+export type { TableCellProps } from '../../organisms/Table/index.types';

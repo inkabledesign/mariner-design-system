@@ -1,5 +1,5 @@
+const path = require('path');
 const { resolveConfig, transform } = require('@svgr/core');
-const resolveConfigDir = require('path-dirname');
 const upstreamTransformer = require('@expo/metro-config/babel-transformer');
 
 const defaultSVGRConfig = {
@@ -22,18 +22,30 @@ const defaultSVGRConfig = {
   },
 };
 
-function createTransformer(transformer) {
-  return async (transformOptions, projectRoot, filename, src, fileBuffer) => {
-    if (filename && typeof filename === 'string' && filename.endsWith('.svg')) {
-      const config = await resolveConfig(resolveConfigDir(filename));
-      const svgrConfig = config
-        ? { ...defaultSVGRConfig, ...config }
-        : defaultSVGRConfig;
-      const transformedSrc = await transform(src, svgrConfig, { filePath: filename });
-      return transformer.transform(transformOptions, projectRoot, filename, transformedSrc, fileBuffer);
-    }
-    return transformer.transform(transformOptions, projectRoot, filename, src, fileBuffer);
-  };
-}
+// Support both Metro signatures:
+//   modern:  transform({ filename, src, options, plugins, ... })
+//   legacy:  transform(transformOptions, projectRoot, filename, src, fileBuffer)
+module.exports = {
+  transform: async function transform() {
+    const args = Array.from(arguments);
+    const first = args[0] || {};
+    const isModern = typeof first === 'object' && 'src' in first;
+    const filename = isModern ? first.filename : args[2];
+    const src = isModern ? first.src : args[3];
 
-module.exports = { transform: createTransformer(upstreamTransformer) };
+    if (filename && typeof filename === 'string' && filename.endsWith('.svg')) {
+      const config = (await resolveConfig(path.dirname(filename))) || defaultSVGRConfig;
+      const code = await transform(src, { ...defaultSVGRConfig, ...config }, { filePath: filename });
+      if (isModern) {
+        return upstreamTransformer.transform({
+          ...first,
+          src: code,
+          options: first.options ?? {},
+        });
+      }
+      args[3] = code;
+      return upstreamTransformer.transform.apply(null, args);
+    }
+    return upstreamTransformer.transform.apply(null, args);
+  },
+};

@@ -1,7 +1,8 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { Pressable, LayoutChangeEvent, View } from 'react-native';
 import Row from '../../atoms/Row';
-import Animated, {
+import {
+  createAnimatedComponent,
   useAnimatedStyle,
   useSharedValue,
   withTiming,
@@ -10,8 +11,13 @@ import Animated, {
 } from 'react-native-reanimated';
 import ViewStyled from '../../atoms/ViewStyled';
 import TextStyled from '../../atoms/TextStyled';
-import { theme } from '@mariner/theme';
+import { theme } from '@inkabledesign/mariner-theme';
 import type { TabBarProps } from './index.types';
+
+// NOTE: use createAnimatedComponent rather than Animated.View — in the
+// Rollup-bundled output `Animated` resolves to the module namespace, which
+// does not expose `View` as a named export.
+const AnimatedView = createAnimatedComponent(View);
 
 /**
  * TabBar - Animated tab bar with sliding indicator
@@ -192,7 +198,10 @@ const TabBar = ({
       }
     }
     return 0;
-  }, [scrollX, maxScrollX, isReady, tabMeasurements, tabs.length]);
+    // NOTE: no deps array — Reanimated mutates the passed array
+    // (dependencies.push), which crashes under React Compiler's memoized
+    // literals. The worklets plugin captures inputs via __closure.
+  });
 
   // Animated style for the indicator
   const indicatorStyle = useAnimatedStyle(() => {
@@ -242,7 +251,7 @@ const TabBar = ({
         ))}
 
         {/* Animated indicator - now sibling of tabs */}
-        <Animated.View
+        <AnimatedView
           style={[
             indicatorStyle,
             {

@@ -1,7 +1,13 @@
 import React from 'react';
+import { View } from 'react-native';
 import ViewStyled from '../ViewStyled';
 import type { ProgressBarProps } from './index.types';
-import Animated from 'react-native-reanimated';
+import { createAnimatedComponent } from 'react-native-reanimated';
+
+// NOTE: use createAnimatedComponent rather than Animated.View — in the
+// Rollup-bundled output `Animated` resolves to the module namespace, which
+// does not expose `View` as a named export.
+const AnimatedView = createAnimatedComponent(View);
 
 /**
  * ProgressBar Component
@@ -37,7 +43,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
 }) => {
   // Clamp progress between 0 and 100
   const clampedProgress = Math.min(Math.max(progress, 0), 100);
-  const progressWidth = `${clampedProgress}%`;
+  const progressWidth: `${number}%` = `${clampedProgress}%`;
 
   // Get colors based on style variant
   const getColors = () => {
@@ -61,7 +67,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
 
   return (
     <ViewStyled className={`w-full ${className}`}>
-      <Animated.View
+      <AnimatedView
         className={`relative ${heightClass} w-full overflow-hidden rounded-lg`}
         style={animatedProgressLBarStyle}>
         {/* Rail (background) */}
@@ -72,7 +78,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
           className={`absolute bottom-0 left-0 top-0 rounded-lg ${colors.progress}`}
           style={{ width: progressWidth }}
         />
-      </Animated.View>
+      </AnimatedView>
     </ViewStyled>
   );
 };

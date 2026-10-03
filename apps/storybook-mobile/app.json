@@ -5,10 +5,6 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
-    "splash": {
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -22,11 +18,18 @@
     "scheme": "mariner-storybook",
     "plugins": [
       [
-        "expo-router",
+        "expo-splash-screen",
         {
-          "root": "./app"
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
         }
-      ]
+      ],
+      "@react-native-community/datetimepicker",
+      "expo-asset",
+      "expo-audio",
+      "expo-image",
+      "expo-status-bar",
+      "expo-video"
     ]
   }
 }

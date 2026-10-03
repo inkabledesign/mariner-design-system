@@ -12,7 +12,7 @@ A versatile badge component extracted from Figma design system. Displays status 
 
 - ✅ Five variants: `primary`, `secondary`, `danger`, `success`, `warning`
 - ✅ Two sizes: `lg` (large), `sm` (small)
-- ✅ Optional icon and text
+- ✅ Optional icon and text — render conditionally via `iconName` / `label`
 - ✅ Icon-only, text-only, or combined modes
 - ✅ Rounded pill shape
 - ✅ Custom icon support
@@ -33,49 +33,44 @@ A versatile badge component extracted from Figma design system. Displays status 
   - Small: 16x16px (w-4 h-4)
 
 ### Typography
-- **Large**: heading6 style (16px Montserrat SemiBold, line-height 21px)
-- **Small**: footnote style (13.33px Montserrat Medium, line-height 16px)
+- **Large**: footnote style (13px Montserrat SemiBold, line-height 22px)
+- **Small**: caption style (11px Montserrat SemiBold, line-height 17px)
 
 ### Color Variants
 
 #### Primary (Blue)
 - Background: `brand-primary-100` (#262ebc)
-- Text: `brand-primary-5` (#f4f5fc)
-- Icon: `brand-primary-5` (#f4f5fc)
+- Text: `text-light-primary` (#f8f9fd)
+- Icon: `text-light-primary` (#f8f9fd)
 - Border: `brand-accent-100` (#a68756)
-- Default Icon: `ico-tick-round`
 - **Use Case**: Active status, selected items, primary indicators
 
-#### Secondary (Light Blue)
-- Background: `brand-primary-5` (#f4f5fc)
-- Text: `brand-primary-100` (#262ebc)
-- Icon: `brand-primary-100` (#262ebc)
+#### Secondary (White)
+- Background: `material-surface-light` (#ffffff)
+- Text: `text-primary` (#262ebc)
+- Icon: `text-primary` (#262ebc)
 - Border: `brand-accent-80` (#b89f78)
-- Default Icon: `ico-tick-round`
 - **Use Case**: Inactive status, secondary indicators, outlined badges
 
 #### Danger (Red)
-- Background: `system-error-100` (#f82b2b)
-- Text: `material-surface-0` (#f4f4f4)
-- Icon: `material-surface-0` (#f4f4f4)
-- Border: `system-error-20` (rgba(248, 43, 43, 0.2))
-- Default Icon: `ico-close-round`
+- Background: `system-error-80` (rgba(248, 43, 43, 0.8))
+- Text: `text-light-primary` (#f8f9fd)
+- Icon: `text-light-primary` (#f8f9fd)
+- Border: `system-error-80` (rgba(248, 43, 43, 0.8))
 - **Use Case**: Errors, critical alerts, unavailable status
 
 #### Success (Green)
-- Background: `system-success-100` (#83ae27)
-- Text: `material-surface-0` (#f4f4f4)
-- Icon: `material-surface-0` (#f4f4f4)
-- Border: `system-success-20` (rgba(131, 174, 39, 0.2))
-- Default Icon: `ico-tick-round`
+- Background: `system-success-60` (rgba(131, 174, 39, 0.6))
+- Text: `text-dark-primary` (#000023)
+- Icon: `text-dark-primary` (#000023)
+- Border: `system-success-80` (rgba(131, 174, 39, 0.8))
 - **Use Case**: Success status, completed items, available status
 
 #### Warning (Yellow)
-- Background: `system-warning-100` (#ffba42)
-- Text: `material-surface-80` (#333333)
-- Icon: `material-surface-80` (#333333)
-- Border: `system-warning-20` (rgba(255, 186, 66, 0.2))
-- Default Icon: `ico-info-round`
+- Background: `system-warning-80` (rgba(255, 186, 66, 0.8))
+- Text: `text-dark-primary` (#000023)
+- Icon: `text-dark-primary` (#000023)
+- Border: `system-warning-80` (rgba(255, 186, 66, 0.8))
 - **Use Case**: Warnings, pending status, attention needed
 
 ## Usage
@@ -113,15 +108,17 @@ import Badge from '@/components/molecules/Badge';
 
 ### Icon and Text Combinations
 
+Icon and label render conditionally based on the props provided:
+
 ```tsx
-// Icon + Text (default)
-<Badge label="Available" variant="primary" hasIcon={true} hasText={true} />
+// Icon + Text
+<Badge label="Available" variant="primary" iconName="ico-tick-round" />
 
-// Text only
-<Badge label="Available" variant="primary" hasIcon={false} hasText={true} />
+// Text only — omit iconName
+<Badge label="Available" variant="primary" />
 
-// Icon only
-<Badge variant="primary" hasIcon={true} hasText={false} />
+// Icon only — omit label
+<Badge variant="primary" iconName="ico-tick-round" />
 ```
 
 ### Custom Icons
@@ -136,7 +133,16 @@ import Badge from '@/components/molecules/Badge';
 
 // Different icons per variant
 <Badge label="Pinned" variant="primary" iconName="ico-pin" />
-<Badge label="Locked" variant="danger" iconName="ico-lock" />
+<Badge label="Locked" variant="danger" iconName="ico-locked-round" />
+```
+
+### Dark Mode
+
+Text and container colors adapt via `dark:` classes. The icon color is resolved
+from tokens at runtime — pass `themeMode` so it matches the active theme:
+
+```tsx
+<Badge label="Available" variant="primary" themeMode={appTheme} />
 ```
 
 ### Real-World Examples
@@ -145,30 +151,29 @@ import Badge from '@/components/molecules/Badge';
 // Module status badges
 <Badge label="Available" variant="success" size="sm" />
 <Badge label="Coming Soon" variant="warning" size="sm" />
-<Badge label="Locked" variant="danger" size="sm" hasIcon={false} />
+<Badge label="Locked" variant="danger" size="sm" />
 
 // Update indicator
-<Badge label="Update" variant="danger" size="sm" />
+<Badge label="Update" variant="danger" size="sm" iconName="ico-download-round-fill" />
 
 // Completion status
-<Badge label="Complete" variant="success" size="lg" />
-<Badge label="In Progress" variant="warning" size="lg" />
+<Badge label="Complete" variant="success" size="lg" iconName="ico-tick-round" />
+<Badge label="In Progress" variant="warning" size="lg" iconName="ico-info-round" />
 
 // Icon-only indicators
-<Badge variant="success" size="sm" hasText={false} />
-<Badge variant="danger" size="sm" hasText={false} />
+<Badge variant="success" size="sm" iconName="ico-tick-round" />
+<Badge variant="danger" size="sm" iconName="ico-close-round" />
 ```
 
 ## Props
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `label` | `string` | `'Available'` | Badge label text |
-| `variant` | `'primary' \| 'secondary' \| 'danger' \| 'success' \| 'warning'` | `'primary'` | Badge variant/type |
+| `label` | `string` | `undefined` | Badge label text (renders when provided) |
+| `variant` | `'primary' \| 'secondary' \| 'danger' \| 'success' \| 'warning'` | `'primary'` | Badge variant/type (`'error'` and `'default'` are deprecated aliases) |
 | `size` | `'lg' \| 'sm'` | `'lg'` | Badge size |
-| `hasIcon` | `boolean` | `true` | Show icon |
-| `hasText` | `boolean` | `true` | Show text |
-| `iconName` | `IconName` | `undefined` | Optional custom icon name |
+| `iconName` | `IconName` | `undefined` | Icon to render (renders when provided) |
+| `themeMode` | `'light' \| 'dark'` | `'light'` | Theme mode for icon color resolution |
 | `className` | `string` | `''` | Additional CSS classes |
 
 ## Implementation Notes
@@ -177,18 +182,10 @@ import Badge from '@/components/molecules/Badge';
 - ✅ Uses Row atom for layout
 - ✅ Uses ViewStyled for container
 - ✅ Uses TextStyled for typography
-- ✅ Uses Icon atom with proper color variants
-- ✅ Default icons per variant
-- ✅ Supports custom icons via iconName prop
+- ✅ Uses Icon atom with semantic text color tokens
+- ✅ Icon renders when `iconName` is provided (no `hasIcon`/`hasText` flags)
 - ✅ Fully responsive
 - ✅ Uses NativeWind for cross-platform styling
-
-### Default Icons by Variant
-- **Primary**: `ico-tick-round` (checkmark)
-- **Secondary**: `ico-tick-round` (checkmark)
-- **Danger**: `ico-close-round` (X/close)
-- **Success**: `ico-tick-round` (checkmark)
-- **Warning**: `ico-info-round` (info/alert)
 
 ### Padding Logic
 The component automatically adjusts padding based on content:
@@ -202,7 +199,7 @@ The component automatically adjusts padding based on content:
 ```tsx
 // Status indicator on module cards
 <Badge label="Available" variant="success" size="sm" />
-<Badge label="Update" variant="danger" size="sm" hasIcon={false} />
+<Badge label="Update" variant="danger" size="sm" />
 ```
 
 ### List Items
@@ -222,7 +219,7 @@ The component automatically adjusts padding based on content:
 ### Inline Indicators
 ```tsx
 // Small icon-only badges
-<Badge variant="success" size="sm" hasText={false} />
+<Badge variant="success" size="sm" iconName="ico-tick-round" />
 ```
 
 ## Related Components
@@ -245,16 +242,16 @@ The component automatically adjusts padding based on content:
 - `radius-lg` (18px)
 
 ### Colors
-- `brand-primary-5`, `brand-primary-100`
-- `brand-accent-80`, `brand-accent-100`
-- `system-error-20`, `system-error-100`
-- `system-success-20`, `system-success-100`
-- `system-warning-20`, `system-warning-100`
-- `material-surface-0`, `material-surface-80`
+- `brand-primary-100`, `brand-accent-80`, `brand-accent-100`
+- `material-surface-light`
+- `system-error-80`, `system-error-100`
+- `system-success-60`, `system-success-80`
+- `system-warning-80`
+- `text-primary`, `text-light-primary`, `text-dark-primary`
 
 ### Typography
-- `heading6` (16px Montserrat SemiBold)
-- `footnote` (13.33px Montserrat Medium)
+- `footnote` (13px Montserrat SemiBold)
+- `caption` (11px Montserrat SemiBold)
 
 ## Accessibility Notes
 
