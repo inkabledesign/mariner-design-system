@@ -36,7 +36,7 @@ const Chip = ({
   onPress,
   className = '',
 }: ChipProps) => {
-  const leadingIconName = iconName ?? (type === 'icon' ? 'ico-mylocation' : undefined);
+  const leadingIconName = iconName ?? (type === 'icon' ? 'ico-my-location' : undefined);
   const resolvedTrailingIconName =
     trailingIconName ?? (type === 'filter' ? 'ico-chevron-down' : undefined);
 

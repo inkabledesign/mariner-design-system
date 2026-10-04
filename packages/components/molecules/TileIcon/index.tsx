@@ -13,7 +13,7 @@ import type { TileIconProps } from './index.types';
  * Source: Mariner-Library / Molecules / Tiles/TileIcon (Figma).
  *
  * @example
- * <TileIcon iconName="ico-loundry" label="Laundry" isActive onPress={fn} />
+ * <TileIcon iconName="ico-laundry" label="Laundry" isActive onPress={fn} />
  */
 const TileIcon = ({ iconName, label, isActive = false, onPress, className = '' }: TileIconProps) => {
   const fg = isActive ? 'text-brand-primary-100' : 'text-material-surface-60';

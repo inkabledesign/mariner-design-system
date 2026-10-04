@@ -5,7 +5,7 @@ const meta: Meta<typeof TileIcon> = {
   title: 'Molecules/TileIcon',
   component: TileIcon,
   parameters: { layout: 'centered' },
-  args: { iconName: 'ico-loundry', label: 'Laundry' },
+  args: { iconName: 'ico-laundry', label: 'Laundry' },
 };
 
 export default meta;

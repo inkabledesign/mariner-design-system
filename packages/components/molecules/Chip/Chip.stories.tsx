@@ -21,7 +21,7 @@ export const Icon: Story = { args: { type: 'icon', label: 'Find nearest' } };
 export const IconOnly: Story = { args: { type: 'icon', label: '' } };
 export const Filter: Story = { args: { type: 'filter', label: 'Filter' } };
 export const FilterWithLeadingIcon: Story = {
-  args: { type: 'filter', label: 'Find nearest', iconName: 'ico-mylocation' },
+  args: { type: 'filter', label: 'Find nearest', iconName: 'ico-my-location' },
 };
 export const Selected: Story = { args: { type: 'icon', label: 'Find nearest', selected: true } };
 export const SelectedIconOnly: Story = { args: { type: 'icon', label: '', selected: true } };

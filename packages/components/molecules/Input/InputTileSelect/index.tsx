@@ -13,7 +13,7 @@ import type { InputTileSelectProps } from './index.types';
  * Source: Mariner-Library / Molecules / Input/InputTileSelect (Figma).
  *
  * @example
- * <InputTileSelect iconName="ico-loundry" label="Laundry" isActive onPress={fn} />
+ * <InputTileSelect iconName="ico-laundry" label="Laundry" isActive onPress={fn} />
  */
 const InputTileSelect = ({
   iconName,

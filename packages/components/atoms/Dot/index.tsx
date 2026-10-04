@@ -5,16 +5,16 @@ import type { DotProps } from './index.types';
 /**
  * Dot Component (Atom)
  *
- * A single indicator dot with quizz/lesson filled and outline variants.
+ * A single indicator dot with quiz/lesson filled and outline variants.
  * Source: Mariner-Learning / Atoms / Dot (Figma) — ~16px circle.
  *
  * @example
- * <Dot variant="quizz" />
+ * <Dot variant="quiz" />
  */
-const Dot = ({ variant = 'quizz', className = '' }: DotProps) => {
+const Dot = ({ variant = 'quiz', className = '' }: DotProps) => {
   const styles = {
-    quizz: 'bg-brand-primary-100',
-    'quizz-outline': 'border-2 border-brand-primary-100',
+    quiz: 'bg-brand-primary-100',
+    'quiz-outline': 'border-2 border-brand-primary-100',
     lesson: 'bg-material-surface-100',
     'lesson-outline': 'border-2 border-material-surface-100',
   }[variant];

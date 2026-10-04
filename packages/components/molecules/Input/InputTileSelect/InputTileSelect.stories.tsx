@@ -5,7 +5,7 @@ const meta: Meta<typeof InputTileSelect> = {
   title: 'Molecules/Input/InputTileSelect',
   component: InputTileSelect,
   parameters: { layout: 'centered' },
-  args: { iconName: 'ico-loundry', label: 'Laundry' },
+  args: { iconName: 'ico-laundry', label: 'Laundry' },
 };
 
 export default meta;

@@ -47,7 +47,7 @@ const ProgressDonutCard = ({
             iconName={
               type === "lessons"
                 ? "ico-learn-book"
-                : "ico-module-quizz-round-fill"
+                : "ico-module-quiz-round-fill"
             }
             color="text-brand-primary-100"
           />

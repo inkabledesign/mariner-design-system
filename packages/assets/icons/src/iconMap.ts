@@ -1,13 +1,13 @@
 // Input svg
 import inputIcoAge from './Input/ico-age.svg';
-import inputIcoAncorRound from './Input/ico-ancor-round.svg';
+import inputIcoAnchorRound from './Input/ico-anchor-round.svg';
 import inputIcoAntenna from './Input/ico-antenna.svg';
 import inputIcoApproach from './Input/ico-approach.svg';
 import inputIcoBerthHeight from './Input/ico-berth-height.svg';
 import inputIcoBerthRound from './Input/ico-berth-round.svg';
 import inputIcoBerth from './Input/ico-berth.svg';
-import inputIcoBoat_nameRound from './Input/ico-boat_name-round.svg';
 import inputIcoBoatMotorRound from './Input/ico-boat-motor-round.svg';
+import inputIcoBoatNameRound from './Input/ico-boat-name-round.svg';
 import inputIcoBoatSailing from './Input/ico-boat-sailing.svg';
 import inputIcoBoatWidth from './Input/ico-boat-width.svg';
 import inputIcoCallRound from './Input/ico-call-round.svg';
@@ -38,30 +38,30 @@ import inputIcoWidthRound from './Input/ico-width-round.svg';
 // Map svg
 import mapIcoDirection from './Map/ico-direction.svg';
 import mapIcoDistance from './Map/ico-distance.svg';
-import mapIcoLocatioon from './Map/ico-locatioon.svg';
+import mapIcoLocation from './Map/ico-location.svg';
 import mapIcoMapRound from './Map/ico-map-round.svg';
 import mapIcoMarinaBold from './Map/ico-marina-bold.svg';
-import mapIcoMylocation from './Map/ico-mylocation.svg';
+import mapIcoMyLocation from './Map/ico-my-location.svg';
 import mapIcoPin from './Map/ico-pin.svg';
 import mapIcoSlack from './Map/ico-slack.svg';
 
 // Marina svg
 import marinaIcoBar from './Marina/ico-bar.svg';
 import marinaIcoBrokers from './Marina/ico-brokers.svg';
-import marinaIcoCaffee from './Marina/ico-caffee.svg';
 import marinaIcoCamping from './Marina/ico-camping.svg';
 import marinaIcoCarpark from './Marina/ico-carpark.svg';
 import marinaIcoCctv from './Marina/ico-cctv.svg';
 import marinaIcoChandlery from './Marina/ico-chandlery.svg';
 import marinaIcoCharters from './Marina/ico-charters.svg';
+import marinaIcoCoffee from './Marina/ico-coffee.svg';
 import marinaIcoCrane from './Marina/ico-crane.svg';
 import marinaIcoDiesel from './Marina/ico-diesel.svg';
-import marinaIcoDrystorage from './Marina/ico-drystorage.svg';
+import marinaIcoDryStorage from './Marina/ico-dry-storage.svg';
 import marinaIcoElectricity from './Marina/ico-electricity.svg';
 import marinaIcoGas from './Marina/ico-gas.svg';
 import marinaIcoGated from './Marina/ico-gated.svg';
 import marinaIcoHotel from './Marina/ico-hotel.svg';
-import marinaIcoLoundry from './Marina/ico-loundry.svg';
+import marinaIcoLaundry from './Marina/ico-laundry.svg';
 import marinaIcoPetrol from './Marina/ico-petrol.svg';
 import marinaIcoRepair from './Marina/ico-repair.svg';
 import marinaIcoRestaurant from './Marina/ico-restaurant.svg';
@@ -93,7 +93,7 @@ import navIcoHomeLrg from './Nav/ico-home-lrg.svg';
 import navIcoLearnBook from './Nav/ico-learn-book.svg';
 import navIcoMapFill from './Nav/ico-map-fill.svg';
 import navIcoMarina from './Nav/ico-marina.svg';
-import navIcoQuizzPassed from './Nav/ico-quizz-passed.svg';
+import navIcoQuizPassed from './Nav/ico-quiz-passed.svg';
 import navIcoStations from './Nav/ico-stations.svg';
 import navIcoTides from './Nav/ico-tides.svg';
 import navIcoTools from './Nav/ico-tools.svg';
@@ -178,7 +178,7 @@ import uiIcoFeed from './UI/ico-feed.svg';
 import uiIcoList from './UI/ico-list.svg';
 import uiIcoModuleBuoy from './UI/ico-module-buoy.svg';
 import uiIcoModuleColregs from './UI/ico-module-colregs.svg';
-import uiIcoModuleQuizzRoundFill from './UI/ico-module-quizz-round-fill.svg';
+import uiIcoModuleQuizRoundFill from './UI/ico-module-quiz-round-fill.svg';
 import uiIcoModuleRadioRoundFill from './UI/ico-module-radio-round-fill.svg';
 import uiIcoModuleRadio from './UI/ico-module-radio.svg';
 import uiIcoModuleSafety from './UI/ico-module-safety.svg';
@@ -191,7 +191,7 @@ import uiIcoModuleWindRoundFill from './UI/ico-module-wind-round-fill.svg';
 import uiIcoModuleWind from './UI/ico-module-wind.svg';
 import uiIcoPostRound from './UI/ico-post-round.svg';
 import uiIcoPost from './UI/ico-post.svg';
-import uiIcoQuizzTime from './UI/ico-quizz-time.svg';
+import uiIcoQuizTime from './UI/ico-quiz-time.svg';
 import uiIcoSafetyRoundFill from './UI/ico-safety-round-fill.svg';
 import uiIcoScore from './UI/ico-score.svg';
 import uiIcoTimer from './UI/ico-timer.svg';
@@ -203,19 +203,19 @@ import uiIcoToolVhfRadio from './UI/ico-tool-vhf-radio.svg';
 
 // Weather svg
 import weatherIcoFirst_quarter from './Weather/ico-first_quarter.svg';
-import weatherIcoFullmoon from './Weather/ico-fullmoon.svg';
+import weatherIcoFull_moon from './Weather/ico-full_moon.svg';
 import weatherIcoHighTide from './Weather/ico-high-tide.svg';
 import weatherIcoHumidity from './Weather/ico-humidity.svg';
 import weatherIcoLowTide from './Weather/ico-low-tide.svg';
 import weatherIcoNew_moon from './Weather/ico-new_moon.svg';
 import weatherIcoPressure from './Weather/ico-pressure.svg';
 import weatherIcoSlackTide from './Weather/ico-slack-tide.svg';
-import weatherIcoThird_quater from './Weather/ico-third_quater.svg';
+import weatherIcoThird_quarter from './Weather/ico-third_quarter.svg';
 import weatherIcoUv from './Weather/ico-uv.svg';
 import weatherIcoVisibility from './Weather/ico-visibility.svg';
-import weatherIcoWaning_cresent from './Weather/ico-waning_cresent.svg';
-import weatherIcoWanining_gibbous from './Weather/ico-wanining_gibbous.svg';
-import weatherIcoWaxing_cresen from './Weather/ico-waxing_cresen.svg';
+import weatherIcoWaning_crescent from './Weather/ico-waning_crescent.svg';
+import weatherIcoWaning_gibbous from './Weather/ico-waning_gibbous.svg';
+import weatherIcoWaxing_crescent from './Weather/ico-waxing_crescent.svg';
 import weatherIcoWaxing_gibbous from './Weather/ico-waxing_gibbous.svg';
 import weatherIcoWeatherClearday from './Weather/ico-weather-clearday.svg';
 import weatherIcoWeatherClearnight from './Weather/ico-weather-clearnight.svg';
@@ -238,14 +238,14 @@ import { IconMap } from '../icons.type';
 export const iconMap: IconMap = {
   input: {
     'ico-age': inputIcoAge,
-    'ico-ancor-round': inputIcoAncorRound,
+    'ico-anchor-round': inputIcoAnchorRound,
     'ico-antenna': inputIcoAntenna,
     'ico-approach': inputIcoApproach,
     'ico-berth-height': inputIcoBerthHeight,
     'ico-berth-round': inputIcoBerthRound,
     'ico-berth': inputIcoBerth,
-    'ico-boat_name-round': inputIcoBoat_nameRound,
     'ico-boat-motor-round': inputIcoBoatMotorRound,
+    'ico-boat-name-round': inputIcoBoatNameRound,
     'ico-boat-sailing': inputIcoBoatSailing,
     'ico-boat-width': inputIcoBoatWidth,
     'ico-call-round': inputIcoCallRound,
@@ -276,30 +276,30 @@ export const iconMap: IconMap = {
   map: {
     'ico-direction': mapIcoDirection,
     'ico-distance': mapIcoDistance,
-    'ico-locatioon': mapIcoLocatioon,
+    'ico-location': mapIcoLocation,
     'ico-map-round': mapIcoMapRound,
     'ico-marina-bold': mapIcoMarinaBold,
-    'ico-mylocation': mapIcoMylocation,
+    'ico-my-location': mapIcoMyLocation,
     'ico-pin': mapIcoPin,
     'ico-slack': mapIcoSlack,
   },
   marina: {
     'ico-bar': marinaIcoBar,
     'ico-brokers': marinaIcoBrokers,
-    'ico-caffee': marinaIcoCaffee,
     'ico-camping': marinaIcoCamping,
     'ico-carpark': marinaIcoCarpark,
     'ico-cctv': marinaIcoCctv,
     'ico-chandlery': marinaIcoChandlery,
     'ico-charters': marinaIcoCharters,
+    'ico-coffee': marinaIcoCoffee,
     'ico-crane': marinaIcoCrane,
     'ico-diesel': marinaIcoDiesel,
-    'ico-drystorage': marinaIcoDrystorage,
+    'ico-dry-storage': marinaIcoDryStorage,
     'ico-electricity': marinaIcoElectricity,
     'ico-gas': marinaIcoGas,
     'ico-gated': marinaIcoGated,
     'ico-hotel': marinaIcoHotel,
-    'ico-loundry': marinaIcoLoundry,
+    'ico-laundry': marinaIcoLaundry,
     'ico-petrol': marinaIcoPetrol,
     'ico-repair': marinaIcoRepair,
     'ico-restaurant': marinaIcoRestaurant,
@@ -331,7 +331,7 @@ export const iconMap: IconMap = {
     'ico-learn-book': navIcoLearnBook,
     'ico-map-fill': navIcoMapFill,
     'ico-marina': navIcoMarina,
-    'ico-quizz-passed': navIcoQuizzPassed,
+    'ico-quiz-passed': navIcoQuizPassed,
     'ico-stations': navIcoStations,
     'ico-tides': navIcoTides,
     'ico-tools': navIcoTools,
@@ -416,7 +416,7 @@ export const iconMap: IconMap = {
     'ico-list': uiIcoList,
     'ico-module-buoy': uiIcoModuleBuoy,
     'ico-module-colregs': uiIcoModuleColregs,
-    'ico-module-quizz-round-fill': uiIcoModuleQuizzRoundFill,
+    'ico-module-quiz-round-fill': uiIcoModuleQuizRoundFill,
     'ico-module-radio-round-fill': uiIcoModuleRadioRoundFill,
     'ico-module-radio': uiIcoModuleRadio,
     'ico-module-safety': uiIcoModuleSafety,
@@ -429,7 +429,7 @@ export const iconMap: IconMap = {
     'ico-module-wind': uiIcoModuleWind,
     'ico-post-round': uiIcoPostRound,
     'ico-post': uiIcoPost,
-    'ico-quizz-time': uiIcoQuizzTime,
+    'ico-quiz-time': uiIcoQuizTime,
     'ico-safety-round-fill': uiIcoSafetyRoundFill,
     'ico-score': uiIcoScore,
     'ico-timer': uiIcoTimer,
@@ -441,19 +441,19 @@ export const iconMap: IconMap = {
   },
   weather: {
     'ico-first_quarter': weatherIcoFirst_quarter,
-    'ico-fullmoon': weatherIcoFullmoon,
+    'ico-full_moon': weatherIcoFull_moon,
     'ico-high-tide': weatherIcoHighTide,
     'ico-humidity': weatherIcoHumidity,
     'ico-low-tide': weatherIcoLowTide,
     'ico-new_moon': weatherIcoNew_moon,
     'ico-pressure': weatherIcoPressure,
     'ico-slack-tide': weatherIcoSlackTide,
-    'ico-third_quater': weatherIcoThird_quater,
+    'ico-third_quarter': weatherIcoThird_quarter,
     'ico-uv': weatherIcoUv,
     'ico-visibility': weatherIcoVisibility,
-    'ico-waning_cresent': weatherIcoWaning_cresent,
-    'ico-wanining_gibbous': weatherIcoWanining_gibbous,
-    'ico-waxing_cresen': weatherIcoWaxing_cresen,
+    'ico-waning_crescent': weatherIcoWaning_crescent,
+    'ico-waning_gibbous': weatherIcoWaning_gibbous,
+    'ico-waxing_crescent': weatherIcoWaxing_crescent,
     'ico-waxing_gibbous': weatherIcoWaxing_gibbous,
     'ico-weather-clearday': weatherIcoWeatherClearday,
     'ico-weather-clearnight': weatherIcoWeatherClearnight,

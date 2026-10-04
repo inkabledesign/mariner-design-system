@@ -11,7 +11,7 @@ export interface ChipProps {
   /**
    * Chip variant (Figma Chips/InputChip):
    * - text: label, optional trailing icon (e.g. ico-close for a removable chip)
-   * - icon: leading icon + optional label; defaults to ico-mylocation
+   * - icon: leading icon + optional label; defaults to ico-my-location
    * - filter: label + trailing icon (defaults to ico-chevron-down), optional leading icon
    * @default 'text'
    */
@@ -25,7 +25,7 @@ export interface ChipProps {
 
   /**
    * Leading icon glyph. Rendered when provided; always rendered for
-   * type="icon" (default ico-mylocation).
+   * type="icon" (default ico-my-location).
    */
   iconName?: IconName;
 

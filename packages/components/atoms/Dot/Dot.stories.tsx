@@ -8,15 +8,15 @@ const meta: Meta<typeof Dot> = {
   argTypes: {
     variant: {
       control: { type: 'select' },
-      options: ['quizz', 'quizz-outline', 'lesson', 'lesson-outline'],
+      options: ['quiz', 'quiz-outline', 'lesson', 'lesson-outline'],
     },
   },
-  args: { variant: 'quizz' },
+  args: { variant: 'quiz' },
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Quizz: Story = { args: { variant: 'quizz' } };
-export const QuizzOutline: Story = { args: { variant: 'quizz-outline' } };
+export const Quiz: Story = { args: { variant: 'quiz' } };
+export const QuizOutline: Story = { args: { variant: 'quiz-outline' } };
 export const Lesson: Story = { args: { variant: 'lesson' } };
