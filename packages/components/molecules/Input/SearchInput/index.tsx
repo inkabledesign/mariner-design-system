@@ -94,9 +94,14 @@ const SearchInput = forwardRef<TextInput, SearchInputProps>(
           placeholderTextColor={theme.color[themeMode].material.surface['40']}
           style={{
             flex: 1,
+            // Android: the 18px token lineHeight is below Montserrat's natural
+            // line box at 16px and clips glyph tops; paddingVertical/
+            // includeFontPadding remove the platform's extra in-box padding.
+            paddingVertical: 0,
+            includeFontPadding: false,
+            textAlignVertical: 'center',
             fontFamily: 'Montserrat-Italic',
             fontSize: theme.typography[breakpoint].text.placeholder.fontSize,
-            lineHeight: theme.typography[breakpoint].text.placeholder.lineHeight,
             color: theme.color[themeMode].material.surface['100'],
             paddingHorizontal: theme.spacing[breakpoint].spacing.xs,
           }}

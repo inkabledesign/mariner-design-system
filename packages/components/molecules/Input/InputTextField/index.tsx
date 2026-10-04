@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextInput, type TextStyle } from 'react-native';
+import { Platform, TextInput, type TextStyle } from 'react-native';
 import ViewStyled from '../../../atoms/ViewStyled';
 import { theme } from '@inkabledesign/mariner-theme';
 import type { InputTextFieldProps, InputTextFieldStatus } from './index.types';
@@ -75,11 +75,20 @@ const InputTextField = ({
         style={{
           flex: 1,
           textAlignVertical: 'top',
+          // Android: remove the platform's extra in-box padding so the text
+          // doesn't sit lower than the container's p-md implies.
+          paddingVertical: 0,
+          includeFontPadding: false,
           fontFamily: textToken.fontFamily,
           fontSize: textToken.fontSize,
           lineHeight: textToken.lineHeight,
           letterSpacing: textToken.letterSpacing,
-          fontStyle: textToken.fontStyle as TextStyle['fontStyle'],
+          // Android can't resolve 'italic' inside the single-style
+          // Montserrat-Italic family — the face is already italic.
+          fontStyle:
+            Platform.OS === 'android'
+              ? 'normal'
+              : (textToken.fontStyle as TextStyle['fontStyle']),
           color: theme.color[themeMode].brand.primary.dark,
         }}
         {...textInputProps}

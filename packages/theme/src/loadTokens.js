@@ -28,6 +28,10 @@ const toTailwindTextColors = (text) => ({
   "light-secondary": text.lightSecondary,
 });
 
+// No fontWeight here: every weight ships as its own font-* family class, and
+// Android fails to resolve a custom fontFamily when a non-400 fontWeight is
+// also set (the family has a single NORMAL entry), falling back to the
+// default font.
 const toTailwindFontSizes = (typography) =>
   Object.fromEntries(
     Object.entries(typography).map(([name, token]) => [
@@ -36,7 +40,6 @@ const toTailwindFontSizes = (typography) =>
         `${token.fontSize}px`,
         {
           lineHeight: `${token.lineHeight}px`,
-          fontWeight: token.fontWeight,
           letterSpacing: `${token.letterSpacing}px`,
         },
       ],

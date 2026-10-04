@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TextInput, type TextStyle } from 'react-native';
+import { Platform, TextInput, type TextStyle } from 'react-native';
 import Row from '../../../atoms/Row';
 import Icon from '../../../atoms/Icon';
 import { theme } from '@inkabledesign/mariner-theme';
@@ -96,11 +96,23 @@ const InputText: React.FC<InputTextProps> = ({
         }}
         style={{
           flex: 1,
+          // Android: the 18px token lineHeight is below Montserrat's natural
+          // line box at 16px, so Android clips the top of the glyphs (text
+          // looks "shifted up"). Single-line inputs center via the parent row
+          // instead; paddingVertical/includeFontPadding remove the platform's
+          // extra in-box padding.
+          paddingVertical: 0,
+          includeFontPadding: false,
+          textAlignVertical: 'center',
           fontFamily: textToken.fontFamily,
           fontSize: textToken.fontSize,
-          lineHeight: textToken.lineHeight,
           letterSpacing: textToken.letterSpacing,
-          fontStyle: textToken.fontStyle as TextStyle['fontStyle'],
+          // Android can't resolve 'italic' inside the single-style
+          // Montserrat-Italic family — the face is already italic.
+          fontStyle:
+            Platform.OS === 'android'
+              ? 'normal'
+              : (textToken.fontStyle as TextStyle['fontStyle']),
           color: theme.color[themeMode].brand.primary.dark,
         }}
         {...textInputProps}

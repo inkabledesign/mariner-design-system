@@ -1,4 +1,5 @@
 import React from 'react';
+import { Platform } from 'react-native';
 import Row from '../../../atoms/Row';
 import TextStyled from '../../../atoms/TextStyled';
 import Icon from '../../../atoms/Icon';
@@ -57,7 +58,12 @@ const InputSelect = ({
               ? undefined
               : {
                   fontFamily: placeholderToken.fontFamily,
-                  fontStyle: placeholderToken.fontStyle as 'italic',
+                  // Android can't resolve 'italic' inside the single-style
+                  // Montserrat-Italic family — the face is already italic.
+                  fontStyle:
+                    Platform.OS === 'android'
+                      ? 'normal'
+                      : (placeholderToken.fontStyle as 'italic'),
                 }
           }
         >
