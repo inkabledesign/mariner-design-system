@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import * as Font from 'expo-font';
 import StorybookUIRoot from '../.storybook/Storybook';
 
-import { fontAssets } from '@inkabledesign/mariner-assets';
+import { fontAssets } from '@inkabledesign/mariner-assets/fonts';
 
 export default function RootLayout() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
