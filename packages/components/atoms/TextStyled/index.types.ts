@@ -1,7 +1,7 @@
-import type { TextStyle as RNTextStyle } from 'react-native';
+import type { TextProps } from 'react-native';
 import type { Breakpoint, TypographyTextScale } from '@inkabledesign/mariner-theme';
 
-export interface StyledTextProps {
+export interface StyledTextProps extends TextProps {
   /** Breakpoint for responsive typography resolution @default 'mobile' */
   breakpoint?: Breakpoint;
   // Text content
@@ -37,6 +37,5 @@ export interface StyledTextProps {
   selectable?: boolean;
 
   // Additional styles
-  style?: RNTextStyle;
   className?: string;
 }

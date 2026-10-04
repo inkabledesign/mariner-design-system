@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { Text } from 'react-native';
 import type { StyledTextProps } from './index.types';
 import { theme, getFontFamilyForWeight, getFontFamilyClass } from '@inkabledesign/mariner-theme';
 // Removed useTheme import to prevent render-time state updates
 
-const TextStyled: React.FC<StyledTextProps> = ({
+const TextStyled = forwardRef<Text, StyledTextProps>(({
   breakpoint = 'mobile',
   text,
   children,
@@ -18,7 +18,8 @@ const TextStyled: React.FC<StyledTextProps> = ({
   selectable,
   style,
   className,
-}) => {
+  ...textProps
+}, ref) => {
   // Build Tailwind className from props - NativeWind handles dark mode automatically
   const buildClassName = (): string => {
     const classes: string[] = [];
@@ -47,6 +48,10 @@ const TextStyled: React.FC<StyledTextProps> = ({
       } else {
         classes.push('font-montserrat-regular');
       }
+    }
+
+    if (!fontWeight && !textStyle && !className?.match(/\bfont-(montserrat|rajdhani|space-mono)/)) {
+      classes.push('font-montserrat-regular');
     }
 
     // Color classes with static dark mode variants
@@ -122,6 +127,8 @@ const TextStyled: React.FC<StyledTextProps> = ({
 
   return (
     <Text
+      {...textProps}
+      ref={ref}
       style={style}
       className={combinedClassName}
       numberOfLines={numberOfLines}
@@ -129,6 +136,8 @@ const TextStyled: React.FC<StyledTextProps> = ({
       {content}
     </Text>
   );
-};
+});
+
+TextStyled.displayName = 'TextStyled';
 
 export default TextStyled;
