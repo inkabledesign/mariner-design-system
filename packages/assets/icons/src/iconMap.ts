@@ -44,6 +44,11 @@ import mapIcoMarinaBold from './Map/ico-marina-bold.svg';
 import mapIcoMyLocation from './Map/ico-my-location.svg';
 import mapIcoPin from './Map/ico-pin.svg';
 import mapIcoSlack from './Map/ico-slack.svg';
+import mapIcoStreamArrow100 from './Map/ico-stream-arrow-100.svg';
+import mapIcoStreamArrow20 from './Map/ico-stream-arrow-20.svg';
+import mapIcoStreamArrow40 from './Map/ico-stream-arrow-40.svg';
+import mapIcoStreamArrow60 from './Map/ico-stream-arrow-60.svg';
+import mapIcoStreamArrow80 from './Map/ico-stream-arrow-80.svg';
 
 // Marina svg
 import marinaIcoBar from './Marina/ico-bar.svg';
@@ -282,6 +287,11 @@ export const iconMap: IconMap = {
     'ico-my-location': mapIcoMyLocation,
     'ico-pin': mapIcoPin,
     'ico-slack': mapIcoSlack,
+    'ico-stream-arrow-100': mapIcoStreamArrow100,
+    'ico-stream-arrow-20': mapIcoStreamArrow20,
+    'ico-stream-arrow-40': mapIcoStreamArrow40,
+    'ico-stream-arrow-60': mapIcoStreamArrow60,
+    'ico-stream-arrow-80': mapIcoStreamArrow80,
   },
   marina: {
     'ico-bar': marinaIcoBar,

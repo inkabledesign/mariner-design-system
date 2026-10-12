@@ -8,7 +8,7 @@ export type IconCategoryType =
 
 export type InputIconName = 'ico-age' | 'ico-anchor-round' | 'ico-antenna' | 'ico-approach' | 'ico-berth' | 'ico-berth-height' | 'ico-berth-round' | 'ico-boat-motor-round' | 'ico-boat-name-round' | 'ico-boat-sailing' | 'ico-boat-width' | 'ico-call' | 'ico-call-round' | 'ico-certificate-round' | 'ico-city-round' | 'ico-crew' | 'ico-crew-round' | 'ico-distance-round' | 'ico-edit' | 'ico-edit-round' | 'ico-email-round' | 'ico-flag-round' | 'ico-keyboard' | 'ico-keyboard-outline' | 'ico-passport-round' | 'ico-pin-round' | 'ico-radio-off' | 'ico-radio-on' | 'ico-registration' | 'ico-sailor' | 'ico-sailor-round' | 'ico-search' | 'ico-voice' | 'ico-voice-outline' | 'ico-width-round';
 
-export type MapIconName = 'ico-direction' | 'ico-distance' | 'ico-location' | 'ico-map-round' | 'ico-marina-bold' | 'ico-my-location' | 'ico-pin' | 'ico-slack';
+export type MapIconName = 'ico-direction' | 'ico-distance' | 'ico-location' | 'ico-map-round' | 'ico-marina-bold' | 'ico-my-location' | 'ico-pin' | 'ico-slack' | 'ico-stream-arrow-100' | 'ico-stream-arrow-20' | 'ico-stream-arrow-40' | 'ico-stream-arrow-60' | 'ico-stream-arrow-80';
 
 export type MarinaIconName = 'ico-bar' | 'ico-brokers' | 'ico-camping' | 'ico-carpark' | 'ico-cctv' | 'ico-chandlery' | 'ico-charters' | 'ico-coffee' | 'ico-crane' | 'ico-diesel' | 'ico-dry-storage' | 'ico-electricity' | 'ico-gas' | 'ico-gated' | 'ico-hotel' | 'ico-laundry' | 'ico-petrol' | 'ico-repair' | 'ico-restaurant' | 'ico-school' | 'ico-shop' | 'ico-shower' | 'ico-slipway' | 'ico-toilet' | 'ico-water' | 'ico-wifi';
 

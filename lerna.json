@@ -5,7 +5,7 @@
     "publish": {
       "conventionalCommits": true,
       "message": "chore(release): publish",
-      "registry": "https://npm.pkg.github.com"
+      "registry": "https://registry.figma.com/npm/aead56d4-5c30-4a37-9fea-416be436e316/registry/"
     },
     "version": {
       "allowBranch": ["main", "master"],
