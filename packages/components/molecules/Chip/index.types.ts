@@ -1,6 +1,20 @@
 import type { IconName } from '../../types/icons.type';
 
-export type ChipType = 'text' | 'icon' | 'filter';
+export type ChipVariant = 'primary' | 'secondary';
+
+export type ChipSize = 'sm' | 'md';
+
+export type ChipRadius =
+  | 'xxxs'
+  | 'xxs'
+  | 'xs'
+  | 'sm'
+  | 'md'
+  | 'lg'
+  | 'xl'
+  | 'xxl'
+  | 'xxxl'
+  | 'full';
 
 export interface ChipProps {
   /**
@@ -9,29 +23,43 @@ export interface ChipProps {
   label?: string;
 
   /**
-   * Chip variant (Figma Chips/InputChip):
-   * - text: label, optional trailing icon (e.g. ico-close for a removable chip)
-   * - icon: leading icon + optional label; defaults to ico-my-location
-   * - filter: label + trailing icon (defaults to ico-chevron-down), optional leading icon
-   * @default 'text'
+   * Color scheme (Figma Chips/InputChip `type`):
+   * - primary: brand-primary tint + border, primary content
+   * - secondary: brand-accent tint + border, surface-80 content
+   * @default 'primary'
    */
-  type?: ChipType;
+  variant?: ChipVariant;
 
   /**
-   * Selected state (filled brand tint + primary-100 content).
+   * Size (Figma `size`):
+   * - sm: caption typography, 25px tall, px-xs / py-xxs
+   * - md: footnote typography, 34px tall, px-sm / py-xs
+   * @default 'md'
+   */
+  size?: ChipSize;
+
+  /**
+   * Corner radius token. `'full'` is the round pill; smaller tokens
+   * (e.g. `'xs'` / `'xxxs'`) give the squared "default" Figma style.
+   * @default 'full'
+   */
+  radius?: ChipRadius;
+
+  /**
+   * Selected state (Figma `state="active"` — filled brand tint).
    * @default false
    */
   selected?: boolean;
 
   /**
-   * Leading icon glyph. Rendered when provided; always rendered for
-   * type="icon" (default ico-my-location).
+   * Leading icon glyph. Rendered when provided. A chip with an icon and
+   * no label renders as a fixed-size icon-only chip.
    */
   iconName?: IconName;
 
   /**
-   * Trailing icon glyph. Rendered when provided; type="filter" defaults
-   * to ico-chevron-down. Use ico-close for a removable chip.
+   * Trailing icon glyph. Rendered when provided (e.g. ico-chevron-down for
+   * a filter chip, ico-close for a removable chip).
    */
   trailingIconName?: IconName;
 

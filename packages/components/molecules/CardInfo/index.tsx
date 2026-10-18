@@ -13,9 +13,9 @@ import type { CardInfoProps } from "./index.types";
  * Displays detailed messages with title, subtitle, and body text.
  *
  * Features:
- * - Five variants: danger, warning, success, info, generic
+ * - Six variants: danger, warning, success, info, info-accent, generic (aka default)
  * - Icon with matching color
- * - Title, subtitle, and body text support
+ * - Optional kicker, title, subtitle, and body text support
  * - Bordered container with subtle background
  * - Cross-platform (React Native + Next.js web)
  *
@@ -34,6 +34,7 @@ import type { CardInfoProps } from "./index.types";
  * />
  */
 const CardInfo = ({
+  kicker,
   title = "Offline access",
   subtitle = "Download module for offline access",
   body = "This module includes pictures, videos, and audio. To avoid using up your mobile data, we recommend downloading it over Wi-Fi.",
@@ -50,12 +51,14 @@ const CardInfo = ({
           bg: "bg-system-error-5",
           border: "border-system-error-40",
           icon: "text-system-error-100",
+          kicker: "text-system-error-60",
         };
       case "warning":
         return {
           bg: "bg-system-warning-5",
           border: "border-system-warning-40",
           icon: "text-system-warning-100",
+          kicker: "text-material-surface-80",
         };
       case "success":
         return {
@@ -63,19 +66,30 @@ const CardInfo = ({
           border: "border-system-success-40",
           icon: "text-system-success-100",
           iconName: "ico-tick-round-fill",
+          kicker: "text-system-success-100",
         };
       case "info":
         return {
           bg: "bg-brand-primary-alpha-5",
           border: "border-brand-primary-alpha-40",
           icon: "text-brand-primary-100",
+          kicker: "text-brand-primary-100",
+        };
+      case "info-accent":
+        return {
+          bg: "bg-brand-accent-alpha-10",
+          border: "border-brand-accent-alpha-60",
+          icon: "text-brand-accent-100",
+          kicker: "text-material-surface-60",
         };
       case "generic":
+      case "default":
       default:
         return {
           bg: "bg-material-alphaDark-5",
           border: "border-material-alphaDark-40",
           icon: "text-material-surface-100",
+          kicker: "text-material-surface-60",
         };
     }
   };
@@ -106,8 +120,19 @@ const CardInfo = ({
           </ViewStyled>
           {/* Content Column */}
           <Column className="flex-1 gap-xs">
-            {/* Title and Subtitle Row */}
+            {/* Kicker, Title and Subtitle Column */}
             <Column className="gap-xs">
+              {/* Kicker */}
+              {kicker && (
+                <Row className="items-center">
+                  <TextStyled
+                    textStyle="number"
+                    className={`${colors.kicker} uppercase flex-1`}
+                  >
+                    {kicker}
+                  </TextStyled>
+                </Row>
+              )}
               <Row className="items-center justify-between">
                 <TextStyled
                   textStyle="heading6"
