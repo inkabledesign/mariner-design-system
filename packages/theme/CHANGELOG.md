@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/inkabledesign/mariner-design-system/compare/v2.0.0...v2.1.0) (2026-10-18)
+
+### Features
+
+- add stream arrow icons and migrate to Figma npm registry ([228e981](https://github.com/inkabledesign/mariner-design-system/commit/228e98160d548231765c83e9f48faaa62ccdc8b0))
+
 # [2.0.0](https://github.com/inkabledesign/mariner-design-system/compare/v1.0.3...v2.0.0) (2026-10-04)
 
 ### Bug Fixes
