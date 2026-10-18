@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import type { ViewStyle } from 'react-native';
 import type { SharedValue } from 'react-native-reanimated';
+import type { Breakpoint } from '@inkabledesign/mariner-theme';
 import type { IconName } from '../../types/icons.type';
 
 export interface HeaderTopSheetProps {
@@ -59,4 +60,16 @@ export interface HeaderTopSheetProps {
    * Additional styles for the container.
    */
   style?: ViewStyle;
+
+  /**
+   * Theme mode used for the sheet surface, border and shadow colours.
+   * @default 'light'
+   */
+  themeMode?: 'light' | 'dark';
+
+  /**
+   * Breakpoint used for radius tokens.
+   * @default 'mobile'
+   */
+  breakpoint?: Breakpoint;
 }

@@ -29,13 +29,15 @@ const Avatar = ({
   size = AVATAR_SIZE,
   imageUrl,
   iconName,
-  hasAddButton = true,
   onEditPress,
   addButtonAccessibilityLabel = "Add profile image",
+  themeMode = "light",
   style,
   className = "",
 }: AvatarProps) => {
   const scale = size / AVATAR_SIZE;
+  const surfaceClass =
+    themeMode === "dark" ? "bg-material-surface-100" : "bg-material-surface-0";
   const resolvedType = getAvatarType(type, imageUrl, iconName);
   const contentType =
     resolvedType === "image" && !imageUrl ? "default" : resolvedType;
@@ -74,7 +76,7 @@ const Avatar = ({
   return (
     <ViewStyled
       style={[{ width: size, height: size, borderRadius: size / 2 }, style]}
-      className={`relative items-center justify-center bg-material-surface-light ${className}`.trim()}
+      className={`relative items-center justify-center ${surfaceClass} ${className}`.trim()}
     >
       <ViewStyled
         className="absolute rounded-full border border-brand-accent-100"
@@ -133,26 +135,18 @@ const Avatar = ({
         />
       )}
 
-      {hasAddButton &&
-        (onEditPress ? (
-          <PressableStyled
-            accessibilityLabel={addButtonAccessibilityLabel}
-            accessibilityRole="button"
-            hitSlop={10}
-            onPress={onEditPress}
-            className="absolute items-center justify-center overflow-hidden rounded-full border-0 bg-material-surface-0 p-0"
-            style={addButtonStyle}
-          >
-            {addButtonContent}
-          </PressableStyled>
-        ) : (
-          <ViewStyled
-            className="absolute items-center justify-center overflow-hidden rounded-full bg-material-surface-0"
-            style={addButtonStyle}
-          >
-            {addButtonContent}
-          </ViewStyled>
-        ))}
+      {onEditPress && (
+        <PressableStyled
+          accessibilityLabel={addButtonAccessibilityLabel}
+          accessibilityRole="button"
+          hitSlop={10}
+          onPress={onEditPress}
+          className={`absolute items-center justify-center overflow-hidden rounded-full border-0 p-0 ${surfaceClass}`}
+          style={addButtonStyle}
+        >
+          {addButtonContent}
+        </PressableStyled>
+      )}
     </ViewStyled>
   );
 };

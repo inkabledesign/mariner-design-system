@@ -16,11 +16,11 @@ export interface AvatarProps {
   /** Glyph used by the icon variant. Defaults to ico-sailor. */
   iconName?: IconName;
 
-  /** Shows the add badge from the Figma component. */
-  hasAddButton?: boolean;
-
-  /** Makes the add badge interactive when supplied. */
+  /** Renders the add badge and makes it interactive. Omit to hide the badge. */
   onEditPress?: () => void;
+
+  /** Theme mode for the surface colours. @default 'light' */
+  themeMode?: 'light' | 'dark';
 
   /** Accessible name for the interactive add badge. */
   addButtonAccessibilityLabel?: string;

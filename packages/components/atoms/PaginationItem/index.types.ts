@@ -1,5 +1,5 @@
 export type PaginationItemVariant = 'number' | 'dot';
-export type PaginationItemState = 'default' | 'active' | 'correct';
+export type PaginationItemState = 'default' | 'active' | 'correct' | 'error';
 
 export interface PaginationItemProps {
   /**
@@ -12,9 +12,10 @@ export interface PaginationItemProps {
 
   /**
    * Visual state.
-   * - default: muted
-   * - active: brand-primary
-   * - correct: brand-accent
+   * - default: muted (accent ring, primary-60 text)
+   * - active: accent ring, brand-primary text / centre dot
+   * - correct: brand-accent ring and text
+   * - error: system-error ring and text
    * @default 'default'
    */
   state?: PaginationItemState;

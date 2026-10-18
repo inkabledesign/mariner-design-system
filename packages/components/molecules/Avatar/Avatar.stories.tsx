@@ -10,7 +10,7 @@ const meta: Meta<typeof Avatar> = {
     type: { control: "select", options: ["default", "icon", "image"] },
     size: { control: { type: "number" } },
   },
-  args: { type: "default", size: 72, hasAddButton: true },
+  args: { type: "default", size: 72 },
 };
 
 export default meta;
@@ -26,11 +26,7 @@ export const Image: Story = {
   args: { type: "image", imageUrl: "https://i.pravatar.cc/128" },
 };
 
-export const WithoutAddButton: Story = {
-  args: { hasAddButton: false },
-};
-
-export const InteractiveAddButton: Story = {
+export const WithAddButton: Story = {
   args: { onEditPress: () => {} },
 };
 

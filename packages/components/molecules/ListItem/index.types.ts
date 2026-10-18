@@ -23,12 +23,12 @@ export interface ListItemProps {
   /** Leading content type. Not rendered when omitted. */
   leading?: ListItemLeading;
 
-  /** Leading icon glyph (leading="icon"). @default 'ico-berth-round' */
+  /** Leading icon glyph, centered inside the leading slot / progress ring (leading="icon"). Rendered when provided. */
   leadingIconName?: IconName;
 
   /**
-   * Progress percentage for the ring around the leading icon (leading="icon").
-   * The ring is rendered when provided.
+   * Progress percentage for the ring in the leading slot (leading="icon").
+   * The ring is rendered when provided; it may wrap a leading icon or stand alone.
    */
   leadingProgress?: number;
 

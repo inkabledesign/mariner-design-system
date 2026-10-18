@@ -57,7 +57,7 @@ const ListItem = ({
   caption,
   value,
   leading,
-  leadingIconName = "ico-berth-round",
+  leadingIconName,
   leadingProgress,
   avatarImageUrl,
   avatarIconName,
@@ -96,7 +96,6 @@ const ListItem = ({
             size={36}
             imageUrl={avatarImageUrl}
             iconName={avatarIconName}
-            hasAddButton={false}
           />
         );
       case "switch":
@@ -111,16 +110,19 @@ const ListItem = ({
         );
       case "radio":
         return <RadioIndicator checked={checked} onPress={handleToggle} />;
-      case "icon":
+      case "icon": {
+        if (!leadingIconName && leadingProgress == null) return null;
         return (
           <Row className="relative h-7 w-7 items-center justify-center">
-            <Icon
-              iconName={leadingIconName}
-              color="text-brand-primary-100"
-              className="h-md w-md"
-            />
+            {leadingIconName && (
+              <Icon
+                iconName={leadingIconName}
+                color="text-brand-primary-100"
+                className="h-md w-md"
+              />
+            )}
             {leadingProgress != null && (
-              <Row className="absolute inset-0 rotate-180">
+              <Row className="absolute inset-0 items-center justify-center">
                 <CircleProgress
                   progress={leadingProgress}
                   progressColor="text-brand-primary-100"
@@ -132,6 +134,7 @@ const ListItem = ({
             )}
           </Row>
         );
+      }
       default:
         return null;
     }
@@ -141,7 +144,7 @@ const ListItem = ({
 
   const content = (
     <Row
-      className={`min-h-[52px] w-full items-center gap-md border-b border-brand-primary-10 ${surfaceClass} px-lg py-xs ${className}`.trim()}
+      className={`min-h-[52px] w-full items-center gap-md border-b border-brand-primary-10 ${surfaceClass} px-md py-sm ${className}`.trim()}
     >
       {leadingContent && (
         <Row className="shrink-0 items-center gap-[10px]">{leadingContent}</Row>

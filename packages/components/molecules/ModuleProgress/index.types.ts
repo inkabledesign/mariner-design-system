@@ -25,7 +25,8 @@ export interface ModuleProgressProps {
   animatedPositionY?: SharedValue<number>;
 
   /**
-   * Additional Tailwind classes for the container.
+   * Theme mode for the card surface.
+   * @default 'light'
    */
-  className?: string;
+  themeMode?: 'light' | 'dark';
 }

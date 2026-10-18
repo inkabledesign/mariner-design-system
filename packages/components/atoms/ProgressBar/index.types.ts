@@ -1,4 +1,5 @@
 import { StyleProp, ViewStyle } from 'react-native';
+import type { Breakpoint } from '@inkabledesign/mariner-theme';
 
 export type ProgressBarStyle = 'primary' | 'accent';
 
@@ -16,7 +17,7 @@ export interface ProgressBarProps {
 
   /**
    * Height of the progress bar in pixels
-   * @default 2
+   * @default 12
    */
   height?: number;
 
@@ -29,4 +30,10 @@ export interface ProgressBarProps {
    * Animated style for the progress bar
    */
   animatedProgressLBarStyle?: StyleProp<ViewStyle>;
+
+  /**
+   * Breakpoint used for radius tokens
+   * @default 'mobile'
+   */
+  breakpoint?: Breakpoint;
 }
