@@ -1,8 +1,21 @@
 import { IconName } from '@/types/icons.type';
 
-export type CardInfoType = 'danger' | 'warning' | 'success' | 'info' | 'generic';
+export type CardInfoType =
+  | 'danger'
+  | 'warning'
+  | 'success'
+  | 'info'
+  | 'info-accent'
+  | 'generic'
+  | 'default';
 
 export interface CardInfoProps {
+  /**
+   * Optional kicker — a short, uppercase monospace label shown above the title.
+   * Rendered only when provided.
+   */
+  kicker?: string;
+
   /**
    * Card title (bold heading)
    */
@@ -31,7 +44,8 @@ export interface CardInfoProps {
    * - warning: Yellow/orange border and icon (warnings, cautions)
    * - success: Green border and icon (success messages)
    * - info: Blue border and icon (informational)
-   * - generic: Gray border and icon (neutral info)
+   * - info-accent: Gold/accent border and icon (informational, branded)
+   * - generic / default: Gray border and icon (neutral info)
    * @default 'danger'
    */
   type?: CardInfoType;

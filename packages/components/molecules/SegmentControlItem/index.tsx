@@ -80,10 +80,17 @@ const SegmentControlItem = ({
         }`}
         style={selectionStyle}>
         {label && (
+          // The button-sml/button tokens clamp lineHeight to fontSize; iOS
+          // top-anchors the run in that shrunken line box, so the label sits
+          // ~2px high. A line box ≥ the font's natural height lets
+          // justify-center center the glyphs optically (matches Figma's
+          // rendering). includeFontPadding removes Android's extra in-box
+          // font padding — ignored on iOS/web.
           <TextStyled
             textStyle={size === 'lg' ? 'button' : 'button-sml'}
             breakpoint={breakpoint}
             numberOfLines={1}
+            style={{ lineHeight: size === 'lg' ? 24 : 20, includeFontPadding: false }}
             className={`text-center ${labelColor}`}>
             {label}
           </TextStyled>

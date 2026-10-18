@@ -80,6 +80,7 @@ export { default as NavBar } from './molecules/NavBar';
 export { default as OfflineBanner } from './molecules/OfflineBanner';
 export { default as OnboardingSteps } from './molecules/OnboardingSteps';
 export { default as ProgressDecorative } from './molecules/ProgressDecorative';
+export { default as ProgressStepper } from './molecules/ProgressStepper';
 export { default as PricingSelector } from './molecules/PricingSelector';
 export { default as ProgressDetailCard } from './molecules/ProgressDetailCard';
 export { default as ProgressDonutCard } from './molecules/ProgressDonutCard';

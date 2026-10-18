@@ -8,7 +8,7 @@ const meta: Meta<typeof CardInfo> = {
   component: CardInfo,
   parameters: { layout: 'padded' },
   argTypes: {
-    type: { control: { type: 'select' }, options: ['danger', 'warning', 'success', 'info', 'generic'] },
+    type: { control: { type: 'select' }, options: ['danger', 'warning', 'success', 'info', 'info-accent', 'generic', 'default'] },
   },
   args: {
     title: 'Heads up',
@@ -31,3 +31,9 @@ export const Info: Story = { args: { type: 'info' } };
 export const Success: Story = { args: { type: 'success', title: 'All done', body: 'Module completed.' } };
 export const Warning: Story = { args: { type: 'warning', title: 'Careful', body: 'Low storage.' } };
 export const Danger: Story = { args: { type: 'danger', title: 'Error', body: 'Something went wrong.' } };
+export const InfoAccent: Story = {
+  args: { type: 'info-accent', title: 'Premium feature', body: 'Upgrade to unlock interval history.' },
+};
+export const WithKicker: Story = {
+  args: { type: 'info', kicker: 'New', title: 'Heads up', body: 'Your subscription renews in 3 days.' },
+};

@@ -44,6 +44,11 @@ import mapIcoMarinaBold from './Map/ico-marina-bold.svg';
 import mapIcoMyLocation from './Map/ico-my-location.svg';
 import mapIcoPin from './Map/ico-pin.svg';
 import mapIcoSlack from './Map/ico-slack.svg';
+import mapIcoStreamArrow100 from './Map/ico-stream-arrow-100.svg';
+import mapIcoStreamArrow20 from './Map/ico-stream-arrow-20.svg';
+import mapIcoStreamArrow40 from './Map/ico-stream-arrow-40.svg';
+import mapIcoStreamArrow60 from './Map/ico-stream-arrow-60.svg';
+import mapIcoStreamArrow80 from './Map/ico-stream-arrow-80.svg';
 
 // Marina svg
 import marinaIcoBar from './Marina/ico-bar.svg';
@@ -89,11 +94,14 @@ import mediaIcoVolumeMute from './Media/ico-volume-mute.svg';
 
 // Nav svg
 import navIcoChart from './Nav/ico-chart.svg';
+import navIcoChecklist from './Nav/ico-checklist.svg';
 import navIcoHomeLrg from './Nav/ico-home-lrg.svg';
 import navIcoLearnBook from './Nav/ico-learn-book.svg';
 import navIcoMapFill from './Nav/ico-map-fill.svg';
 import navIcoMarina from './Nav/ico-marina.svg';
 import navIcoQuizPassed from './Nav/ico-quiz-passed.svg';
+import navIcoRoute from './Nav/ico-route.svg';
+import navIcoSailboat from './Nav/ico-sailboat.svg';
 import navIcoStations from './Nav/ico-stations.svg';
 import navIcoTides from './Nav/ico-tides.svg';
 import navIcoTools from './Nav/ico-tools.svg';
@@ -175,9 +183,12 @@ import uiIcoFeedImageRound from './UI/ico-feed-image-round.svg';
 import uiIcoFeedImage from './UI/ico-feed-image.svg';
 import uiIcoFeedRound from './UI/ico-feed-round.svg';
 import uiIcoFeed from './UI/ico-feed.svg';
+import uiIcoListLg from './UI/ico-list-lg.svg';
+import uiIcoListTime from './UI/ico-list-time.svg';
 import uiIcoList from './UI/ico-list.svg';
 import uiIcoModuleBuoy from './UI/ico-module-buoy.svg';
 import uiIcoModuleColregs from './UI/ico-module-colregs.svg';
+import uiIcoModuleNavigation from './UI/ico-module-navigation.svg';
 import uiIcoModuleQuizRoundFill from './UI/ico-module-quiz-round-fill.svg';
 import uiIcoModuleRadioRoundFill from './UI/ico-module-radio-round-fill.svg';
 import uiIcoModuleRadio from './UI/ico-module-radio.svg';
@@ -189,6 +200,7 @@ import uiIcoModuleWeatherRoundFill from './UI/ico-module-weather-round-fill.svg'
 import uiIcoModuleWeather from './UI/ico-module-weather.svg';
 import uiIcoModuleWindRoundFill from './UI/ico-module-wind-round-fill.svg';
 import uiIcoModuleWind from './UI/ico-module-wind.svg';
+import uiIcoNavigationModuleRoundFill from './UI/ico-navigation-module-round-fill.svg';
 import uiIcoPostRound from './UI/ico-post-round.svg';
 import uiIcoPost from './UI/ico-post.svg';
 import uiIcoQuizTime from './UI/ico-quiz-time.svg';
@@ -282,6 +294,11 @@ export const iconMap: IconMap = {
     'ico-my-location': mapIcoMyLocation,
     'ico-pin': mapIcoPin,
     'ico-slack': mapIcoSlack,
+    'ico-stream-arrow-100': mapIcoStreamArrow100,
+    'ico-stream-arrow-20': mapIcoStreamArrow20,
+    'ico-stream-arrow-40': mapIcoStreamArrow40,
+    'ico-stream-arrow-60': mapIcoStreamArrow60,
+    'ico-stream-arrow-80': mapIcoStreamArrow80,
   },
   marina: {
     'ico-bar': marinaIcoBar,
@@ -327,11 +344,14 @@ export const iconMap: IconMap = {
   },
   nav: {
     'ico-chart': navIcoChart,
+    'ico-checklist': navIcoChecklist,
     'ico-home-lrg': navIcoHomeLrg,
     'ico-learn-book': navIcoLearnBook,
     'ico-map-fill': navIcoMapFill,
     'ico-marina': navIcoMarina,
     'ico-quiz-passed': navIcoQuizPassed,
+    'ico-route': navIcoRoute,
+    'ico-sailboat': navIcoSailboat,
     'ico-stations': navIcoStations,
     'ico-tides': navIcoTides,
     'ico-tools': navIcoTools,
@@ -413,9 +433,12 @@ export const iconMap: IconMap = {
     'ico-feed-image': uiIcoFeedImage,
     'ico-feed-round': uiIcoFeedRound,
     'ico-feed': uiIcoFeed,
+    'ico-list-lg': uiIcoListLg,
+    'ico-list-time': uiIcoListTime,
     'ico-list': uiIcoList,
     'ico-module-buoy': uiIcoModuleBuoy,
     'ico-module-colregs': uiIcoModuleColregs,
+    'ico-module-navigation': uiIcoModuleNavigation,
     'ico-module-quiz-round-fill': uiIcoModuleQuizRoundFill,
     'ico-module-radio-round-fill': uiIcoModuleRadioRoundFill,
     'ico-module-radio': uiIcoModuleRadio,
@@ -427,6 +450,7 @@ export const iconMap: IconMap = {
     'ico-module-weather': uiIcoModuleWeather,
     'ico-module-wind-round-fill': uiIcoModuleWindRoundFill,
     'ico-module-wind': uiIcoModuleWind,
+    'ico-navigation-module-round-fill': uiIcoNavigationModuleRoundFill,
     'ico-post-round': uiIcoPostRound,
     'ico-post': uiIcoPost,
     'ico-quiz-time': uiIcoQuizTime,
