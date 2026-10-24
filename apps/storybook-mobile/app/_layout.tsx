@@ -1,5 +1,6 @@
 import '../global.css';
 import React, { useEffect, useState } from 'react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import * as Font from 'expo-font';
 import StorybookUIRoot from '../.storybook/Storybook';
 
@@ -14,5 +15,9 @@ export default function RootLayout() {
 
   if (!fontsLoaded) return null;
 
-  return <StorybookUIRoot />;
+  return (
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <StorybookUIRoot />
+    </GestureHandlerRootView>
+  );
 }

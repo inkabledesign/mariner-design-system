@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
-import { Dimensions } from 'react-native';
+import React, { createContext, useContext } from 'react';
+import { useWindowDimensions } from 'react-native';
 
 export type Breakpoint = 'mobile' | 'tablet' | 'desktop-sm' | 'desktop-lg';
 
@@ -41,24 +41,13 @@ interface BreakpointProviderProps {
  * current breakpoint via `useBreakpoint()`.
  */
 export const BreakpointProvider: React.FC<BreakpointProviderProps> = ({ children }) => {
-  const [dimensions, setDimensions] = useState(() => {
-    const { width, height } = Dimensions.get('window');
-    return { width, height };
-  });
+  const { width, height } = useWindowDimensions();
 
-  useEffect(() => {
-    const subscription = Dimensions.addEventListener('change', ({ window }) => {
-      setDimensions({ width: window.width, height: window.height });
-    });
-
-    return () => subscription?.remove();
-  }, []);
-
-  const breakpoint = getBreakpointFromWidth(dimensions.width);
+  const breakpoint = getBreakpointFromWidth(width);
 
   return React.createElement(
     BreakpointContext.Provider,
-    { value: { breakpoint, ...dimensions } },
+    { value: { breakpoint, width, height } },
     children,
   );
 };

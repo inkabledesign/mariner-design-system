@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { TextInput } from 'react-native';
+import { TextInput, type TextInputInstance } from 'react-native';
 import ViewStyled from '../../../atoms/ViewStyled';
 import Icon from '../../../atoms/Icon';
 import Divider from '../../../atoms/Divider';
@@ -26,7 +26,7 @@ import type { SearchInputProps } from './index.types';
  * 
  * @example
  * // With ref
- * const inputRef = useRef<TextInput>(null);
+ * const inputRef = useRef<TextInputInstance>(null);
  * 
  * <SearchInput 
  *   ref={inputRef}
@@ -46,7 +46,9 @@ import type { SearchInputProps } from './index.types';
  *   showDivider={false}
  * />
  */
-const SearchInput = forwardRef<TextInput, SearchInputProps>(
+const SearchInput: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<SearchInputProps> & React.RefAttributes<TextInputInstance>
+> = forwardRef<TextInputInstance, SearchInputProps>(
   (
     {
       value = '',

@@ -29,7 +29,7 @@ const HeaderTopBar: React.FC<HeaderTopBarProps> = ({
   // In landscape mode, use horizontal insets for proper spacing from rounded corners
   const topPadding = orientation === 'landscape' ? Math.max(insets.left / 2) : insets.top + 4;
   const horizontalPadding =
-    orientation === 'landscape' ? Math.max(insets.left / 2.5, insets.right / 2.5, 1) : theme.spacing[breakpoint].spacing.md;
+    orientation === 'landscape' ? Math.max(insets.left / 2.5, insets.right / 2.5, 1) : theme.spacing[breakpoint].spacing.lg;
   return (
     <>
       <ViewStyled
@@ -38,9 +38,9 @@ const HeaderTopBar: React.FC<HeaderTopBarProps> = ({
           paddingLeft: horizontalPadding,
           paddingRight: horizontalPadding,
         }}
-        className={'flex-row items-center justify-center py-xxs gap-md z-[2]'}>
+        className={'flex-row items-center justify-center py-xs gap-md z-[2]'}>
         {/* Left Section */}
-        <Row className="items-center gap-md w-[44px]">
+        <Row className="items-center gap-md min-w-[44px]">
           {iconLeft && (
             <Pressable onPress={onLeftPress}>
               <ViewStyled className="items-center justify-center h-[32px]">
@@ -93,7 +93,7 @@ const HeaderTopBar: React.FC<HeaderTopBarProps> = ({
           </ViewStyled>
         )}
         {/* Right Section */}
-        <Row className="items-center justify-end gap-md w-[44px]">
+        <Row className="items-center justify-end gap-md min-w-[44px]">
           {textRight && (
             <Pressable onPress={onRightPress}>
               <ViewStyled className="pl-xs">

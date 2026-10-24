@@ -61,6 +61,7 @@ export { default as Button } from './molecules/Button';
 export { default as ButtonGroup } from './molecules/ButtonGroup';
 export { default as ButtonGroupItem } from './molecules/ButtonGroupItem';
 export { default as ButtonNumber } from './molecules/ButtonNumber';
+export { default as PaginationStyled } from './molecules/PaginationStyled';
 export { default as ButtonProgress } from './molecules/ButtonProgress';
 export { default as ButtonIcon } from './molecules/ButtonIcon';
 export { default as CardInfo } from './molecules/CardInfo';

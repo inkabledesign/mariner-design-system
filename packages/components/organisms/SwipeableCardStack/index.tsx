@@ -1,6 +1,7 @@
+import { scheduleOnRN } from 'react-native-worklets';
 import React from 'react';
-import { Dimensions, View } from 'react-native';
-import { Gesture, GestureDetector } from 'react-native-gesture-handler';
+import { useWindowDimensions, View } from 'react-native';
+import { usePanGesture, GestureDetector } from 'react-native-gesture-handler';
 import {
   createAnimatedComponent,
   useSharedValue,
@@ -8,7 +9,6 @@ import {
   withTiming,
   interpolate,
   Extrapolation,
-  runOnJS,
   type SharedValue,
 } from 'react-native-reanimated';
 import ViewStyled from '../../atoms/ViewStyled';
@@ -18,8 +18,6 @@ import type { SwipeableCardStackProps } from './index.types';
 // Rollup-bundled output `Animated` resolves to the module namespace, which
 // does not expose `View` as a named export.
 const AnimatedView = createAnimatedComponent(View);
-
-const { height: SCREEN_HEIGHT } = Dimensions.get('window');
 
 interface CardProps<T> {
   item: T;
@@ -44,28 +42,30 @@ const SwipeableCard = <T,>({
   renderCard,
   onDismiss,
 }: CardProps<T>) => {
+  const { height: screenHeight } = useWindowDimensions();
   const translateY = useSharedValue(0);
   const isTop = index === currentIndex;
 
-  const panGesture = Gesture.Pan()
-    .enabled(isTop)
-    .onUpdate((event: { translationY: number }) => {
+  const panGesture = usePanGesture({
+    enabled: isTop,
+    onUpdate: event => {
       if (event.translationY > 0) {
         translateY.value = event.translationY;
-        animatedValue.value = interpolate(event.translationY, [0, SCREEN_HEIGHT], [index, index + 1]);
+        animatedValue.value = interpolate(event.translationY, [0, screenHeight], [index, index + 1]);
       }
-    })
-    .onEnd((event: { translationY: number }) => {
-      if (event.translationY > swipeThreshold) {
-        translateY.value = withTiming(SCREEN_HEIGHT + 100, { duration: 200 }, () => {
-          runOnJS(onDismiss)(item, index);
+    },
+    onDeactivate: event => {
+      if (!event.canceled && event.translationY > swipeThreshold) {
+        translateY.value = withTiming(screenHeight + 100, { duration: 200 }, finished => {
+          if (finished) scheduleOnRN(onDismiss, item, index);
         });
         animatedValue.value = withTiming(index + 1, { duration: 200 });
       } else {
         translateY.value = withTiming(0);
         animatedValue.value = withTiming(index);
       }
-    });
+    },
+  });
 
   const animatedCardStyle = useAnimatedStyle(() => {
     const stackPosition = index - animatedValue.value;

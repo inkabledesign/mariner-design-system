@@ -75,7 +75,6 @@ const UserProfile = ({
           size={72}
           imageUrl={imageUrl}
           iconName="ico-sailor"
-          hasAddButton={Boolean(onEditPress)}
           onEditPress={onEditPress}
         />
       </Row>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, View, type StyleProp, type ViewStyle } from 'react-native';
+import { View, type StyleProp, type ViewStyle } from 'react-native';
 import {
   createAnimatedComponent,
   useAnimatedStyle,
@@ -39,26 +39,35 @@ const ModuleProgress = ({
   variant = 'accent',
   animatedOpacity,
   animatedPositionY,
-  className = '',
+  themeMode = 'light',
 }: ModuleProgressProps) => {
   const clampedProgress = Math.min(Math.max(progress, 0), 100);
 
+  const colors = theme.color[themeMode];
+  const surfaceColor =
+    themeMode === 'dark' ? colors.material.surface['100'] : colors.material.surface['0'];
+
   const animationProgress = useDerivedValue(() => {
     'worklet';
-    if (!animatedPositionY) return 0;
+    if (!animatedPositionY) return 1;
     const positionValue = animatedPositionY.value;
-    if (!isValidValue(positionValue)) return 0;
+    if (!isValidValue(positionValue)) return 1;
     return Math.max(0, Math.min(1, (positionValue - 102) / 68));
   });
 
+  // Card chrome (padding + border) fades out as the header collapses so only the
+  // bar remains — Figma HeaderModule isCollapsed state.
   const animatedContainerStyle = useAnimatedStyle(() => {
     'worklet';
     if (!animatedPositionY) return {};
     const p = animationProgress.value;
     return {
-      height: 24 + p * 32,
-      transform: [{ translateY: (Platform.OS === 'android' ? -34 : -28) + p * 40 }],
-      padding: p * 12,
+      height: 4 + p * 52,
+      paddingVertical: p * 12,
+      // 12→24: collapsed bar keeps Figma's ~24px inset from the sheet edge
+      // (sheet px-md 12 + card padH 12)
+      paddingHorizontal: theme.spacing.mobile.spacing.md + p * 12,
+      borderWidth: p,
     };
   });
 
@@ -74,10 +83,9 @@ const ModuleProgress = ({
     'worklet';
     if (!animatedPositionY) return {};
     const p = animationProgress.value;
-    return {
-      height: 6 - p * 4,
-      transform: [{ translateY: -8 + p * 8 }],
-    };
+    // The card is justifyContent:flex-end, so the bar always hugs its bottom
+    // edge — no translate needed as the card height animates.
+    return { height: 4 - p * 2 };
   });
 
   return (
@@ -88,16 +96,23 @@ const ModuleProgress = ({
           gap: theme.spacing.mobile.spacing.xs,
           width: '100%',
           flexDirection: 'column',
+          justifyContent: 'flex-end',
+          backgroundColor: surfaceColor,
+          borderColor: colors.brand.primary['10'],
+          borderWidth: 1,
+          paddingVertical: theme.spacing.mobile.spacing.md,
+          paddingHorizontal: theme.spacing.mobile.spacing.xl,
+          overflow: 'hidden',
         },
         animatedContainerStyle,
       ]}
     >
       <AnimatedView style={animatedLabelStyle}>
         <Row className="items-center justify-between w-full">
-          <TextStyled textStyle="label" className="text-brand-primary-100">
+          <TextStyled textStyle="label" fontWeight="500" className="text-brand-primary-100">
             Module progress
           </TextStyled>
-          <TextStyled textStyle="label" className="text-brand-primary-100" fontWeight="700">
+          <TextStyled textStyle="footnote" className="text-brand-primary-100" fontWeight="700">
             {Math.round(clampedProgress)}%
           </TextStyled>
         </Row>
@@ -106,7 +121,7 @@ const ModuleProgress = ({
         progress={clampedProgress}
         animatedProgressLBarStyle={animatedProgressBarStyle as unknown as StyleProp<ViewStyle>}
         style={variant}
-        height={3}
+        height={2}
       />
     </AnimatedView>
   );

@@ -1,3 +1,4 @@
+import { scheduleOnRN } from 'react-native-worklets';
 import React from 'react';
 import { Pressable, View, StyleSheet } from 'react-native';
 import {
@@ -5,10 +6,9 @@ import {
   useAnimatedStyle,
   withSpring,
   useSharedValue,
-  runOnJS,
   withTiming,
 } from 'react-native-reanimated';
-import { Gesture, GestureDetector } from 'react-native-gesture-handler';
+import { usePanGesture, GestureDetector } from 'react-native-gesture-handler';
 import TextStyled from '../../atoms/TextStyled';
 import ViewStyled from '../../atoms/ViewStyled';
 import { theme } from '@inkabledesign/mariner-theme';
@@ -85,14 +85,18 @@ const ButtonGroup = ({
   });
 
   // Pan gesture for dragging between options
-  const panGesture = Gesture.Pan()
-    .onUpdate(event => {
+  const panGesture = usePanGesture({
+    onUpdate: event => {
       const newX = selectedIndex * buttonWidth + event.translationX;
       // Clamp between 0 and max position
       const clampedX = Math.max(0, Math.min(newX, (options.length - 1) * buttonWidth));
       dragX.value = clampedX;
-    })
-    .onEnd(event => {
+    },
+    onDeactivate: event => {
+      if (event.canceled) {
+        dragX.value = withTiming(selectedIndex * buttonWidth);
+        return;
+      }
       // Calculate which option is closest
       const targetIndex = Math.round(dragX.value / buttonWidth / 2);
       const clampedIndex = Math.max(0, Math.min(targetIndex, options.length - 1));
@@ -104,9 +108,10 @@ const ButtonGroup = ({
 
       // Call onChange if different option
       if (clampedIndex !== selectedIndex) {
-        runOnJS(onChange)(options[clampedIndex].id);
+        scheduleOnRN(onChange, options[clampedIndex].id);
       }
-    });
+    },
+  });
 
   // Update drag position when selectedId changes externally
   React.useEffect(() => {

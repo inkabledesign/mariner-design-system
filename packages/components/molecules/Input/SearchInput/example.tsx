@@ -3,7 +3,7 @@
  */
 
 import React, { useState, useRef } from 'react';
-import { TextInput } from 'react-native';
+import { TextInput, type TextInputInstance } from 'react-native';
 import SearchInput from './index';
 import ViewStyled from '../../../atoms/ViewStyled';
 import Column from '../../../atoms/Column';
@@ -17,7 +17,7 @@ export const SearchInputExamples = () => {
   const [query3, setQuery3] = useState('');
   const [query4, setQuery4] = useState('');
   
-  const inputRef = useRef<TextInput>(null);
+  const inputRef = useRef<TextInputInstance>(null);
 
   const handleFocus = () => {
     inputRef.current?.focus();
