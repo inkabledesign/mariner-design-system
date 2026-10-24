@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/inkabledesign/mariner-design-system/compare/v2.1.0...v2.2.0) (2026-10-24)
+
+### Features
+
+- refactor PaginationItem, ButtonNumber, Avatar and ProgressBar to match Figma specs and add PaginationStyled molecule ([3e077d0](https://github.com/inkabledesign/mariner-design-system/commit/3e077d0de472c7fc53422ca3303c30f4e5eec040))
+
 # [2.1.0](https://github.com/inkabledesign/mariner-design-system/compare/v2.0.0...v2.1.0) (2026-10-18)
 
 ### Features
