@@ -5,6 +5,7 @@ import {
   Dimensions,
   type NativeScrollEvent,
   type NativeSyntheticEvent,
+  type ScrollViewInstance,
 } from 'react-native';
 import ViewStyled from '../../atoms/ViewStyled';
 import PrimaryImage from '../../atoms/PrimaryImage';
@@ -32,7 +33,7 @@ const ImageCarousel = ({
   className = '',
 }: ImageCarouselProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const scrollViewRef = useRef<ScrollView>(null);
+  const scrollViewRef = useRef<ScrollViewInstance>(null);
   const [viewWidth, setViewWidth] = useState(Dimensions.get('window').width);
 
   const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {

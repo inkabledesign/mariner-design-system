@@ -1,5 +1,5 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
-import { Pressable, LayoutChangeEvent, View } from 'react-native';
+import { Pressable, LayoutChangeEvent, View, type ViewInstance } from 'react-native';
 import Row from '../../atoms/Row';
 import {
   createAnimatedComponent,
@@ -52,8 +52,8 @@ const TabBar = ({
   const [isReady, setIsReady] = useState(false);
 
   // Refs for measurements
-  const containerRef = useRef<View>(null);
-  const tabRefs = useRef<Array<View | null>>(tabs.map(() => null));
+  const containerRef = useRef<ViewInstance>(null);
+  const tabRefs = useRef<Array<ViewInstance | null>>(tabs.map(() => null));
 
   // Animation values
   const indicatorX = useSharedValue(0);
@@ -233,7 +233,7 @@ const TabBar = ({
           <Pressable
             key={item.id}
             ref={ref => {
-              tabRefs.current[index] = ref as unknown as View | null;
+              tabRefs.current[index] = ref as unknown as ViewInstance | null;
             }}
             style={{ flex: 1 }}
             onPress={() => handleTabPress(index)}>

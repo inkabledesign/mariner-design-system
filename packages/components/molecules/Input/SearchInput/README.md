@@ -31,9 +31,9 @@ const [query, setQuery] = useState('');
 
 ```tsx
 import { useRef } from 'react';
-import { TextInput } from 'react-native';
+import { type TextInputInstance } from 'react-native';
 
-const inputRef = useRef<TextInput>(null);
+const inputRef = useRef<TextInputInstance>(null);
 
 <SearchInput 
   ref={inputRef}
@@ -139,7 +139,7 @@ SearchInput (Container)
 When using a ref, you have access to all TextInput methods:
 
 ```tsx
-const inputRef = useRef<TextInput>(null);
+const inputRef = useRef<TextInputInstance>(null);
 
 // Focus
 inputRef.current?.focus();
@@ -161,7 +161,7 @@ inputRef.current?.isFocused();
 ```tsx
 const SearchScreen = () => {
   const [query, setQuery] = useState('');
-  const inputRef = useRef<TextInput>(null);
+  const inputRef = useRef<TextInputInstance>(null);
 
   useEffect(() => {
     // Auto-focus on mount

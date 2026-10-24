@@ -1,10 +1,12 @@
 import React, { forwardRef } from 'react';
-import { Text } from 'react-native';
+import { Text, type TextInstance } from 'react-native';
 import type { StyledTextProps } from './index.types';
 import { theme, getFontFamilyForWeight, getFontFamilyClass } from '@inkabledesign/mariner-theme';
 // Removed useTheme import to prevent render-time state updates
 
-const TextStyled = forwardRef<Text, StyledTextProps>(({
+const TextStyled: React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<StyledTextProps> & React.RefAttributes<TextInstance>
+> = forwardRef<TextInstance, StyledTextProps>(({
   breakpoint = 'mobile',
   text,
   children,

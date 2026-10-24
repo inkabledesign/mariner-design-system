@@ -72,6 +72,7 @@ export default {
     'react-native', 
     'react-native-svg',
     'react-native-reanimated',
+    'react-native-worklets',
     'react-native-gesture-handler',
     'react-native-safe-area-context',
     'expo-image',

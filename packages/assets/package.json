@@ -44,15 +44,15 @@
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.5",
     "@types/node": "^20.0.0",
-    "@types/react": "^19.0.0",
+    "@types/react": "~19.3.0",
     "cheerio": "^1.2.0",
     "rollup": "^4.6.0",
     "typescript": "^5.2.0"
   },
   "peerDependencies": {
-    "react": "^19.0.0",
-    "react-native": ">=0.83.0",
-    "react-native-svg": "^15.15.4"
+    "react": "^19.3.0",
+    "react-native": ">=0.88.0",
+    "react-native-svg": "^15.16.0"
   },
   "publishConfig": {
     "registry": "https://registry.figma.com/npm/aead56d4-5c30-4a37-9fea-416be436e316/registry/"
