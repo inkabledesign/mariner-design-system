@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, ViewStyle } from 'react-native';
+import { ViewStyle } from 'react-native';
+import { StyledView } from '../../utils/styled';
 
 export type ColumnProps = {
   children?: React.ReactNode;
@@ -11,9 +12,9 @@ const Column = ({ children, style, className }: ColumnProps) => {
   const mergedClassName = className ? `flex flex-col ${className}` : 'flex flex-col';
   
   return (
-    <View style={style} className={mergedClassName}>
+    <StyledView style={style} className={mergedClassName}>
       {children}
-    </View>
+    </StyledView>
   );
 };
 

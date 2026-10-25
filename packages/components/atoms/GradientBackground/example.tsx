@@ -1,5 +1,4 @@
 import React from 'react';
-import { View } from 'react-native';
 import GradientBackground from './index';
 import { GRADIENT_PRESETS } from './presets';
 import Column from '../Column';
@@ -105,14 +104,14 @@ export const CustomOpacityExample = () => (
 
 // Example 5: Full Screen Background
 export const FullScreenExample = () => (
-  <View className="relative w-full h-screen bg-white">
+  <ViewStyled className="relative w-full h-screen bg-white">
     <GradientBackground />
     <Column className="relative z-10 p-xl justify-center items-center h-full">
       <TextStyled className="text-heading2 text-brand-primary-100">
         Full Screen Gradient
       </TextStyled>
     </Column>
-  </View>
+  </ViewStyled>
 );
 
 // Example 6: Blue Gradient Preset

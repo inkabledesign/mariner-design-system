@@ -1,5 +1,5 @@
 import React from 'react';
-import { View as RNView } from 'react-native';
+import { StyledView } from '../../utils/styled';
 import type { ViewStyledProps } from './index.types';
 
 /**
@@ -19,9 +19,9 @@ import type { ViewStyledProps } from './index.types';
  */
 const ViewStyled = ({ children, style, className }: ViewStyledProps) => {
   return (
-    <RNView style={style} className={className}>
+    <StyledView style={style} className={className}>
       {children}
-    </RNView>
+    </StyledView>
   );
 };
 

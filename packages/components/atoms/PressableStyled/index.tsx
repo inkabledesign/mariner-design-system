@@ -1,5 +1,6 @@
 import React from 'react';
-import { Pressable, PressableProps, ViewStyle } from 'react-native';
+import { PressableProps, ViewStyle } from 'react-native';
+import { StyledPressable } from '../../utils/styled';
 
 export type PressableStyledProps = PressableProps & {
   children?: React.ReactNode;
@@ -9,9 +10,9 @@ export type PressableStyledProps = PressableProps & {
 
 const PressableStyled = ({ children, style, className, ...pressableProps }: PressableStyledProps) => {
   return (
-    <Pressable style={style} className={className} {...pressableProps}>
+    <StyledPressable style={style} className={className} {...pressableProps}>
       {children}
-    </Pressable>
+    </StyledPressable>
   );
 };
 

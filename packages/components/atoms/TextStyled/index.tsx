@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react';
-import { Text, type TextInstance } from 'react-native';
+import { type TextInstance } from 'react-native';
+import { StyledText } from '../../utils/styled';
 import type { StyledTextProps } from './index.types';
 import { theme, getFontFamilyForWeight, getFontFamilyClass } from '@inkabledesign/mariner-theme';
 // Removed useTheme import to prevent render-time state updates
@@ -128,7 +129,7 @@ const TextStyled: React.ForwardRefExoticComponent<
   const content = text !== undefined ? text : children;
 
   return (
-    <Text
+    <StyledText
       {...textProps}
       ref={ref}
       style={style}
@@ -136,7 +137,7 @@ const TextStyled: React.ForwardRefExoticComponent<
       numberOfLines={numberOfLines}
       selectable={selectable}>
       {content}
-    </Text>
+    </StyledText>
   );
 });
 

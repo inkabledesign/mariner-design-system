@@ -25,7 +25,8 @@
     "templates",
     "hooks",
     "types",
-    "data"
+    "data",
+    "utils"
   ],
   "scripts": {
     "build": "rollup -c",

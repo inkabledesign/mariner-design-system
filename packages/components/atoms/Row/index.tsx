@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, ViewStyle } from 'react-native';
+import { ViewStyle } from 'react-native';
+import { StyledView } from '../../utils/styled';
 
 export type RowProps = {
   children?: React.ReactNode;
@@ -11,9 +12,9 @@ const Row = ({ children, style, className }: RowProps) => {
   const mergedClassName = className ? `flex flex-row ${className}` : 'flex flex-row';
   
   return (
-    <View style={style} className={mergedClassName}>
+    <StyledView style={style} className={mergedClassName}>
       {children}
-    </View>
+    </StyledView>
   );
 };
 

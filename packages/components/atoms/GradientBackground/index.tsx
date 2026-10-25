@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { View } from 'react-native';
 import { Svg, Defs, LinearGradient, RadialGradient, Stop, Rect } from 'react-native-svg';
+import { StyledView } from '../../utils/styled';
 import Animated, {
   useSharedValue,
   useAnimatedProps,
@@ -109,7 +109,7 @@ const GradientBackground = ({
     : { x1: '0%', y1: '0%', x2: '0%', y2: '100%' };
 
   return (
-    <View className={`absolute top-0 left-0 w-full h-full ${className}`}>
+    <StyledView className={`absolute top-0 left-0 w-full h-full ${className}`}>
       <Svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
         <Defs>
           {/* Linear Gradient - from JSON config */}
@@ -217,7 +217,7 @@ const GradientBackground = ({
             <Rect x="0" y="0" width="100" height="100" fill="url(#linearGrad)" />
           ))}
       </Svg>
-    </View>
+    </StyledView>
   );
 };
 
